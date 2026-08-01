@@ -1,0 +1,4 @@
+Selected Employee:
+	ID: 4fcd662a-e317-45f8-a5fc-d6c7042f2be8
+	Full Name: John Doe
+	Annual Salary: 100200

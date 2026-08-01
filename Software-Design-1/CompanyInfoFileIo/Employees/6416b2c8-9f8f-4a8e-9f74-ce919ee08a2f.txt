@@ -1,0 +1,4 @@
+Selected Employee:
+	ID: 6416b2c8-9f8f-4a8e-9f74-ce919ee08a2f
+	Full Name: Jane Doe
+	Annual Salary: 150000

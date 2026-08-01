@@ -1,0 +1,4 @@
+Selected Employee:
+	ID: 6b33db47-0d19-46de-8851-9250c97e5302
+	Full Name: Anakin Skywalker
+	Annual Salary: 97000
