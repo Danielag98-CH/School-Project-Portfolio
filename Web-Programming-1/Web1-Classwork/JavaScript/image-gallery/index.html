@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Pictures</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Image Gallery">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    /*
+    Note that on your final project, the following CSS code 
+    should go into your style sheet (main.css)
+    */
+    input[type=button]{
+      border:2px solid gray;
+      background-color: #333333;
+      border-radius: 4px;
+      padding:10px;
+      color:gray;
+      font-weight: bold;
+    }
+
+    #image-gallery{
+      width:380px;
+    }
+
+    #image-gallery #mainImg{
+      width:100%;
+      border: 2px solid #333333;
+    }
+  </style>
+  
+  <!-- Link to the JavaScript file that controls the image gallery -->
+  <script type="text/javascript" src="js/image-gallery.js"></script>
+
+</head>
+<body>  
+	<h1>Image Gallery</h1>
+  <div id="image-gallery">
+    <img id="mainImg" src="js/image-gallery.js" />
+    <h3 id="caption"></h3>
+    <input type="button" id="btnPrev" value="Prev" />
+    &nbsp;
+    <input type="button" id="btnNext" value="Next" />
+  </div>
+</body>
+</html>
+
+

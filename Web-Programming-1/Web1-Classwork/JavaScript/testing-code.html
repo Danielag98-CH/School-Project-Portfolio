@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            const account1 = {
+                customer: "Lu Vang",
+                balance: 100.01,
+                deposit: function(amount){
+                    this.balance += amount;
+                },
+                withdraw(amount){
+                    if(amount < this.balance){
+                        this.balance -= amount;
+                        return amount;
+                    }else{
+                        throw Error("NSF");
+                    }
+                }
+            };
+            console.log(typeof account1);
+            console.log(account1.balance);
+            account1.interestRate = 0.05;
+            console.log(account1);
+            account1.customer = "Lue Vang";
+            account1.deposit(10);
+            console.log(account1.balance);
+            let cash = account1.withdraw(75);
+            console.log (account1.balance);
+            // cash += account1.withdram(40);
+            
+            const house = {
+                kitchen: {
+                    fridge:{
+                        sandwich:{
+                            bread: "wheat",
+                            meat: "turkey",
+                            veggie: "lettuce"
+                        }
+                    }
+                }
+            }
+
+            console.log(house.kitchen.fridge.sandwich.meat);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

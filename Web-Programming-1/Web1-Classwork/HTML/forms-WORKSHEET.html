@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Forms Worksheet</title>
+    <meta name="description" content="Forms">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/main.css" TYPE="text/css">
+    <!-- <script type="text/javascript" src="http://wtc-web.com/form-checker.js"></script> -->
+    <style type="text/css">
+        label{
+            display: block;
+            padding-top:10px;
+            font-weight: bold;
+            color: midnightblue;
+        }
+        input[type=radio]+label, input[type=checkbox]+label{
+          display: inline;
+          font-weight: normal;
+        }
+        textarea{
+          width: 400px;
+          height:80px;
+        }
+    </style>
+  </head>
+  <body>
+      <h1>Forms Worksheet</h1>
+      <p class="question">
+        In the FORM element below, add elements to create a form that looks like this:
+        <br>
+        <img src="../images/html-form.png" alt="HTML form">
+      </p>
+      <p>
+        Put a LABEL element before each form control, which indicates what information should be entered.
+      </p>
+       <pre>
+LABEL            HTML Form Control
+----------------------------------------------------------------------------------------------------------------------
+First Name:      Create a text input that has a <b>name</b> attribute of 'firstName'.
+
+Favorite Color:  Create a select box that has a <b>name</b> attribute of 'color'.
+                 The select box should contain the following options:
+                 - Red (the <b>value</b> attribute of this option should be set to 'red').
+                 - Yellow (the <b>value</b> attribute of this option should be set to 'yellow' ).
+                 - Blue (the <b>value</b> attribute of this option should be set to 'blue').
+                 - Other (the <b>value</b> attribute of this option should be set to 'other').
+                 
+                 For example: the first option inside the select tag should look like this:
+
+                 &lt;option value="red"&gt;Red&lt;/option&gt;
+
+Favorite Meal:   Create a group of radio buttons (put a label to the right of each radio button)
+                 - Breakfast (give it a <b>name</b> attribute of 'meal', a <b>value</b> attribute of 'breakfast'). 
+                 - Lunch (give it a <b>name</b> attribute of 'meal', a <b>value</b> attribute of 'lunch').
+                 - Dinner (give it a <b>name</b> attribute of 'meal', a <b>value</b> attribute of 'dinner').
+
+Places Visited:  Create 3 checkboxes with a label to the right of each one (put a line break after each label)
+                 - Europe (give it a <b>name</b> attribute of 'visited', and a <b>value</b> attribute of 'Europe').
+                 - Africa (give it a <b>name</b> attribute of 'visited', and a <b>value</b> attribute of 'Africa').
+                 - Asia (give it a <b>name</b> attribute of 'visited', and a <b>value</b> attribute of 'Asia').
+                 NOTE: Be sure to include the square brackets after 'visited' when setting the name attribute of each checkbox.
+                 I can explain why those are required in class.
+
+Favorite Quote:  Create a textarea that has a <b>name</b> attribute of 'quote'.       
+
+Submit           Create a submit button (an input tag with a <b>type</b> attribute of 'submit' and a <b>value</b> of 'Submit').
+                 
+       </pre>
+       <div class="answer">
+          <form id="frmSurvey" action="https://www.wtc-web.com/form-handler.php" method="POST">
+            <label>First Name</label>
+            <br>
+            <input type="text" name="firstName">
+            <br>
+            <label>Favorite Color</label>
+            <select name="color">
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+                <option value="blue">Blue</option>
+                <option value="other">Other</option>
+            </select>
+            <br>
+            <label>Favorite Pizza</label>
+            <br>
+            
+            <label>
+                <input type="radio" name="meal" value="breakfast">
+                Breakfast
+                <input type="radio" name="meal" value="lunch" checked="true">
+                Lunch
+                <input type="radio" name="meal" value="dinner">
+                Dinner
+            </label>
+            <br>
+
+            <label>Places Visited</label>
+            <label>
+              <input type="checkbox" name="visited" value="Europe">
+              Europe
+              <input type="checkbox" name="visited" value="Africa">
+              Africa
+              <input type="checkbox" name="visited" value="Asia">
+              Asia
+           </label>
+            <br>
+
+            <label>Favorite Quote</label>
+            <textarea name="quote"></textarea>
+            <br>
+
+            <input type="submit" value="Submit">
+            <br>
+
+          </form>
+       </div>
+       <footer>
+        &copy; 2023 Niall Kader
+       </footer>
+  </body>
+</html>
+<!-- <script src="http://wtc-web.com/form-checker.js"></script> -->
+<script defer src="https://www.webcoder.club/files/web-programming/form-checker.js"></script>

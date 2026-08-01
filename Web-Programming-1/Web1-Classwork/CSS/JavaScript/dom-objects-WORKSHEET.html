@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>WORKSHEET - DOM Objects</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link REL=StyleSheet HREF="../styles/main.css" TYPE="text/css">
+        <script src="../js/main.js"></script>
+    </head>
+    <body>
+        <main>
+			<h1>DOM Objects Worksheet</h1>
+            <h4>Question 1</h4>
+            <p class="question">
+                In order to use the document.getElementById() method to 'get a handle' on an element,
+                what attribute must that element have?
+            </p>
+            <div class="answer">
+                Replace this text with the solution to the above question/problem.
+            </div>
+            <h4>Question 2</h4>
+            <p class="question">
+                When you invoke document.getElementById(), you must pass in a string parameter. What does the parameter represent? 
+            </p>
+            <div class="answer">
+                Replace this text with the solution to the above question/problem.
+            </div>
+            <h4>Question 3</h4>
+            <p class="question">
+                What does the document.getElementById() method return? 
+            </p>
+            <div class="answer">
+                Replace this text with the solution to the above question/problem.
+            </div>
+            <h4>Question 4</h4>
+            <p class="question">
+                What object is at the top of the DOM? In other words, what DOM object contains all other DOM objects?
+            </p>
+            <div class="answer">
+                Replace this text with the solution to the above question/problem.
+            </div>
+            <br><br>
+            <h1>Coding Problems</h1>
+            <p>
+            	You'll use the following elements to complete the coding problems:
+            </p>
+            <b>Problem 1</b>
+            <br>
+            <input type="text" id="txtFirstName" name="firstName" value="Bob">
+            <br><br>
+            <b>Problem 2</b>
+            <br>
+            <img id="animal-pic" src="../images/eagle.png" alt="A bald eagle" width="300" />
+            <br><br>
+            <b>Problem 3</b>
+            <div id="myDiv">This is myDiv</div>
+            <br><br>
+            <b>Problem 4</b>
+            <form>
+            	<h3>Sign Up Form</h3>
+                <p>Complete this form to sign up</p>
+                <label>First Name:</label>
+                <br>
+            	<input type="text" id="txtFirstName">
+                <br>
+                <label>Last Name:</label>
+                <br>
+            	<input type="text" id="txtLastName">
+                <br>
+                <label>Email:</label>
+                <br>
+            	<input type="text" id="txtEmail">
+                <br>
+                <label>Password:</label>
+                <br>
+            	<input type="text" id="txtPassword">
+                <br>
+                <label>Confirm Password:</label>
+                <br>
+            	<input type="password" id="txtConfirmPassword">
+                <br>
+            	<input type="button" id="btnSubmit" value="Sign Up">
+            </form>
+            
+            <script>
+            /////////////////////
+            // CODING PROBLEMS
+            /////////////////////
+
+            console.log("Problem 1");
+            //Get a handle on the textbox above (the INPUT element that has it's ID attribute set to "txtFirstName") and then log the 'value' property of the element/object.
+			//Then update the value property by setting it to your first name
+
+
+            console.log("Problem 2");
+            // Get a handle on the the img element on this page that displays a picture of an eagle.
+            // Then use dot notation to change the src and alt properties of the element object.
+            // Change the src property to "../images/happy-dog.jpg"
+            // Change the alt property to "A happy dog"
+
+
+            console.log("Problem 3");
+            // Prompt the user to enter his/her name.
+            // There is a DIV element on this page that that has an id attribute of 'myDiv'.
+            // Get a handle on the DIV element and change its innerHTML property to display the user's name inside an H1 element.
+
+
+
+            console.log("Problem 4");
+            // This problem has some code that we have not talked about yet 
+            // (but we will soon)
+            // Before getting started on it, we'll get a handle on the input button in this page:
+            const btnSubmit = document.getElementById("btnSubmit");
+
+            // Put your code inside the body of the handleSignup function below. 
+            // (your instructions are the comments inside the function body):
+            function handleSignup(){
+                // Get a handle on each of the text inputs
+                // and then console log the 'value' property
+                // of each of the element objects.
+            } 
+
+            // This is the code we have not yet talked about:
+            btnSubmit.onclick = handleSignup;
+            // To give you a quick explanation, the handleSignup() function will
+            // be invoked when the button is clicked. 
+            
+            // To test the code that you added to the handleSignup function:
+            // 1. Reload the page in the browser
+            // 2. Enter data into each of the text inputs
+            // 3. Click the button
+            // 4. Check the console log to see the data 
+
+ 
+
+           </script>
+        </main>
+        <footer>
+            &copy; 2024 Niall Kader
+        </footer> 
+    </body>
+</html>

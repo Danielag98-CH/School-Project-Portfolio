@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Selectors and Rule Sets</title>
+	<meta name="robots" content="noindex, nofollow" />
+	<style>
+
+		/*
+		MAKE SURE TO REFRESH THE PAGE AFTER EACH STEP, TO TEST YOUR WORK
+		*/
+		
+		/*
+		STEP 1
+		Add a CSS rule set that applies to the 'body' element (use a tag selector).
+		Set the 'color' property to 'green' (ex: color: green;).
+		Notice that the text in 'p' tags will be green as well, because
+		the color property 'cascades' down to elements/tags that are
+		nested inside the body tag.
+		*/
+		body{
+			color: green; 
+		}
+		
+		/*
+		STEP 2
+		Make a rule set that uses a tag selector to target all P tags.
+		Set the 'color' to 'orange'.
+		Note that this rule overrides the rule from step 1 for P tags.
+		*/
+		p{
+			color: orange;
+		}
+
+		/*
+		STEP 3
+		Use a tag selector that targets all H3 tags, and sets
+		their 'color' to '#333333', and their 'font-family' to 'Verdana'.
+		Note that #333333 is a hexidecimal value for a color 
+		(it should be a very dark gray). We'll learn more about hex colors soon!
+		*/
+		h3{
+			color: #333333; 
+			font-family: Verdana;
+		}
+
+
+
+		/*
+		STEP 4
+		Use a mixed selector that targets H3 tags, but only if they
+		have a 'class' attribute set to a value of 'special'.
+		We'll use this class when we want to announce specials on our website.
+		Set the 'color' to 'red' (to make the text in these tags stand out).
+		Notice that the font-family of these H3 tags will be set to Verdana
+		because of the rule set from the previous step. But this rule will
+		override the the color from the previous step.
+		*/
+		h3.special{
+			color: red;
+		}
+
+
+
+
+		/*
+		STEP 5
+		Use an ID selector to target the tag on this page that
+		has an ID attribute value of 'main-nav'.
+		Set the 'background-color' to 'midnightblue' and the 'height' to '30px'.
+		Set the 'margin' to '0px' and the 'padding' to '0px'.
+		We'll work on this a bit more in the next step 
+		(things may look a little strange now).
+		*/
+		#main-nav{
+			background-color: midnightblue;
+			height: 30px;
+			margin: 0px;
+			padding: 0px;
+		}
+
+
+
+		/*
+		STEP 6
+		Set up a rule set that uses a selector to target LI tags, but only
+		if they are nested inside of the the div that has an id of 'main-nav' (hint: #main-nav li).
+		Set the 'display' to 'inline' (this will change the targeted tags from block to inline)
+		Set the 'list-style' to 'none' (this will remove the 'bullet' next to each LI tag)
+		*/
+		#main-nav li{
+			display: inline;
+			list-style: none;
+		}
+
+
+
+		/*
+		STEP 7
+		Set up a rule set that uses a selector to target A tags, but only if they are nested
+		inside of the main-nav (hint: #main-nav a ). Set the following properties/rules:
+			
+			Set the 'display' to be 'inline-block' (this will allow the A tags to act sort of like
+				block level tags and sort of like inline tags, for example we can now set a height
+				and width for them, which we couldn't do if we left them as their default of inline)
+
+			Set the 'height' to be '30px'
+
+			Set the 'line-height' to be '30px' (this trick will center the text vertically)
+
+			Set the 'color' to 'white'
+
+			Set the 'text-decoration' to 'none'
+
+			Set the 'padding' to '0px 20px'
+		*/
+		#main-nav a{
+			display: inline-block;
+			height: 30px;
+			line-height: 30px;
+			color: white;
+			text-decoration: none;
+			padding: 0px 20px;
+		}
+
+
+
+		/*
+		STEP 8
+		Let's use a PSUEDO selector to add a rollover effect to our nav bar links. 
+		To do this set up a rule set that uses this selector: 
+			#main-nav a:hover
+		Set the 'background-color' to 'orange'.
+		*/
+		#main-nav a:hover{
+			background-color: orange;
+		}
+
+
+
+		/*
+		STEP 9
+		Add these three rules to the rule set we created in the previous step:
+			transform:scale(1.5);
+			-webkit-transition: all 0.7s ease;
+			transition: all 0.7s ease;
+		*/
+		#main-nav a:hover{
+			transform:scale(1.5);
+			-webkit-transition: all 0.7s ease;
+			transition: all 0.7s ease;
+		}
+	</style>
+</head>
+<body>
+	Hello, I might be green!
+	<p>
+		I'm a P tag, and I might be green, because the color rule
+		on the body tag 'cascades' down to me (I am nested inside the body tag).
+		Or maybe I'll end up being orange!
+	</p>
+	<h3>I am an H3 tag/element!</h3>
+	<h3 class="special">I am a 'special' H3 tag/element!</h3>
+	Here is a nav bar...
+	<ul id="main-nav">
+		<li><a href="#">Link 1</a></li>
+		<li><a href="#">Link 2</a></li>
+		<li><a href="#">Link 3</a></li>
+	</ul>
+	<footer>
+	  &copy; 2020 Niall Kader
+	</footer>
+</body>
+
+</html>

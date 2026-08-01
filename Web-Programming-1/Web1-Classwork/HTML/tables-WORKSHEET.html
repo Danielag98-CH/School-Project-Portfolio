@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tables Worksheet</title>
+    <meta name="description" content="Tables">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/main.css" TYPE="text/css">
+  </head>
+  <body>
+  	<h1>HTML Tables Worksheet</h1>
+
+  	<p class="question">
+		Create a table to hold the following data. Set the <b>border</b> attribute of the table tag to 1 so that you can see the borders of each cell. 
+    Make sure to use the proper tags for the first row, which displays the column headers. 
+    Be particularly careful to format your html (including the proper indentation) so that it's easy see the hierarchical structure of the tags when viewing the code.
+	</p>
+	<pre>
+            <b>Jan    Feb    Mar    Apr    May    Jun</b>
+Income      500    350    400    600    200    700
+Expenses    400    400    300    300    200    100 
+    </pre>
+	<div class="answer">
+		<table border="1" width="100%">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Jan</th>
+          <th>Feb</th>
+          <th>Mar</th>
+          <th>Apr</th>
+          <th>May</th>
+          <th>Jun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Income</td>
+          <td>500</td>
+          <td>350</td>
+          <td>400</td>
+          <td>600</td>
+          <td>200</td>
+          <td>700</td>
+        </tr>
+        <tr>
+          <td>Expenses</td>
+          <td>400</td>
+          <td>400</td>
+          <td>300</td>
+          <td>300</td>
+          <td>200</td>
+          <td>100</td>
+        </tr>
+      </tbody>
+    </table>	
+	</div>
+
+  <h3>Bonus Problem</h3>
+	<p class="question">
+		Use the <b>colspan</b> and <b>rowspan</b> attributes to create a table that looks something like this
+    (don't worry if your table does not look exactly like the image below, instead focus on using the colspan and rowspan attributes):
+		<br>
+		<img src="../images/table.png" alt="A table that has colspan and rowspan" />
+	</p>
+	<div class="answer">
+		<table border="1" width="100%">
+      <thead>
+        <tr>
+          <th colspan="7">
+            <h3>Monthly Budget</h3>
+          </th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Jan</th>
+          <th>Feb</th>
+          <th>Mar</th>
+          <th>Apr</th>
+          <th>May</th>
+          <th>Jun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">Income</td>
+          <td>500</td>
+          <td>350</td>
+          <td>400</td>
+          <td>600</td>
+          <td>200</td>
+          <td>700</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>100</td>
+          <td>300</td>
+          <td>200</td>
+          <td>600</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Expenses</td>
+          <td>400</td>
+          <td>400</td>
+          <td>300</td>
+          <td>300</td>
+          <td>200</td>
+          <td>100</td>
+        </tr>
+      </tbody>
+    </table>		
+	</div>
+  <footer>
+    &copy; 2024 Niall Kader
+   </footer>
+  </body>
+</html>

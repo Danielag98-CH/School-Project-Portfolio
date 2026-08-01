@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WORKSHEET - Operators</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/prism.css" TYPE="text/css">
+    <link REL=StyleSheet HREF="../styles/main.css" TYPE="text/css">
+</head>
+<body>
+
+<main>
+
+<h1>Operators Worksheet</h1>
+<h4>Question 1</h4>
+<p class="question">
+    What are the comparison operators used for?
+</p>
+<div class="answer">
+    Comparison operators are used to compare two values, for example they are often used in <b>boolean expressions</b>
+    when needing to return a true or false statement. 
+</div>
+<h4>Question 2</h4>
+<p class="question">
+    Explain the difference between the logical AND operator (<b>&&</b>) and the logical OR operator (<b>||</b>).
+</p>
+<div class="answer">
+    Logical operators are used to combine two or more boolean expressions.
+    The two ampersand 'AND' operator <b>'&&'</b> is used to see if two boolean expressions are both true.
+    The two 'pipe' characters <b>'||'</b> representing the 'OR' operator is used to see if one of the two boolean expressions listed is true.
+</div>
+<h4>Question 3</h4>
+<p class="question">
+    Which operator would you use to find the remainder from dividing 2 numbers.
+</p>
+<div class="answer">
+    The 'modulus' operator <b>%</b> is used to find the reaminder in division operations.
+</div>
+<h4>Question 4</h4>
+<p class="question">
+    Which operator would you use if you wanted to find out if two values were NOT equal?
+</p>
+<div class="answer">
+    The <b>inequality operator</b> which is represented as <b>'!='</b> 
+    is the operator you use to see if values are NOT equal.
+</div>
+
+<h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+<p>
+    <b>Always test your work! Check the console log to make sure there are no errors.</b>
+</p>
+<script>
+/////////////////////
+// CODING PROBLEMS
+/////////////////////
+
+//Problem 1
+console.log("Problem 1");
+//Declare a variable named 'score' and assign it a value of 21.
+//Then use a short-cut arithmetic operator to add 7 to it.
+let score = 21;
+
+score += 7;
+
+    console.log(score);
+
+//Problem 2
+console.log("Problem 2");
+//Use the decrement operator to reduce the value of 'score' variable by 1.
+score--;
+
+    console.log(score);
+
+
+//Problem 3
+console.log("Problem 3");
+//Declare a variable named 'todaysHighScore' and initialize it to a value of 20.
+//Then write an IF statement that checks to see if the value of the 'score' 
+//variable is greater than the value of the 'todaysHighScore' variable
+//If it's true then alert("You beat the high score for the day!")
+let todaysHighScore = 20; 
+
+if(score > todaysHighScore){
+    console.log("Your beat the high score for the day!");
+}
+
+
+//Problem 4
+console.log("Problem 4");
+//Use your imagination to declare and initialize a few variables and 
+//then demonstrate the logical AND operator in an IF statement
+let passingGrade = 62;
+
+let highestAverageGrade = 45;
+
+if(passingGrade > 60 && highestAverageGrade > 40){
+    console.log("You Did It!");
+}
+
+
+//Problem 5
+console.log("Problem 5");
+//Use your imagination to declare and initialize a few variables 
+//and then demonstrate the logical OR operator in an IF statement
+
+if(passingGrade > 60 || highestAverageGrade > 40){
+    console.log("You worked hard good job!");
+}else{
+    console.log("Better Luck Next Time");
+}
+
+
+
+
+
+
+</script>
+</main>
+<footer>
+    &copy; 2024 Niall Kader
+</footer>
+</body>
+</html>

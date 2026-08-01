@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forms</title>
+    </head>
+    <body>
+        <h1>Forms</h1>
+        <form action="https://www.wtc-web.com/form-handler.php" method="POST">
+            <label>First Name</label>
+            <br>
+            <input type="text" name="firstName">
+            <br>
+            <label>Agree to our terms</label>
+            <input type="checkbox" name="agreed" value="yes">
+            <br>
+            <label>Favorite Pizza</label>
+            <br>
+            <label>
+                <input type="radio" name="pizza" value="sausage">
+                Sausage
+            </label>
+            <label>
+                <input type="radio" name="pizza" value="pepperoni" checked="true">
+                Pepperoni
+            </label>
+            <label>
+                <input type="radio" name="pizza" value="mushrooms">
+                Mushrooms
+            </label>
+            <br>
+            <label>Favorite Color</label>
+            <select name="color">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green" selected="true">Green</option>
+                <option value="pink">Pink</option>
+                <option value="purple">Purple</option>
+                <option value="mint">Mint</option>
+            </select>
+            <br>
+            <label>Comments</label>
+            <br>
+            <textarea name="Comments"></textarea>
+            <br>
+            <label>Birth Date</label>
+            <br>
+            <input type="date" name="birthDate">
+
+            <br>
+            <input type="submit" value="SAVE">
+        </form>
+        
+    </body>
+</html>

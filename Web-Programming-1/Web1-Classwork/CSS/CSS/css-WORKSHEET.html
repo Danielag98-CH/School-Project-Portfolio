@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Selectors and Rule Sets</title>
+	<meta name="robots" content="noindex, nofollow" />
+	<style>
+
+		/*
+		MAKE SURE TO REFRESH THE PAGE AFTER EACH STEP, TO TEST YOUR WORK
+		*/
+		
+		/*
+		STEP 1
+		Write a CSS rule set that applies to the BODY element (use a type selector).
+		Set the color property to green.
+		Notice that the text inside the P elements will be green as well, because
+		the color property is inherited by elements that are
+		nested inside the BODY element.
+		*/
+
+		
+		/*
+		STEP 2
+		Write a rule set that uses a type selector to target all P elements.
+		Set the color property to orange.
+		Note that this rule overrides the rule from step 1 for P elements.
+		*/
+
+
+		/*
+		STEP 3
+		Use a type selector that targets all H3 elements.
+		Set the color property to #333333, and the font-family to Verdana.
+		Note that #333333 is a hexadecimal value for a color 
+		(it should be a very dark gray).
+		*/
+		
+
+		/*
+		STEP 4
+		Use a mixed selector that targets H3 elements, but only if they
+		have a class attribute set to a value of 'special'.
+
+		Set the color to red.
+		Notice that the font-family of these H3 elements will be set to Verdana
+		because of the rule set from the previous step. But this rule will
+		override the the color from the previous step for H3 elements that have a class of 'special'.
+		*/
+
+
+		/*
+		STEP 5
+		Write a rule set that uses an ID selector to target the element on this page that
+		has its ID attribute set to a value of 'link-list'.
+		
+    Set the background-color to midnightblue 
+    Set the height to 30px.
+		Set the margin to 0px
+    Set the padding to 0px.
+		We'll work on this a bit more in the next step 
+		(things may look a little strange now).
+		*/
+
+
+		/*
+		STEP 6
+		Write a rule set with a selector that targets LI elements, but only
+		if they are nested inside of the the element that has an ID of 'link-list'.
+
+		Set the display property to inline (this will change the targeted elements from block to inline)
+		Set the list-style to none (this will remove the 'bullet' next to each LI element)
+		*/
+
+
+		/*
+		STEP 7
+		Write a rule set with a selector that targets A elements, but only if they are nested
+		inside of the element that has an ID of 'link-list'. 
+    Set the following properties/rules:
+			
+      Set the display property to inline-block
+
+			Set the height to 30px
+
+			Set the line-height to 30px
+
+			Set the color to white
+
+			Set the text-decoration to none (this will remove the line that normally appears under hyperlinks)
+
+			Set the padding-top to 0px 20px ( hint -> padding: 0px 20px; )
+		*/
+
+
+
+
+		/*
+		STEP 8
+		Write a rule set that uses a pseudo selector to add a rollover effect to the hyperlinks. 
+		The selector should target A elements that are both nested within the element 
+    that has an ID of 'link-list' AND in the hover state
+
+		Inside the rule set, set the background-color property to orange.
+		*/
+
+
+
+		/*
+		STEP 9
+		Add these three rules to the rule set you created in the previous step:
+			transform:scale(1.5);
+			-webkit-transition: all 0.7s ease;
+			transition: all 0.7s ease;
+		*/
+
+	</style>
+</head>
+<body>
+	Hello, I might be green!
+	<p>
+		I'm a P tag, and I might be green, because the color rule
+		on the body tag 'cascades' down to me (I am nested inside the body tag).
+		Or maybe I'll end up being orange!
+	</p>
+	<h3>I am an H3 tag/element!</h3>
+	<h3 class="special">I am a 'special' H3 tag/element!</h3>
+	<ul id="link-list">
+		<li><a href="#">Link 1</a></li>
+		<li><a href="#">Link 2</a></li>
+		<li><a href="#">Link 3</a></li>
+	</ul>
+	<footer>
+	  &copy; 2024 Niall Kader
+	</footer>
+</body>
+
+</html>

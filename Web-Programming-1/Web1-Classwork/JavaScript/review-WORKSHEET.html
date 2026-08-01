@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript Review Worksheet</title>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link REL=StyleSheet HREF="../styles/prism.css" TYPE="text/css">
+        <link REL=StyleSheet HREF="../styles/main.css" TYPE="text/css">
+        <script src="../js/main.js"></script>
+        <script src="../js/prism.js"></script>
+	</head>
+	<body>
+        <main>
+            <h1>JavaScript Review</h1>
+            <b>Question 1</b>
+            <p class="question">
+                There are two functions being called in the code sample below.
+				Which one returns a value? How can you tell?
+            </p>
+            <pre><code class="language-js">var grade = calculateLetterGrade(96);
+submitFinalGrade(grade);</code></pre>
+            <div class="answer">
+                The line of code that states <b>var grade = calculateLetterGrade(96);</b> will return a value.
+                In this case 'grade' is storing the the value 'calculateLetterGrade(96)'. In the case of 'submitFinalGrade' the function is not complete, so it will not return a value.
+            </div>
+
+            <b>Question 2</b>
+            <p class="question">
+                Explain the difference between a <b>local variable</b> and a <b>global variable</b>.
+            </p>
+            <div class="answer">
+                The main difference between a <b>local variable</b> and a <b>global variable</b>
+                is that a 'local variable' is declared and accessed within a function and 'global variables'
+                are variables that are declared outside a function. To clarify local variables are declared with 'let', 'var', or 'const' etc
+                and generally confined within the scope of a function that defines them. Global variables on the other hand, are the variable outside the 
+                scope of a function and any variable declared without the local keywords become global variables. 
+            </div>
+
+            <b>Question 3</b>
+            <p class="question">
+                Which variables in the code sample below are local, and which ones are global?
+            </p>
+            <pre><code class="language-js">var stateTaxRate = 0.06;
+var federalTaxRate = 0.11;
+
+function calculateTaxes(wages){
+	var totalStateTaxes = wages * stateTaxRate;
+	var totalFederalTaxes = wages * federalTaxRate;
+	var totalTaxes = totalStateTaxes + totalFederalTaxes;
+	return totalTaxes;
+}</code></pre>
+            <div class="answer">
+                In this function 'stateTaxRate' and 'federalTaxRate' are global variables and 'totalStateTaxes', 
+                'totalFederalTaxes', and 'totaltaxes' are local variables.  
+            </div>
+
+            <b>Question 4</b>
+            <p class="question">
+                What is the problem with this code (hint: this program will crash, explain why):
+            </p>
+            <pre><code class="language-js">function addTwoNumbers(num1, num2){
+	var sum = num1 + num2;
+	alert(sum);
+}
+
+alert("The sum is " + sum);
+addTwoNumbers(3,7);</code></pre>
+            <div class="answer">
+                This code will crash because sum has not been defined anywhere, there is an error because there is no connection 
+                between addTwoNumbers and sum defined within the function.
+            </div>
+
+            <b>Question 5</b>
+            <p class="question">
+                True or false - All user input defaults to being a string, even if the user enters a number.
+            </p>
+            <div class="answer">
+                True, unless the variable is defined as a number the function defaults as a 'string'.
+            </div>
+
+            <b>Question 6</b>
+            <p class="question">
+                What function would you use to convert a string to an integer number?
+            </p>
+            <div class="answer">
+                A 'Number()' method turns a value into a number in a function. It needs to be declared as a number to be an integer.
+            </div>
+
+            <b>Question 7</b>
+            <p class="question">
+                What function would you use to convert a string to a number that has a decimal in it (a 'float')?
+            </p>
+            <div class="answer">
+                In JavaScript you can use the <b>parseFloat()</b> to make a string into a number with a decimal in it.
+            </div>
+
+            <b>Question 8</b>
+            <p class="question">
+                What is the problem with this code sample:
+            </p>
+            <pre><code class="language-js">var firstName = prompt("Enter your first name");
+if(firstName = "Bob"){
+	alert("Hello Bob! That's a common first name!");
+}</code></pre>
+            <div class="answer">
+                The issue with this function is the statement that is stating 'Bob' as the first name
+                in instead of using '=' we should be using '==' to set first name equal to 'Bob'.
+            </div>
+            <b>Question 9</b>
+            <p class="question">
+                What will the value of x be after the following code executes (in other words, what will appear in the log when the last line executes)?
+            </p>
+            <pre><code class="language-js">var x = 7;
+x--;
+x += 3;
+x++;
+x *= 2;
+console.log(x);</code></pre>
+            <div class="answer">
+                6, 10, 8, 14
+            </div>
+
+            <b>Question 10</b>
+            <p class="question">
+                Explain the difference between <b>stepping over</b> and <b>stepping into</b> a line of code when using the debugger.
+            </p>
+            <div class="answer">
+                When you <b>step over</b> a line of code in debugger it just moves on to the next line of code,
+                while <b>stepping in</b> actually opens the function to see the details of the code. 
+            </div>
+            <h1>Coding Problems</h1>
+            <h3>Coding Problems - See the 'script' tag at the bottom of the page. You will have to write some JavaScript code in it.</h3>
+		 </main>
+	</body>
+	<footer>
+	    &copy; 2024 Niall Kader
+	</footer>
+</html>
+<script type="text/javascript">
+
+
+console.log("Problem 1");
+// You'll use this globabl variable in the body of the function that you write for this problem:
+var daysPerYear = 365;
+// Write a function named convertToDays that converts a number of years into days.
+// The function should have a parameter that represents a number in years.
+// It should convert the years into days and return the result.
+// In the body of the function make use of the daysPerYear variable (which is a global variable).
+// When you are done writing the function (declaring the function) then invoke it like so:
+// 		console.log(convertToDays(7));
+//		(you should see 2555 in the console)
+
+var daysPerYear = 365;
+
+function convertToDays(years){
+    const days = years * daysPerYear;
+    return days;
+}
+console.log(convertToDays(7));
+
+
+console.log("Problem 2");
+// Write a program that prompts the user to enter his/her age
+// If the user is 21 or older, then prompt to enter if he/she likes wine (y/n).
+//  If the user likes wine, then log "I recommend our cabernet".
+//  If the user does not like wine, then log "I recommend our tap beer"
+// If the user is under 21 then log "I recommend the chocolate milk".
+const age = parseInt(prompt("Enter your age"));
+if(age >= 21){
+    const likesWine = prompt("Do you like wine (y/n)?");
+    if(likeWine = "y"){
+        console.log("I recommend our cabernet");
+    }else{
+        console.log("I recommend our tap beer");
+    }
+}else{
+    console.log("I recommend the chocolate milk");
+}
+
+
+
+console.log("Problem 3");
+// Uncomment the following two lines:
+
+var desertChoice;
+var input = prompt("Which do you prefer (enter either I or P): \n I - Ice Cream \n  P - Pie");
+
+// If the user enters I (for Ice Cream), 
+// then prompt them to enter V for vanilla or C for chocolate
+//      If the user chooses V, then initialize the desertChoice variable to "Vanilla Ice Cream"
+//      If the user chooses C, then initialize the desertChoice variable to "Chocolate Ice Cream"
+
+// If the user enters P (for Pie)
+// then prompt them to enter A for apple pie or B for blueberry pie
+//      If the user chooses A, then initialize the desertChoice variable to "Apple Pie"
+//      If the user chooses B, then initialize the desertChoice variable to "Blueberry Pie"
+
+// Finally, after the if statement(s), console log the desertChoice variable
+
+if (input === "I" || input === "i"){
+    const iceCreamChoice = prompt("Choose your flavor: \n V - Vanilla \n C - Chocolate");
+    
+    if(iceCreamChoice === "V" || iceCreamChoice === "v"){
+        desertChoice = "Vanilla Ice Cream";
+    }else if(iceCreamChoice === "C" || iceCreamChoice === "c"){
+        desertChoice = "Chocolate Ice Cream";
+    }else{
+        desertChoice = "Invalid choice for Ice Cream flavor";
+    }
+}
+else if(input === "P" || input === "p") {
+    const pieChoice = prompt("Choose your pie: \n A - Apple Pie \n B - Blueberry Pie");
+    
+    if(pieChoice === "A" || pieChoice === "a"){
+        desertChoice = "Apple Pie";
+    }else if(pieChoice === "B" || pieChoice === "b"){
+        desertChoice = "Blueberry Pie";
+    }else{
+        desertChoice = "Invalid choice for Pie flavor";
+    }
+}else{
+    desertChoice = "Invalid choice. Please enter I for Ice Cream or P for Pie.";
+}
+
+console.log(desertChoice);
+
+
+
+
+console.log("Problem 4");
+// Write a function named isEven that determines if a given number is odd or even.
+// The function should take a parameter that represents a number.
+// If the number is even, the function should return true.
+// If the number is odd, the function should return false.
+// Note that we wrote an IF statement in class that determined if a number is odd or even (when we discussed operators), 
+// So you should take a look at that code to help you solve this problem
+// After you declare/define the function, call it two times, like so:
+// 		console.log(isEven(4));
+//		console.log(isEven(5));
+// (you should see true and false in the console)
+
+function isEven(number){
+    if(number % 2 === 0 ){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+console.log(isEven(4));
+console.log(isEven(5));
+
+
+
+console.log("Problem 5");
+// Write a function named calculateGrossEarnings that calculates the gross earnings for an employee during a pay period.
+// The function should have two parameters:
+//		hourlyRate (the amount that an employee earns per hour)
+// 		hoursWorked (the number of hours that the employee worked during the pay period)
+//
+// In the body of the function, write code that calculates the earnings like so:
+// If the employee worked 40 hours or less, then multiply the hourlyRate by the hoursWorked.
+// But if the employee worked more than 40 hours, then the employee should earn 1.5 times his/her hourly rate for the overtime hours.
+// The function should return the employee's total earnings for the pay period.
+// After you define the function (write the function), then invoke it like so: 
+// 		console.log(calculateGrossEarnings(10,41));
+// 		(you should see 415 in the console)
+function calculateGrossEarnings(hourlyRate, hoursWorked){
+    let totalEarnings;
+    if(hoursWorked <= 40){
+        totalEarnings = hourlyRate * hoursWorked;
+    }else{
+        totalEarnings = hourlyRate * 40;
+        
+        let overtimeHours = hoursWorked - 40;
+
+        totalEarnings += overtimeHours * hourlyRate *1.5;
+    }
+    
+    return totalEarnings;
+}
+
+console.log(calculateGrossEarnings(10,41));
+
+
+console.log("Problem 6");
+// You'll make use of these global variables for this problem:
+var federalTaxRate = 0.15;
+var stateTaxRate = 0.06;
+var socialSecurityRate = 0.05;
+var medicareRate = 0.02;
+
+// Write a function named calculateTotalDeductions that has a parameter named earnings.
+// The earnings parameter will represent an employee's gross earnings for a pay period 
+// In the body of the function figure out the total deductions by applying each of the rates (in the global variables) to the earnings parameter. 
+// The function should return total deductions for an employee.
+// When you are done writing the function, invoke/call it like so: console.log(calculateTotalDeductions(1500));
+// (you should see 420 in the console)
+
+function calculateTotalDeductions(earnings){
+    const federalDeduction = earnings * federalTaxRate;
+    const stateDeduction = earnings * stateTaxRate;
+    const socialSecurityDeduction = earnings * socialSecurityRate;
+    const medicareDeduction = earnings * medicareRate;
+
+    const totalDeductions = federalDeduction + stateDeduction + socialSecurityDeduction + medicareDeduction;
+
+    return totalDeductions;
+}
+
+console.log(calculateTotalDeductions(1500));
+
+
+console.log("Problem 7");
+// You'll have to use nested IF statements to solve this problem.
+// Also, you may have to repeat this code in a few places: alert("You lose!");
+// Write a program that asks the user to answer 3 questions.
+// If the user answers all 3 questions correctly, then show an alert that says: "You win!"
+// If the user answers any of the questions incorrectly, they should see an alert
+// that says "You lose!" and the game should end.
+
+var answer1 = prompt("What connects two points of a wreath?");
+if(answer1 === "a string"){
+    
+    var answer2 = prompt("What holiday is next in December?");
+    if(answer2 === "christmas"){
+        
+        var answer3 = prompt("What is the color of snow?");
+        if(answer3 === "white"){
+            alert("You win!");
+        }else{
+            alert("You lose!"); 
+        }
+    }else{
+        alert("You lose!");
+    }
+}else{
+    alert("You lose!");
+}
+
+
+
+
+console.log("Problem 8");
+// Write a function named getAverage that takes 3 parameters (each one is a number) and returns the avg of the numbers.
+// After you declare/define the function, invoke it a few times and make sure that it is working properly.
+function getAverage(num1, num2, num3){
+
+    const average = ((num1 + num2 + num3) / 3);
+
+    return average;
+}
+
+console.log(getAverage(6, 18, 9));
+console.log(getAverage(63, 8, 5));
+console.log(getAverage(73, 75, 83));
+console.log(getAverage(19, 6, 3));
+
+
+
+
+console.log("Problem 9");
+// Write a function named calculateLetterGrade that takes a test score (a number) as a parameter, and returns a letter grade.
+// The letter grade should be determined by the test score like so:
+// 90 - 100 should return "A"
+// 80 - 89 should return "B"
+// 70 - 79 should return "C"
+// 60 - 69 should return "D"
+// A test score lower than 60 should return "F"
+// Test the function by calling/invoking it a few times (log each return value). Make sure to test all possible return letters.
+// Function to calculate letter grade based on test score
+function calculateLetterGrade(score){
+    if(score >= 90 && score <= 100){
+        return "A";
+    
+    }else if(score >= 80 && score <= 89){
+        return "B";
+    
+    }else if(score >= 70 && score <= 79){
+        return "C";
+    
+    }else if(score >= 60 && score <= 69){
+        return "D";
+    }else{
+        return "F";  
+    }
+}
+console.log(calculateLetterGrade(98));  
+console.log(calculateLetterGrade(82));  
+console.log(calculateLetterGrade(78));  
+console.log(calculateLetterGrade(61));  
+console.log(calculateLetterGrade(42));  
+
+
+
+
+
+</script>

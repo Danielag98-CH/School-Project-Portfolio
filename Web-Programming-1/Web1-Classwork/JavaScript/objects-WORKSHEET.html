@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WORKSHEET - Objects</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/main.css" TYPE="text/css">
+</head>
+<body>
+    <main>
+        <h1>JavaScript Objects Worksheet</h1>
+        <h4>Question 1</h4>
+        <p class="question">
+            What makes up an object (what does an object consist of)?
+        </p>
+        <div class="answer">
+            An object is a collection of properties and their values. Properties also known as 
+            'Keys' are the names we use to the different pieces of data in an object and values
+            is the data type associated with each key.
+        </div>
+        <h4>Question 2</h4>
+        <p class="question">
+            What are two different types of notations that you can use when working with the properites of objects? For example, there are two types of syntax that you could use if you wanted to update a property of an object.
+        </p>
+        <div class="answer">
+            When working with the properties of an object we have a choice of using the <b>dot notation</b> or 
+            the <b>bracket notation</b>. 
+        </div>
+        <h4>Question 3</h4>
+        <p class="question">
+            Why are objects an important data type in JavaScript?
+        </p>
+        <div class="answer">
+            Objects are inportant in any coding language because it allows us to create models of 
+            in our code that simulate real-world items. In the videos and reading we learn that objects can be 
+            seen as variables that store a bundle of information that represents what we would see in the the real-world.
+
+        </div>
+        <h4>Question 4</h4>
+        <p class="question">
+            When creating an object, what character is used to separate property names from their values?
+        </p>
+        <div class="answer">
+            Names are separated from values with a colon ' : '.
+        </div>
+        <h4>Question 5</h4>
+        <p class="question">
+            When creating an object, what character is used to separate the property/value pairs in an object?
+        </p>
+        <div class="answer">
+            We use commas ',' to separate property/value pairs in objects. 
+        </div>
+        <h4>Question 6</h4>
+        <p class="question">
+            What operator is used to access a property of an object?
+        </p>
+        <div class="answer">
+            We want to use the <b>dot operator</b> to access properties of an object.
+        </div>
+
+        <h1>Coding Problems</h1>
+        <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+        <script>
+        /////////////////////
+        // CODING PROBLEMS
+        /////////////////////
+
+
+        // Review Problem
+        // Write a function named convertMinutesToHours
+        // The function should have a parameter named minutes
+        // The function should return the number of hours based on the parameter
+        // After you declare the function, invoke it like so: console.log(convertMinutesToHours(90));
+        function convertMinutesToHours(minutes){
+            return minutes / 60;
+        }
+        console.log(convertMinutesToHours(90));
+
+        // Another Review Problem
+        // Write a program that does the following:
+        // Prompt the user to enter their favorite food.
+        // If the user enters 'pizza', then log "We have pizza!"
+        // If the user enters 'spagetti', then log "We have spagetti!"
+        // If the user enters anything other than 'pizza' or 'spagetti', then log "We don't have that!"
+       const favoriteFood = prompt("What is your favorite food?")
+       
+       if(favoriteFood === 'pizza'){
+            console.log("we have pizza!");
+       }else if(favoriteFood === 'spaghetti'){
+            console.log("we have spaghetti!");
+       }else{
+            console.log("we don't have that!");
+       }
+
+
+
+        
+        // Problem 1:
+        // Declare a variable named myBook that stores an object.
+        // The object should have two properties named 'title' and 'author'.
+        // Set the title property to 'The Sun Also Rises' and the author property to 'Ernest Hemmingway'.
+        const myBook = {
+            title: 'The Sun Also Rises',
+            author: 'Ernest Hemmingway'
+        };
+        
+        
+
+
+        // Now log myBook.
+        console.log(myBook);
+
+        // Now log just the 'title' property of myBook.
+        console.log(myBook.title);
+
+
+        
+        // Problem 2
+        // Declare a variable called 'student' and assign it an empty object.
+        // Hint: 
+        //     var student = {};
+
+        // Then use DOT NOTATION to add properties to it.
+        // Hint: 
+        //     student.finalGrade = "A"; 
+
+        // Add the following properties:
+        // name            value          data type of value
+        // --------------------------------------------------
+        // firstName       Bob             string
+        // lastName        Smith           string
+        // age             22              number
+        // undergrad       true            boolean
+        var student = {};
+
+        student.firstName = "Bob";
+        student.lastName = "Smith";
+        student.age = 22;
+        student.undergrad = true;
+
+
+
+
+        // now log the student variable
+        // Hint: console.log(student);
+        console.log(student);
+
+
+
+        // Problem 3
+        // Declare a variable called 'car' and assign it an empty object.
+        // Hint: var car = {};
+        // Then use BRACKET NOTATION to add the following properties to it:
+
+        // name            value          data type of value
+        // --------------------------------------------------
+        // make            Pontiac         string
+        // model           Torrent         string
+        // year            2006            number
+        // used            true            boolean
+        const car ={};
+
+        car['make'] = 'Pontiac';
+        car['model'] = 'Torrent';
+        car['year'] = 2006;
+        car['used'] = true;
+
+
+        // now log the car variable
+        // Hint: console.log(car);
+        console.log(car);
+
+        
+        // Problem 4
+        // Think of 3 real-world objects that you might want to keep track of in a JavaScript program. 
+        // Each object should have at least 3 properties.
+        // Write JavaScript code that would create each one of these objects, and assign a value to each property.
+        // For example:
+        //     var sandwich = {bread:"wheat", meat:"roast turkey", size:"large"};
+
+        // Log each object after you create it.
+        const candy = {
+            sour: "Airheads",
+            sweet: "Gummy Worms",
+            chocolate: "Dark Chocolate Hersheys Almond Bar"
+        };
+        console.log(candy);
+
+
+
+        
+        // Problem 5 - Here's a tricky one (you can nest objects inside of objects!)....
+        // Declare a variable called 'computer' and assign it an empty object.
+        
+        // Then add the following properties to it:
+
+        // name            value                       data type of value
+        // --------------------------------------------------------------
+        // brand           Dell                        string
+        // hardDrive    {size: "100G", type:"sata"}    object
+        const computer ={
+            brand: 'Dell', 
+            hardDrive:{
+                size: "100G",
+                type: "sata"
+            }
+            
+        };
+
+
+
+        // now log the computer variable
+        // Hint: console.log(computer);
+        console.log(computer);
+
+
+        </script>
+
+    </main>
+    <footer>
+         &copy; 2024 Niall Kader
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trial Rowspan</title>
+    </head>
+    <body>
+        <h1>Rowspan Practice</h1>
+        <table>
+            <tr>
+              <th>Month</th>
+              <th>Savings</th>
+              <th>Savings for holiday!</th>
+            </tr>
+            <tr>
+              <td>January</td>
+              <td>$100</td>
+              <td rowspan="2">$50</td>
+            </tr>
+            <tr>
+              <td>February</td>
+              <td>$80</td>
+            </tr>
+          </table>
+        <table>
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>Savings</th>
+                <th rowspan="3">Savings for holiday!</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>January</td>
+                <td>$100</td>
+                <td rowspan="0">$100</td>
+              </tr>
+              <tr>
+                <td>February</td>
+                <td>$80</td>
+              </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

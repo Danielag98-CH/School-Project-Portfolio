@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>Primp a List!</title>
+		<style type="text/css">
+
+			/*
+			Here are just some of the css properties you may want to experiment with:
+			color
+			font-family
+			background-color
+			margin
+			padding
+			border
+			border-radius
+			and many more...
+			*/
+			body{
+				color: aliceblue;
+				font-size: 40px;
+				background-image: linear-gradient(lightslategrey, cyan);
+				text-align: center;
+				height: 40px;
+				margin: 0px;
+				padding: 0px;
+				
+			}
+			.book-list{
+				list-style: none; /*this removes the bullets from the list*/
+				display: flex;
+			
+			}
+
+			.book-list li{
+				font-family: 'Franklin Gothic Medium';
+				font-size: 15px;
+				border: 4px solid white;
+				margin: 10px;
+				padding: 25px;
+		
+			}
+
+			.book-list h3{
+				color: midnightblue;
+				font-size: 40px;
+
+				
+				margin: 0px;
+				padding: 15px;
+				
+				text-decoration: underline;
+			}
+
+			.book-list h4{
+				color: rgb(168, 233, 255);
+				font-size: 30px;
+
+				
+				margin: 0px;
+				padding: 0px;
+				
+			}
+
+			.book-list p{
+				color: white;
+
+				
+				margin: 0px;
+				padding: 0px;
+
+				display: inline;
+				
+			}
+
+			.book-list a{
+				background-image: linear-gradient(white,rgb(212, 143, 241));
+				border-radius: 25px
+			}
+			
+		</style>
+	</head>
+	<body>      
+		<h2>Books</h2>
+		<ul class="book-list">
+			<li>
+				<h3>Harry Potter</h3>
+				<h4>Author: JK Rowlings</h4>
+				<p>This book is about a young wizard, and his young wizard friends.</p>
+				<a href="#">View details...</a>
+			</li>
+			<li>
+				<h3>On the Road</h3>
+				<h4>Author: Jack Keruac</h4>
+				<p>This book is about a young person who goes on the road and has many wild adventures.</p>
+				<a href="#">View details...</a>
+			</li>
+			<li>
+				<h3>For Whom the Bells Toll</h3>
+				<h4>Author: Jack Ernest Hemmingway</h4>
+				<p>This book has the saddest ending imaginable. It made me cry!</p>
+				<a href="#">View details...</a>
+			</li>
+		</ul>		
+	</body>
+</html>

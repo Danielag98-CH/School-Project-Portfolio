@@ -1,0 +1,94 @@
+/* Most of our CSS code will go here*/
+
+body{
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	background-image: linear-gradient(lightslategrey, aquamarine);
+	color: white;
+}
+
+header{
+	background-color: rgb(3, 138, 138);
+	height: 60px;
+	color: white;
+	padding: 20px;
+	box-sizing: border-box;
+	
+}
+
+header h1{
+	font-size: 150%;
+	font-weight: bold;
+
+}
+
+h1{
+	font-size: 120%;
+	margin-bottom: 15px;
+}
+
+p{
+	line-height: 120%;
+	font-size: 100%;
+	margin-bottom: 10px;
+}
+
+nav{
+	color: white;
+	height: 30px;
+	background-color: rgb(15, 172, 164);
+}
+
+
+#content{
+	flex:auto;
+	display: flex;
+}
+
+main{
+	width: 70%;
+	padding: 20px;
+}
+
+aside{
+	width: 30%;
+	padding: 20px;
+}
+
+footer{
+	background-color: rgb(121, 231, 195);
+	padding: 20px;
+	color: teal;
+	
+}
+
+nav li{
+	display: inline-block;
+	height: 30px;
+	padding:  0 20px 0 20px;
+}
+
+nav a{
+	display: flex;
+	align-items: center;
+	height: 100%;
+
+}
+
+@media all and (max-width : 800px) {
+	
+	/*Some of our CSS code will go here*/
+	#content{
+		display: block;
+	}
+
+	main, aside{
+		width: 100%;
+	}
+
+	header{
+		height: 44px;
+	}
+}

@@ -1,0 +1,138 @@
+body{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	display: flex;
+    flex-direction: column;
+	height: 100vh;
+}
+
+header{
+	background-color: rgb(3, 138, 138);
+	height: 60px;
+	color: white;
+	flex-shrink: 0;	
+}
+
+header h1{
+	font-size: 150%;
+	font-weight: bold;
+}
+
+nav{
+	color: white;
+	height: 30px;
+	background-image: linear-gradient(lightslategrey, aquamarine);
+}
+
+nav li{
+	display: inline-block;
+    list-style: none;
+	height: 30px;
+}
+
+nav a{
+	display: flex;
+	align-items: center;
+	height: 100%;
+    padding: 0 10px 0 10px;
+    color: aquamarine;
+}
+
+#content{
+	flex:auto;
+	display: flex;
+    flex-direction: row;
+}
+
+main{
+	width: 60%;
+    box-sizing: border-box;
+	padding: 20px;
+    background-color: lightblue;
+}
+
+aside{
+	width: 30%;
+    box-sizing: border-box;
+	padding: 20px;
+    background-color: teal;
+}
+aside li{
+    color: whitesmoke;
+    display: block;
+    list-style: none;
+	height: 30px;
+}
+
+footer{
+	background-color: lightseagreen;
+	color: white;
+    padding: 20px;
+    font-size: 85%;
+    flex-shrink: 0;	
+}
+
+h1{
+    color: whitesmoke;
+	font-size: 140%;
+	margin-bottom: 20px;
+}
+
+p{
+	margin-bottom: 12px;
+}
+
+#menu-button{
+    display: none;
+}
+input[type=button]{
+    border:2px solid gray;
+    background-color: #333333;
+    border-radius: 4px;
+    padding:10px;
+    color:gray;
+    font-weight: bold;
+  }
+
+  #image-gallery{
+    width:380px;
+  }
+
+  #image-gallery #mainImg{
+    width:100%;
+    border: 2px solid #333333;
+  }
+
+@media all and (max-width : 800px) {
+	header{
+		height: 44px;
+	}
+    #content{
+		display: block;
+	}
+	main, aside{
+		width: 100%;
+	}
+    #menu-button{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 44px;
+        text-align: center;
+        line-height: 44px;
+        color: navy;
+    }
+    nav{
+        height: auto;
+        display: none;
+    }
+    nav li{
+        display: block;
+
+    }
+    nav.open{
+        display: block;
+    }
+
+}
+

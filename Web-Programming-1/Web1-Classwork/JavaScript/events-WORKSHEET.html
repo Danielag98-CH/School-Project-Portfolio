@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>Java Script Events</title>
+	    <meta name="description" content="Working with events in JavaScript">
+	    <meta name="robots" content="noindex, nofollow" />
+	    <meta name="viewport" content="width=device-width">
+	    <link REL=StyleSheet HREF="../styles/prism.css" TYPE="text/css">
+	    <link REL=StyleSheet HREF="../styles/main.css" TYPE="text/css">
+	    <script src="../js/main.js"></script>
+	    <script src="../js/prism.js"></script>
+		<script>
+		window.addEventListener("load", function(){
+			const h1 = document.getElementById("mainHeader");
+			h1.onclick = function(){
+				alert("I see you!");
+			}
+		
+			h1.addEventListener("click", function(){
+				alert("Bar");
+			});
+		})
+			
+		</script>
+	    <style>
+	    #someTagId{
+	    	width:200px;
+	    	padding:10px;
+	    	background-color: midnightblue;
+	    	color:white;
+	    	border-radius: 10px;
+	    }
+
+	    #myDiv{
+	    	width:200px;
+	    	padding:10px;
+	    	background-color: red;
+	    	color:white;
+	    	border-radius: 10px;
+	    	margin-top: 20px;
+	    }
+
+	    #orangeDiv{
+	    	width:200px;
+	    	padding:10px;
+	    	background-color: orange;
+	    	color:white;
+	    	border-radius: 10px;
+	    	margin-top: 20px;
+	    }
+
+	    #greenDiv{
+	    	width:200px;
+	    	padding:10px;
+	    	background-color: green;
+	    	color:white;
+	    	border-radius: 10px;
+	    	margin-top: 20px;
+	    }
+	    </style>
+	</head>
+	<body>
+	<h1 id="mainHeader">JavaScript Events Worksheet</h1>
+    <h2>Questions</h2>
+	<h4>Question 1</h4>
+    <p class="question">
+        What is an 'event handler'?
+    </p>
+    <div class="answer">
+        A function that handles an event.
+    </div>
+    <h4>Question 2</h4>
+    <p class="question">
+        How are event handlers invoked?
+    </p>
+    <div class="answer">
+        The browser invokes the function we just define them.
+    </div>
+    <h4>Question 3</h4>
+    <p class="question">
+        What is an 'anonymous' function?
+    </p>
+    <div class="answer">
+        An unnamed function.
+    </div>
+    <h4>Question 4</h4>
+    <p class="question">
+        Explain what the addEventListener() method of a DOM element is, and explain the purpose of each of it's parameters.
+    </p>
+    <div class="answer">
+        An addEventListener is a element that has a string like "click" and a function that 
+		handles and event.
+    </div>
+        
+	<h1>Coding Problems</h1>
+  	<h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <div id="orangeDiv">Orange</div>
+    <br>
+    <div id="greenDiv">Green</div>
+    <script>
+    // CODING PROBLEMS
+   	// Now that we know about the window/page load event
+   	// we should have for it before we run our JS code.
+    window.addEventListener("load", function(){
+
+
+
+		//STEP 1
+		// First use document.getElementById() to get a handle on the element with an id of 'orangeDiv'
+		// Then use document.getElementById() to get a handle on the element with an id of 'greenDiv'
+		const oDiv = document.getElementById("orangeDiv");
+		const gDiv = document.getElementById("greenDiv");
+
+
+
+		//STEP 2
+		// Use the addEventListener() to add an event handler function for when the mouse hovers over orangeDiv
+		// (the event is called 'mouseover')
+		// In the body of the event handler function, change orangeDiv's innerHTML to say 'Hovering'
+		oDiv.addEventListener("mouseover", function(){
+			oDiv.innerHTML = "Hovering";
+		});
+
+
+
+		//STEP 3
+		// Use addEventListener() to add an event handler function for the 'mouseout' event on orangeDiv.
+		// In the body of the event handler function, change orangeDiv's innerHTML to say 'Not Hovering'
+		oDiv.addEventListener("mouseout", function(){
+			oDiv.innerHTML = "Not Hovering"
+		});
+
+
+
+		//STEP 4 
+		// Add an event handler for when greenDiv gets clicked.
+		// Make an alert box appear that says "You clicked me!"
+		gDiv.addEventListener("click", function(){
+			alert("You Clicked Me!");
+		});
+
+
+		//STEP 5
+		// Get all the 'div' tags on the page (by using document.getElementsByTagName())
+		// Then write a loop that attaches an event handler function to each div tag.
+		// The event handler should be triggered(invoked) when the user clicks the div tag (the 'click' event).
+		// The code in the body of the event handler function should be this: alert("You clicked on a DIV tag!");
+		const allDivs = document.getElementsByTagName("div")
+
+		for(let x = 0; x < allDivs.length; x++){
+			allDivs[x].addEventListener("click", function(){
+				alert("You clicked on a div!");
+			})
+		}
+
+
+	});// This is the end of the window 'load' event handler function, it should be the last line of code before the closing script tag.
+
+    </script>
+     <footer>
+         &copy; 2024 Niall Kader
+    </footer>
+	</body>
+</html>
+
