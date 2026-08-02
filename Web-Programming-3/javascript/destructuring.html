@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Destructuring</title>
+        <script>
+            const names = ["Bob", "Sally"];
+            const [a,b] = names;
+            console.log(a, b);
+
+            // const a = names[0]; the old way to code this method above*
+            // const b = names[1]; "[]" are for arrays "{}" are for objects*
+
+            const person = {name:"Bob", age:22};
+            const {name, age} = person;
+
+            window.addEventListener("click", (evt) => {
+                const {pageX, pageY} = evt;
+                console.log(pageX, pageY);
+                const {location} = evt.currentTarget; /*currentTarget is the thing that you hook the event to*/
+                console.log(location); /* location returns an object with info on the url*/
+            })
+
+            const btn1 = document.querySelector("[name=btn1]");
+            btn1.addEventListener("click", (evt) => {
+                const {innerHTML} = evt.target;
+            })
+
+            const fn = (({name, age}) => {
+                console.log(name, age);
+            })
+
+            // const fnOld = (personObj) => {
+            //     console.log(personObj.name, personObj.age);
+            // }
+
+            fn(person);
+            fn2(person);
+
+            const SomeComponent = ({someData, onDataSelected}) => {
+
+            }
+
+            const SomeComponent2 = (props) => {
+                console.log(props.someData, props.onDataSelected);
+            }
+
+        </script>
+    </head>
+    <body>
+        <button name="btn1">click Me</button>
+        <!-- <input type="button" value="Click Me" /> -->
+    </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Axios Tests</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script type="text/javascript">
+            
+            window.addEventListener("load", () => {
+
+                // MAKE SURE THE JSON SERVER IS RUNNING BEFORE TRYING THESE SAMPLES
+                // npx json-server -w user-data.json
+
+                const baseURL = "http://localhost:8080/users/";
+                const errorHandler = (error) => console.log("ERROR!", error);
+
+
+                document.querySelector("[name=btn1]").addEventListener("click", () => {
+
+                    axios
+                        .get(baseURL)
+                        .then(response => {
+                            console.log("SUCCESS", response)
+                            const data = response.data;
+                            console.log("DATA:", data);
+                        })
+                        .catch(errorHandler);
+
+                });
+
+
+                document.querySelector("[name=btn2]").addEventListener("click", () => {
+
+                    const getAllUsers = async() => {
+                        try{
+                            const response = await axios.get(baseURL);
+                            const users = response.data;
+                            console.log(users);
+                        }catch(error){
+                            errorHandler(error);
+                        }
+                    }
+
+                    getAllUsers();
+
+                });
+
+
+                document.querySelector("[name=btn3]").addEventListener("click", () => {
+
+                    const userId = 3;
+                    axios
+                        .get(baseURL + userId)
+                        .then(response => console.log(response.data))
+                        .catch(errorHandler);
+
+                });
+
+
+                document.querySelector("[name=btn4]").addEventListener("click", () => {
+
+                    const newUser = {first_name: "Jen", last_name: "Lee", email: "jl@gmail.com"};
+
+                    axios
+                        .post(baseURL, newUser)
+                        .then(response => {
+                            console.log("POST status:", response.status)
+                            console.log("DATA:", response.data)
+                        })
+                        .catch(errorHandler);
+
+                });
+
+
+                document.querySelector("[name=btn5]").addEventListener("click", () => {
+
+                    const userToUpdate = {
+                        id: 1,
+                        first_name: "BOB",
+                        last_name: "SCHWARTZ",
+                        email: "rob23@gmail.com"
+                        };
+
+                    axios
+                        .put(baseURL + userToUpdate.id, userToUpdate)
+                        .then(response => console.log("PUT status:", response.status))
+                        .catch(errorHandler);
+
+                });
+
+
+                document.querySelector("[name=btn6]").addEventListener("click", () => {
+
+                    const idOfUserToDelete = 5;
+
+                    axios
+                        .delete(baseURL + idOfUserToDelete)
+                        .then(response => console.log("DELETE status:", response.status))
+                        .catch(errorHandler);
+
+                });
+
+
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Using the Axios library for AJAX calls</h1>
+        <button name="btn1">Get All Users</button>
+        <button name="btn2">Get All Users (async/await)</button>
+        <button name="btn3">Get User By ID</button>
+        <button name="btn4">POST (Insert) User</button>
+        <button name="btn5">PUT (Update) User</button>
+        <button name="btn6">DELETE User</button>
+    </body>

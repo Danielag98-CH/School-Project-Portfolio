@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Testing Book Data Access</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script type="module">
+
+            import {getAllBooks, getBookById, insertBook, updateBook, deleteBook} from './book-data-access.js';
+
+            window.addEventListener("load", () => {
+
+                document.querySelector("[name=btn1]").addEventListener("click", async () => {
+                    // alert("TODO: GET all books")
+                    //getAllBooks().then(books => console.log(books)).catch(err => alert(err));
+
+                    try{
+                        const books = await getAllBooks();
+                        console.log(books);
+                    }catch(err){
+                        alert(err);
+                    }
+                });
+
+                document.querySelector("[name=btn2]").addEventListener("click", () => {
+                    // alert("TODO: GET book by id");
+                    const id = prompt("Enter a book id");
+                    getBookById(id).then(book => console.log(book));
+                });
+
+                document.querySelector("[name=btn3]").addEventListener("click", () => {
+                    // alert("TODO: POST book");
+                    const newBook = {title: "some book", author: "some author"}
+                    insertBook(newBook).then(book => console.log(book));
+                });
+
+                document.querySelector("[name=btn4]").addEventListener("click", () => {
+                    // alert("TODO: PUT book");
+                    const book = {id: 3, title:"Harry Potter", author:"JK Rowlings"};
+                    updateBook(book).catch(err => alert(err));
+                });
+
+                document.querySelector("[name=btn5]").addEventListener("click", () => {
+                    // alert("TODO: DELETE book");
+                    const id = prompt("Enter id of book to delete");
+                    deleteBook(id);
+                });
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <input type="button" name="btn1" value="GET All Books">
+        <br>
+        <input type="button" name="btn2" value="GET Book By ID">
+        <br>
+        <input type="button" name="btn3" value="POST Book">
+        <br>
+        <input type="button" name="btn4" value="PUT Book">
+        <br>
+        <input type="button" name="btn5" value="DELETE Book">
+    </body>
+</html>

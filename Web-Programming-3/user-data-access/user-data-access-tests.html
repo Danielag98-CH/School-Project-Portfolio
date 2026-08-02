@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>User Data Access Tests</title>
+	<script src="user-data-access.js"></script>
+	<script>
+
+		//Wipe out the database before testing:
+		localStorage.clear();
+		
+		const uda = new UserDataAccess();
+
+		// Test getAllUsers()
+		console.log(uda.getAllUsers());
+
+		// Test getUserById()
+		console.log(uda.getUserById(3));
+
+		// Test insertUser()
+		uda.insertUser({firstName:"Marty", lastName:"Tanner", email:"marty@acme.com"});
+		uda.insertUser({firstName:"Phen", lastName:"Van", email:"phen@acme.com"});
+		console.log(uda.getAllUsers());
+
+		// Test updateUser()
+		const marty = uda.getUserById(4); // first, get a user to update
+		marty.lastName = "THOMPSON"; // make an update
+		uda.updateUser(marty);
+		console.log(uda.getAllUsers());
+
+
+		// Test deleteUser()
+		uda.deleteUser(4);
+		console.log(uda.getAllUsers());
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

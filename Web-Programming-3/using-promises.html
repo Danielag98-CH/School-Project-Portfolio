@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using Promises</title>
+    <script>
+
+      // A function that could take a long time to complete, and could fail.
+      // So, it returns a Promise object
+    function getDog() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let randomNumber = Math.round(Math.random());
+            if (randomNumber == 1) {
+              resolve({name:"Brutus", breed:"Boxer", age:9});
+            } else {
+              reject(new Error("Failed to get dog!"));
+            }
+          }, 3000);
+        });
+      }
+
+    getDog()
+        .then(dog => {
+            console.log("Here's the dog:", dog)
+        })
+        .catch(err => console.log(err.message))
+    // multiple then() calls
+   
+    getDog()
+    .then(dog => {
+        console.log("Here's the dog:", dog);
+        return dog.name;
+    })
+    .then(dogName => {
+        console.log("Here's the dog name:", dogName);
+    })
+    .catch(err => console.log(err.message));
+
+    const someWrapperFunction = async () => {
+        try{
+            const dog = await getDog();
+            console.log(dog);
+        }catch(err){
+            console.log(err.message);
+        }
+    
+    
+    }
+
+    someWrapperFunction();
+
+    </script>
+  </head>
+  <body>
+    <h1>Using Promises</h1>
+  </body>
+</html>

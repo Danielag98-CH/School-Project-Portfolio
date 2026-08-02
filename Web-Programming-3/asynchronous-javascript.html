@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Asychronous JS</title>
+        <script>
+            // const doSomething = () => console.log("Hello")
+            // setTimeout(doSomething, 3000);
+
+            // setTimeout(() => console.log("Hello Again"), 3000);
+
+            // const readLargeFile = () => {
+            //     console.log("Starting to read large file...");
+            //     setTimeout(() => console.log("Finished reading large file"), 3000)
+            // }
+
+            const readLargeFileWithCallback = (callback) => {
+            console.log("Starting to read large file...");
+            setTimeout(() => {
+                console.log("Finished reading large file")
+                const fileContent = "This is the large file......";
+                callback(fileContent);
+                }, 3000)
+            }
+
+            readLargeFileWithCallback((content) => console.log("FILE CONTENT:" + content));
+
+            // readLargeFile();
+            // console.log("Blah!");
+
+
+            // Sycnhronized code language example: don't run this code, it won't work properly!
+            // const fileContent = readLargeFile(); // this would 'block' the program until it returns the file content
+            // console.log("FILE CONTENT:" + content);
+            // console.log("Blah");
+
+            //"Callback Hell"
+            function doHomework(callback){
+            console.log("Doing homework...");
+            setTimeout(callback, 3000);
+            }
+
+            function brushTeeth(callback){
+                console.log("Brushing teeth...");
+                setTimeout(callback, 3000);
+            }
+
+            function sleep(callback){
+                console.log("Sleeping...");
+                setTimeout(callback, 3000);
+            }
+
+            doHomework(() => {
+                console.log("done with homework!")
+                brushTeeth(() => {
+                    console.log("done brushing teeth!")
+                    sleep(() => {
+                        console.log("done sleeping!")
+                    });
+                })
+            })
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

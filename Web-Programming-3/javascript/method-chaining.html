@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Method Chaining</title>
+        <script>
+            window.addEventListener("load", () => {
+                                        //if there is a dash in the attribute we need to add '' to the id//
+                document.querySelector("[name=btn]").addEventListener("click", () => {
+                    alert("Thank you!");
+                })
+                
+                const str = "foo"
+                const str2 = str.replace("f", "t").toUpperCase().toLowerCase(); //method chaining example
+                console.log(str.replace("f", "t").toUpperCase()); //one approach
+                console.log(str2); //another approach
+            })
+        </script>
+    </head>
+    <body>
+        <button name="btn">Click Me</button> 
+    </body>
+</html>

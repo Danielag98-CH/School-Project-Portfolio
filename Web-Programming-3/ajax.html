@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AJAX</title>
+        <script>
+            window.addEventListener("load", () => {
+
+                const btn = document.querySelector("[name=btn]");
+                const div = document.querySelector("#container");
+
+                btn.addEventListener("click", () => {
+
+                const getAllPosts = async () => {
+                    const url = "https://jsonplaceholder.typicode.com/posts/";
+                    const response = await fetch(url);
+                    console.log(response);
+                    
+                    const body = await response.json();
+                    console.log(body);
+                    
+                    const ul = document.createElement("ul");
+
+                    body.forEach(post => {
+                        const li = document.createElement("li");
+                        li.innerHTML = post.title;
+                        ul.append(li);
+                    })
+
+                    div.append(ul);
+                }
+
+                getAllPosts();
+
+                })
+
+            });
+        </script>
+    </head>
+    <body>
+        <input type="button" value="AJAX Call (HTTP Request)" name="btn">
+        <div id="container"></div>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "BOB",
+      "last_name": "SCHWARTZ",
+      "email": "rob23@gmail.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Lucy",
+      "last_name": "Ballmer",
+      "email": "lucyb5668@gmail.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Anna",
+      "last_name": "Smith",
+      "email": "annasmith22243@gmail.com"
+    },
+    {
+      "id": 4,
+      "first_name": "Robert",
+      "last_name": "Brown",
+      "email": "bobbrown431222@yahoo.com"
+    },
+    {
+      "first_name": "Jen",
+      "last_name": "Lee",
+      "email": "jl@gmail.com",
+      "id": 6
+    },
+    {
+      "first_name": "FRED",
+      "last_name": "SCHWARTZ",
+      "email": "rob23@gmail.com",
+      "likesPizza": true,
+      "id": 7
+    }
+  ],
+  "people": [
+    {
+      "id": 1,
+      "name": "Daniela"
+    },
+    {
+      "name": "Renee",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Sun Also Rises",
+      "author": "Ernest Hemmingway"
+    },
+    {
+      "id": 2,
+      "title": "For Whom the Bells Toll",
+      "author": "Ernest Hemmingway"
+    },
+    {
+      "title": "some book",
+      "author": "some author",
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+
+            const house = {
+                kitchen: {
+                    faucet: "Moen"
+                }
+            };
+
+            console.log(house?.bathroom?.faucet);
+            const x = house?.bathroom?.faucet;
+
+            //let input = document.getElementById("someInput").value; //this will crash the page cannot read a value of null from the DOM
+            let input = document.getElementById("someInput")?.value ?? "NO INPUT";
+            console.log(input);
+
+            const name = "Bob";
+            const str = name ?? "NO NAME";
+            console.log(str);
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
