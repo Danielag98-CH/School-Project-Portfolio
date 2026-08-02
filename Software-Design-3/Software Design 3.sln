@@ -1,0 +1,59 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChinookAutomapperExample", "ChinookAutomapperExample\ChinookAutomapperExample.csproj", "{6CA4E28F-0368-2F59-8F69-AB20004EB4DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChinookDtoExample", "ChinookDtoExample\ChinookDtoExample.csproj", "{6F36538D-84EC-287A-8AD4-D2B9AB39593B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstDemo", "FirstDemo\FirstDemo.csproj", "{4496C96C-3A64-78FA-479E-0711377604CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{9EB97CB9-D321-04C1-136F-224636A3D34D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrefleApp", "TrefleApp\TrefleApp.csproj", "{7E811F95-398B-569C-287D-2B17A17E7EB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "videos", "videos", "{76866A20-775D-BE1F-F3A7-2A20F796DB06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "videos\MvcMovie\MvcMovie.csproj", "{F0C3EDDE-8A99-4A32-B69A-5C890244361F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CA4E28F-0368-2F59-8F69-AB20004EB4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA4E28F-0368-2F59-8F69-AB20004EB4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA4E28F-0368-2F59-8F69-AB20004EB4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA4E28F-0368-2F59-8F69-AB20004EB4DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F36538D-84EC-287A-8AD4-D2B9AB39593B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F36538D-84EC-287A-8AD4-D2B9AB39593B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F36538D-84EC-287A-8AD4-D2B9AB39593B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F36538D-84EC-287A-8AD4-D2B9AB39593B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4496C96C-3A64-78FA-479E-0711377604CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4496C96C-3A64-78FA-479E-0711377604CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4496C96C-3A64-78FA-479E-0711377604CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4496C96C-3A64-78FA-479E-0711377604CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EB97CB9-D321-04C1-136F-224636A3D34D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EB97CB9-D321-04C1-136F-224636A3D34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EB97CB9-D321-04C1-136F-224636A3D34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EB97CB9-D321-04C1-136F-224636A3D34D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E811F95-398B-569C-287D-2B17A17E7EB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E811F95-398B-569C-287D-2B17A17E7EB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E811F95-398B-569C-287D-2B17A17E7EB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E811F95-398B-569C-287D-2B17A17E7EB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0C3EDDE-8A99-4A32-B69A-5C890244361F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0C3EDDE-8A99-4A32-B69A-5C890244361F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0C3EDDE-8A99-4A32-B69A-5C890244361F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0C3EDDE-8A99-4A32-B69A-5C890244361F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F0C3EDDE-8A99-4A32-B69A-5C890244361F} = {76866A20-775D-BE1F-F3A7-2A20F796DB06}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48FD8E1E-88CF-430F-821F-8B49ADF3EFF5}
+	EndGlobalSection
+EndGlobal

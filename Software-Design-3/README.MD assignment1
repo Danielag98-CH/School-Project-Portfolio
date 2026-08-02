@@ -1,0 +1,222 @@
+### to edit
+
+-----
+
+### Assignment Objective:
+
+In this assignment, you will work with the Chinook database to build and interact with a web API using ASP.NET Core. 
+The goal is to gain hands-on experience developing a backend application that exposes data through structured endpoints, 
+allowing you to practice routing, model binding, LINQ queries, and proper use of HTTP responses with using a database.
+
+This assignment will be leaving more to you to piece together the solutions rather than having a tighter walk-through of the setup.
+
+-----
+
+### Setup
+
+Create the project in the terminal:
+
+    dotnet new mvc -o Martinka_ChinookEndpoints
+
+Install the following in the terminal:
+
+    // Dotnet EF Core Tool (Globally)
+    dotnet tool install --global dotnet-ef
+
+    // Dotnet ASP.NET Code Generator (Globally)
+    dotnet tool install --global dotnet-aspnet-codegenerator
+
+    // Dotnet VS Code Generation Design (Within the Project)
+    dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+    // Dotnet - EF Core Tools (Within the Project)
+    dotnet add package Microsoft.EntityFrameworkCore.Design
+    dotnet add package Microsoft.EntityFrameworkCore.Tools
+    dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+
+    // Dotnet - Swagger (Within the Project)
+    dotnet add package Swashbuckle.AspNetCore
+
+*Properties* > *launchSettings.json*, update the following:
+
+    "applicationUrl": "http://localhost:5000"
+
+*Program.cs* > Before the **var app = builder.Build();** line and after **builder.Services.AddControllersWithViews();** line:
+
+    // Provides endpoint metadata
+    builder.Services.AddEndpointsApiExplorer();
+
+    // Generates Swagger docs + UI
+    builder.Services.AddSwaggerGen();
+​
+*Program.cs* > After your **var app = builder.Build();** line (*only to be used in development*):
+
+    // Configure the HTTP request pipeline.
+    if (!app.Environment.IsDevelopment()) {
+        app.UseExceptionHandler("/Home/Error");
+        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+        app.UseHsts();
+
+    // Add this else to have these lines only occur during development.
+    } else {
+        // Generates swagger.json
+        app.UseSwagger();
+        // Serves the Swagger UI at /swagger
+        app.UseSwaggerUI();
+    }
+
+### Create Models
+
+*Models* Directory > Create *Entities* directory.
+
+*Entities* Directory > Create models:
+
+    Album.cs
+    Artist.cs
+    Customer.cs
+    Employee.cs
+    Genre.cs
+    Invoice.cs
+    InvoiceLine.cs
+    MediaType.cs
+    Playlist.cs
+    PlaylistTrack.cs
+    Track.cs 
+
+### Create, Migrate, and Seed Database
+
+Create *Data* directory in the project.
+
+*Data* > Create *ApplicationDbContext.cs*.
+
+*appsettings.json* > Create a new setting labeled **ConnectionStrings**:
+
+    {
+        "Logging": {
+            "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+            }
+        },
+        "AllowedHosts": "*", 
+        "ConnectionStrings": {
+            "ApplicationDbContext": "Data Source=app.db"
+        }
+    }
+
+*Program.cs* > Before the **var app = builder.Build();** line:
+
+    builder.Services.AddDbContext<ApplicationDbContext>(options => 
+        options.UseSqlite(builder.Configuration.GetConnectionString("ApplicationDbContext")
+        ?? throw new InvalidOperationException("Connection string 'ApplicationDbContext' not found.")));
+
+And add **using Martinka_ChinookEndpoints;** at the top.
+
+Run the database migration and update:
+
+    dotnet ef migrations add InitialMigration
+    dotnet ef database update
+
+*Data* > Add the SQL file (*chinook_data.sql*) to be used to seed the data into the database.
+
+*Models* > Create *SeedData.cs*.
+
+*Martinka_ChinookEndpoints.csproj* > Added the following code:
+
+    <ItemGroup>
+        <None Update="Data\chinook_data.sql">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+*Program.cs* > After the **var app = builder.Build();** line:
+
+    using (var scope = app.Services.CreateScope()) {
+        // await using (var scope = app.Services.CreateAsyncScope()) {    
+        var services = scope.ServiceProvider;
+    
+        await SeedData.Initialize(services);
+    }
+
+And add **using Martinka_ChinookEndpoints.Models;** at the top.
+
+In the terminal, run **dotnet run** to run the program and seed the database.
+
+-----
+
+### Create Controllers
+
+*Controllers* > Create controllers in the terminal:
+
+    dotnet-aspnet-codegenerator controller -name NameController -async -api -outDir Controllers
+    
+    AlbumsController.cs
+    ArtistsController.cs
+    CustomersController.cs
+    InvoicesController.cs
+    PlaylistsController.cs
+
+Create directories in the project, with the following files:
+
+    Models > Dtos >
+        AlbumDto.cs
+        ArtistDto.cs
+        PlaylistDto.cs
+        TrackDto.cs
+        
+    Profiles >
+        AlbumProfile.cs
+        ArtistProfile.cs
+        PlaylistProfile.cs
+        TrackProfile.cs
+
+    Services > Mapping >
+        AlbumMappingService.cs
+        ArtistMappingService.cs
+        PlaylistMappingService.cs
+        TrackMappingService.cs
+
+*Program.cs* > Before the **var app = builder.Build();** line:
+
+    builder.Services.AddAutoMapper(typeof(Program));
+    
+    builder.Services.AddScoped<AlbumMappingService>();
+    builder.Services.AddScoped<ArtistMappingService>();
+    builder.Services.AddScoped<PlaylistMappingService>();
+    builder.Services.AddScoped<TrackMappingService>();
+
+-----
+
+### In the terminal - *dotnet run*. In the browser - *localhost:5000/swagger/index.html*. Verify each route below is correct.
+
+    AlbumsController.cs > 
+        Get All Albums - GET api/albums
+        Get Album By ID - GET api/albums{albumId}
+        Delete Album - DELETE api/albums/{albumID}
+        Search for Album - GET api/albums/search
+        Get Albums by Artist GET api/albums/albums-by-artist
+
+    ArtistsController.cs >
+        Get All Artists - (GET api/artists)
+        Get Artist By ID - GET api/artists/{artistId}
+        Delete Artist - DELETE api/artists/{artistId}
+        Get Artist Stats - GET api/artists/stats
+
+    CustomersController.cs >
+        Get All Customers - GET api/customers
+        Get Customers By ID - GET api/customers/{customerId}
+        Delete Customer - DELETE api/customers/{customerId}
+
+    InvoicesController.cs >
+        Get All Invoices - GET api/invoice
+        Get Invoices By ID - GET api/invoice/{invoiceId}
+        Get Invoice Stats - GET api/invoice/stats
+        Delete Invoice - DELETE api/invoice/{invoiceId} 
+
+    PlaylistsController.cs >
+        Get All Playlists - GET api/playlists
+        Get Playlist By ID - GET api/playlists/{playlistId}
+        Delete Playlist - DELETE api/playlists/{playlistId} 
+        Get Expensive Playlists - GET api/playlists/top-expensive
+
+-----
