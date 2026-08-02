@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Events Worksheet</title>
+	<style type="text/css">
+
+		label{
+			display: block;
+		}
+
+		input[type=radio] + label, input[type=checkbox] + label{
+			display:inline-block;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+	window.addEventListener("load", ()=>{
+
+		/*
+		Example Problem
+		Get a handle on the text box for the first name
+		Add an event handler function that listens for an 'input' event on it
+		In the body of the event handler, simply console log the value of the text box
+		*/
+
+		// ANSWER
+		const txtFirstName = document.querySelector("[name='firstName']");
+		txtFirstName.addEventListener("change", ()=>{
+			console.log(txtFirstName.value);
+		});
+
+		
+		// NOTE: Just for fun, see how the behavior changes if you use a 'change'
+		// event instead of an 'input' event
+
+
+
+		/*
+		Problem 1
+		Get a handle on the text box for the last name
+		Add an event handler function that listens for a 'change' event on it
+		In the body of the event handler, simply console log the value of the text box
+		*/
+		const txtLastName = document.querySelector("[name=lastName]");
+		txtLastName.addEventListener("change", () => {
+			console.log(txtLastName.value);
+		});
+
+
+
+		/*
+		Problem 2
+		Get a handle on the date input
+		Add an event handler function that listens for a 'change' event on it
+		In the body of the event handler, simply console log the value of date input
+		*/
+		const dateInput = document.querySelector("[type=date]");
+		dateInput.addEventListener("change", () => {
+			console.log(dateInput.value);
+		})
+
+
+
+
+
+		/*
+		Problem 3
+		Get a handle on the select box that allows the user to choose a favorite color.
+		Add and event handler function that listens for the 'change' event.
+		In the body of the event handler, simply console log the value of the select box
+		*/
+		const favoriteColor = document.querySelector("[name=color]");
+        favoriteColor.addEventListener("change", (evt) => {
+            console.log(favoriteColor.value);
+            console.log(evt.target.value);
+        })
+
+
+
+		/*
+		Problem 4
+		Get a handle on the checkbox.
+		Add and event handler function that listens for the 'change' event.
+		In the body of the event handler:
+			 write an IF statement that console logs
+			'Agrees to terms of service' IF the checkbox is checked. 
+			If the checkbox is NOT checked, then console 
+			log 'Does not agree to terms of service'
+		HINT: To find out if the checkbox is checked, you can use it's 'checked' propert.
+		This will be TRUE if the the checkbox is checked, and FALSE if it is not.  
+		*/
+		const chk = document.querySelector("[name=terms]");
+        console.log(chk);
+		chk.addEventListener("change", (evt) => {
+			evt.preventDefault();
+            if(chk.checked){
+				alert("Agreed to terms of service");
+			}else{
+				alert("Does not agree to terms of service")
+			}
+        });
+
+
+
+
+		/*
+		Problem 5
+		For this problem, you'll use the radioHandler function below.
+		Use querySelectorAll() to get all of the radio buttons 
+		(querySelectorAll() should return an array of radio button objects)
+		Then loop through the array.
+		In the loop, call the addEventListener() method on the current element.
+			Listen for 'change' events (the first parameter for addEventListener())
+			Use the radioHandler function for the second param that you pass into addEventListener() 
+		When you are done, load the page in the browser and observe the console log as you click
+		on each of the radio buttons.
+		*/
+		const radioHandler = (evt) => {
+			console.log(evt.target.value)
+		}
+
+		const radios = document.querySelectorAll("[name=iceCream]");
+		console.log(radios);
+		
+		radios.forEach((ce) => {
+			ce.addEventListener("change", radioHandler);
+		});
+
+
+	})
+	</script>
+</head>
+<body>
+
+	<h2>Survey</h2>
+	<form id="form1" method="POST" action="http://www.wtc-web.com/form-handler.php">
+
+		<label>First Name:</label>
+		<input type="text" name="firstName">
+
+		<label>Last Name:</label>
+		<input type="text" name="lastName">
+
+		<label>Date</label>
+		<input type="date" name="date">
+
+		<label>Favorite Color</label>
+		<select name="color">
+			<option value="red">RED</option>
+			<option value="blue">BLUE</option>
+			<option value="other">OTHER</option>
+		</select>
+
+		<label>Favorite Ice Cream</label>
+		<input type="radio" name="iceCream" value="vanilla"><label>VANILLA</label>
+		<input type="radio" name="iceCream" value="chocolate"><label>CHOCOLATE</label>
+		<input type="radio" name="iceCream" value="other"><label>OTHER</label>
+		<br>
+
+		<br>
+		<input type="checkbox" name="terms">
+		<label>Check the box if you agree to our terms of service</label>
+		
+		<br>
+		<input type="submit" value="Submit Survey">
+
+	</form>
+
+</body>
+</html>

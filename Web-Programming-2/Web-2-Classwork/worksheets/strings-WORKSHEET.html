@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>String Worksheet</title>
+		<style type="text/css">
+			div.answer{ background-color: lightgray; margin-bottom: 25px; }
+		</style>
+		<script type="text/javascript">
+		window.addEventListener("load", ()=>{
+
+			const speech = `Four score and seven years ago our fathers brought forth on this continent, 
+							a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+							Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, 
+							can long endure. 
+							We are met on a great battle-field of that war. 
+							We have come to dedicate a portion of that field, 
+							as a final resting place for those who here gave their lives that that nation might live. 
+							It is altogether fitting and proper that we should do this.`;
+
+
+			console.log("Problem 1");
+			// Log the number of characters in the speech
+			console.log(speech.length);
+
+
+			console.log("Problem 2");
+			// Use the split method to figure out how many words are in the speech
+			// (Note that this is not the most accurate way of getting a word count)
+			// Log the number of words
+			const words = speech.split(" ")
+			console.log(words.length);
+
+			console.log("Problem 3");
+			// Figure out how many times the word 'of' apears in the speech
+			// Log the result
+			const searchWord = speech.split(" ");
+			let search = "of"
+			let count = 0;
+			searchWord.forEach( word => {
+				if(word === search){
+					count++;
+				}
+			})
+			console.log(`"${search}" appears ${count} times`);
+
+
+			console.log("Problem 4");
+			const vowels = ["a", "e", "i", "o", "u"];
+			// Figure out how many vowels are in the speech (a,e,i,o,u)
+			// To do this, loop through each character in the the speech string
+			// and check to see if the current character is included in the vowels array
+			// (use the includes() method on the vowels array and pass in the current character
+			// If the includes() method returns true, then you have found another vowel)
+			let vCount = 0;
+			for(let x = 0; x < speech.length; x++){
+				const char = speech[x].toLowerCase();
+				if(vowels.includes(char)){
+					vCount++;
+				}
+			}
+			console.log(`There are ${vCount} vowels in the speech`);
+
+			console.log("Problem 5");
+			// Write a function called isStrongPassword that checks to make sure a password is secure
+			// The function takes one parameter, a string that represents a password.
+			// If the password is at least 8 characters AND contains at least one number,
+			// then the function should return true. Otherwise the function should return false.
+			// When you are done defining the function, test it by uncommenting the console logs below
+
+			// PUT THE FUNCTION HERE
+			function isStrongPassword(password){
+				if(password.length >= 8 && /\d/.test(password)){
+					return true;
+				}else{
+					return false;
+				}
+			}
+			console.log(isStrongPassword("foo"));		// should be false
+			console.log(isStrongPassword("foooooo1"));	// shoould be true
+			console.log(isStrongPassword("0foooooo"));	// should be true
+		
+
+		});
+		</script>
+	</head>
+	<body>
+		<h1>JavaScript Strings Worksheet</h1>
+	</body>
+</html>

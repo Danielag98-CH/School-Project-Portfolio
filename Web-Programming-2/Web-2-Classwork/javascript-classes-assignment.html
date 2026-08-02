@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Classes</title>
+        <script>
+            let dogs = [
+                {name: "Bruno", breed: "Poodle", vaccinated: true, age:7},
+                {name: "Snoopy", breed: "Beagle", vaccinated: false, age:2},
+                {name: "Lassie", breed: "Collie", vaccinated: true, age:4},
+                {name: "Fido", breed: "Boxer", vaccinated: true, age:11},
+                {name: "Coco", breed: "Pit Bull", vaccinated: true, age:5}
+                ]
+            class Dog{
+                name;
+                breed;
+                vaccinated = false;
+                age = 0;
+                constructor(name, breed, vaccinated, age){
+                    this.name = name;
+                    this.breed = breed;
+                    this.vaccinated = vaccinated;
+                    this.age = age;
+                }
+                eat(food){
+                    console.log( this.name + " is eating " +  food);
+                }
+            }
+            dogs = [
+                new Dog("Bruno", "Poodle",true,7),
+                new Dog("Snoopy", "Beagle", false, 2),
+                new Dog("Lassie", "Collie", true, 4),
+                new Dog("Fido", "Boxer", true, 11),
+                new Dog("Coco", "Pit Bull", true, 5)
+            ];
+            const dog1 = new Dog();
+            console.log(dog1);
+
+            const dog2 = new Dog("Bruno", "Poodle", true, 7);
+            console.log(dog2);
+            dog2.eat("a biscuit");
+            console.log(dogs);
+
+            dogs.forEach(d => d.eat("a biscuit"));
+            
+            
+            
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

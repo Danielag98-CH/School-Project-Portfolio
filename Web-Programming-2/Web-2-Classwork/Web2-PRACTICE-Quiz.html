@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WEB 2 Practice Quiz</title>
+	<script type="text/javascript">
+	
+	window.addEventListener("load", () => {
+
+
+		console.log("PROBLEM 1"); 
+		// console log your name below this comment
+		console.log("Daniela Gonzalez");
+
+		// You'll use this array to solve the following problems
+		const users = [
+		  {id: 7, firstName:"Bob", lastName:"Smith", email:"bob@smith.com", role: "Admin"},
+		  {id: 96, firstName:"Betty", lastName:"Jones", email:"betty@jones.com", role: "Standard User"},
+		  {id: 33, firstName:"Barney", lastName:"Smith", email:"barney@smith.com", role: "Standard User"}
+		];
+
+
+
+		console.log("PROBLEM 2"); 
+		// Use the forEach() method to loop through each element
+		// in the users array, and console log the first and last name 
+		// each 'user' object
+		users.forEach((u) => {
+			console.log(u.firstName, u.lastName);
+		})
+
+
+
+		console.log("PROBLEM 3") 
+		// Use the filter() method on the users array 
+		// to get the users who have a role of 'Standard User'
+		// Then console log the value returned by calling the filter() method
+		const findStdUser = users.filter(u => u.role == "Standard User");
+		console.log(findStdUser);
+
+
+
+
+		console.log("PROBLEM 4") 
+		/*
+		Use the map() method on the users array to generate an array
+		of strings that looks like this:
+			
+			[
+				"<tr><td>Bob</td><td>Smith</td></tr>",
+				"<tr><td>Betty</td><td>Jones</td></tr>",
+				"<tr><td>Barney</td><td>Smith</td></tr>"
+			]
+			
+
+		Store the value that is returned by the map() method
+		in a variable named 'rows'.
+
+		Then console log the rows variable
+		*/
+		const rows = users.map(u => "<tr><td>" + u.firstName + "</td><td>" + u.lastName + "</td></tr>");
+		console.log(rows);
+
+
+
+
+		console.log("PROBLEM 5"); 
+		// Get a handle on the TABLE element below (in the BODY)
+		// and then set it's innerHTML property by joining
+		// the elements from the 'rows' array that you created in the previous problem.
+		const table = document.querySelector("#users-table");
+		table.innerHTML = rows.join(" ");
+
+
+
+	});
+
+	</script>
+</head>
+<body>
+	<h3>Users</h3>
+	<table border ='1' id="users-table"></table>
+</body>
+</html>

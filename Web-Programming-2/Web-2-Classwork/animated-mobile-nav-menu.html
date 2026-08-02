@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Menu</title>
+    <script>
+        window.addEventListener("load", () => {
+            
+            const menu = document.querySelector("#menu");
+            const menuButton = document.querySelector("#menu-button");
+            // console.log(menu, menuButton);
+            console.log(menu.style);
+            menuButton.addEventListener("click", () => {
+                // if(menu.classList.contains("open")){
+                //     menu.classList.remove("open");
+                // }else{
+                //     menu.classList.add("open");
+                // }
+                menu.classList.toggle("open");
+            })
+
+            
+
+        });
+    </script>
+    <style>
+        body{
+            font-family: Verdana;
+            margin: 30px;
+            line-height: 140%;
+        }
+
+        #menu-button{
+            /*position: absolute;*/
+            height: 44px;
+            width: 44px;
+            line-height: 44px;
+            font-size: 24px;
+            font-weight: bold;
+            display: none;
+            text-align: center;
+            border: 1px solid green;
+        }
+
+        #menu{
+            background-color: #999;
+        }
+
+        #menu ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #menu li{
+            padding: 0;
+            margin: 0;
+            margin-right:10px;
+            display: inline-block;
+        }
+
+        #menu a{
+            text-decoration: none;
+            color: #333;
+            display:inline-block;
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            padding-left: 15px;
+        }
+
+        #menu a:hover{
+            background-color: #666;
+        }
+
+
+
+
+        @media screen and (max-width: 600px) {
+            
+            body{
+                margin-top: 0;
+            }
+
+            #menu-button{
+                display:block;
+                cursor: pointer;
+            }
+
+            #menu{
+                position: absolute;
+                top: 44px; /*44 for the button height*/
+                bottom: 0px;
+                width: 0px;
+                overflow-x: hidden;
+                transition: width 1s;
+                white-space: nowrap;
+            }
+
+            #menu ul{
+                margin: 0;
+                padding: 0;
+            }
+
+            #menu li{
+                padding: 0;
+                margin: 0;
+                display: block;
+            }
+
+            #menu a{
+                /* padding-right: 0px; */
+            }
+
+            #menu.open{
+                width: 200px;
+            }
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div id="menu-button">&#9776;</div>
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="content">
+        <h1>Animated Flyout Menu with JavaScript and CSS</h1>
+        <h2>Part 1 - Review the CSS Code</h2>
+        <p>
+            Review each of the rulesets in the CSS code for this page.
+            Experiment with them in the developer tools (for example toggle some of the rules by checking the boxes in the CSS developer tools).
+        </p>
+        <p>Some things to note:</p>
+        <ul>
+            <li>
+                Then 'hamburger' icon in the menu button is created by using an <b>entity character</b>.
+            </li>
+            <li>
+                The width of the menu is initially set to 0px, which hides it from the page.
+            </li>
+            <li>
+                If the class attribute of the menu includes <b>open</b>, then the width of the menu changes to 200px, which makes it visible on the page.
+            </li>
+            <li>
+                There is a <b>CSS transition</b> applied to the width property of the menu,
+                which states that if the width of the menu changes, the transition should occur in 1 second.
+            </li>
+        </ul>
+        <p>
+            <b>Make sure to use the developer tools to manually add and remove the 'open' class to the menu.</b>
+            To do this, click on the 'elements' button in the developer tools and then double-click on the menu element to update it's attributes.
+        </p>
+        <h2>Part 2 - Add JavaScript that Adds and Removes the 'open' class on the menu</h2>
+        <p>
+            The JavaScript code that we'll add will listen for clicks on the menu button (not the menu).
+            When the button is clicked we'll toggle the 'open' class on the menu.
+            This will show or hide the menu, and we'll see the CSS transition at work as the width changes.
+        </p>
+    </div>
+</body>
+</html>

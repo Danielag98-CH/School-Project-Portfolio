@@ -1,0 +1,17 @@
+<%- include('partials/top') %>
+<main>
+  <div class="container-fluid p-4 my-3 text-center">
+    <article aria-labelledby="post-title">
+      <header>
+        <h1 id="post-title" class="py-2"><%- title %></h1>
+        <hr>
+      </header>
+      <section aria-describedby="post-content">
+        <div id="post-content">
+          <%- content %>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+<%- include('partials/bottom') %>

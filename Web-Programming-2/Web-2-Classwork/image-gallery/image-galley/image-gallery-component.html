@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Image Gallery Component</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Image Gallery Old">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" type="text/css" href="css/image-gallery.css">  
+  <script type="text/javascript" src="js/image-gallery-component.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    const images = [
+      {path: "images/Desert.jpg", description:"A hot desert.", artist:"Bob Smith", "date": "3/31/2018", tags:["dessert", "landscape"]},
+      {path: "images/Lighthouse.jpg", description:"A lighthouse on the ocean", artist:"Betty Carter", "date": "2/01/2014", tags:["oceian", "landscape"]},
+      {path: "images/Tulips.jpg", description:"Some beautiful tulips", artist:"Bob Smith", "date": "2/14/2015", tags:["plants", "tulips", "landscape"]}
+    ];
+
+    const div = document.querySelector("#image-gallery");
+
+    createGallery(div, images);
+
+  })
+</script>
+</head>
+<body>  
+	<h1>Image Gallery Component</h1>
+  <div id="image-gallery"></div>
+  <p>Images provided by Microsoft (Windows 7).</p>
+</body>
+</html>

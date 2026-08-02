@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Map, Reduce, Filter</title>
+	<script type="text/javascript">
+
+	window.addEventListener("load", () => {
+
+		// We'll use the following arrays during this activity:
+
+		// an array of numbers
+		const scores = [75,85,95,85];
+
+		// an array of strings
+		const pets = ["Buster", "Bruno", "Felix"];
+
+		// an array of objects (extremely useful because this is how you get data from a database)
+		const employees = [
+			{"id": 1, "firstName": "Bob", "lastName": "Smith", email: "bob@acme.com", "salary": 45000, "hireDate":"3/12/2009", password: "xxx"},
+			{"id": 2, "firstName": "Betty", "lastName": "Jones", email: "betty@acme.com", "salary": 55000, "hireDate":"5/11/2017", password: "xxx"},
+			{"id": 3, "firstName": "Sally", "lastName": "Johnson", email: "sally@acme.com", "salary": 65000, "hireDate":"5/21/2016", password: "xxx"},
+			{"id": 4, "firstName": "Ted", "lastName": "Thomas", email: "ted@acme.com", "salary": 45000, "hireDate":"9/14/2019", password: "xxx"},
+			{"id": 5, "firstName": "Jean", "lastName": "Parker", email: "jean@acme.com", "salary": 55000, "hireDate":"1/17/2017", password: "xxx"},
+			{"id": 6, "firstName": "Larry", "lastName": "Corker", email: "larry@acme.com", "salary": 65000, "hireDate":"8/19/2012", password: "xxx"},
+			{"id": 7, "firstName": "Morris", "lastName": "Smith", email: "morris@acme.com", "salary": 45000, "hireDate":"5/16/2002", password: "xxx"},
+			{"id": 8, "firstName": "Buster", "lastName": "Jenkins", email: "buster@acme.com", "salary": 55000, "hireDate":"2/23/2019", password: "xxx"},
+			{"id": 9, "firstName": "Grace", "lastName": "Anderson", email: "grace@acme.com", "salary": 85000, "hireDate":"05/03/2017", password: "xxx"}
+		];
+
+
+
+
+		/////////////////////////////
+		// map() - returns a new array of elements that are based on the original array
+		// The param is a function, and it's return value will be added to the new array
+		/////////////////////////////
+        const petListItems = pets.map(p => "<li>" + p + "<li>");
+        console.log(petListItems);
+
+        const employeeNames = employees.map(e => e.firstName + " " + e.lastName)
+        console.log(employeeNames);
+
+
+		//////////////////////////////
+		// filter() returns a new array that is a subset of the original array
+		// The param is a function that returns true or false,
+		// if it returns true, the current element will be added to the new array
+		//////////////////////////////
+        
+		// create an array of all the employees that earn more than 50K:
+        const highestPaidEmployees = employees.filter(e => e.salary > 50000);
+        console.log(highestPaidEmployees);
+
+
+		//////////////////////////////
+		// reduce() - takes two params
+		// 1. a function (accumulator, currentElement) => {}
+		// 2. an initial value for the accumulator
+		//////////////////////////////
+
+		// get the sum of all scores
+        const sum = scores.reduce((s, ce) => s + ce, 0);
+        console.log(sum);
+
+		// get the highest score
+        const highestScore = scores.reduce((max, ce) => Math.max(max, ce), 0)
+        console.log(highestScore);
+
+		// get the max salary of all employees
+        let max = 0;
+		for(let x = 0; x < employees.length; x++){
+			const ce = employees[x];
+			if(ce.salary > max){
+				max = ce.salary;
+			}
+		};
+		console.log(max);
+
+		// const maxSalary = employees.reduce((ac, ce) => {
+		// 	// if(ce.salary > ac){
+		// 	// 	return ce.salary
+		// 	// }else{
+		// 	// 	return ac;
+		// 	// }
+		// 	return ce.salary > ac ? ce.salary : ac;
+		// }, 0);
+		// console.log(maxSalary);
+		const maxSalary = employees.reduce((ac, ce) => ce.salary > ac ? ce.salary : ac, 0);
+		console.log(maxSalary);
+
+
+		// get the employee with the max salary
+		let employeeMax = employees[0];
+		for(let x = 0; x < employees.length; x++){
+			if(employeeMax.salary < employees[x].salary){
+				employeeMax = employees[x];
+			}
+		};
+		console.log(employeeMax);
+
+		employeeMax = employees.reduce((ac, ce) => ac.salary < ce.salary ? ce : ac, employees[0]);
+			// if(ac.salary < ce.salary){
+			// 	return ce;
+			// }else{
+			// 	return ac;
+			// }
+		// }, employees[0]);
+		// console.log(employeeMax);
+		console.log(employeeMax);
+
+		////////////////////////////////
+		// Chaining Array Methods
+		////////////////////////////////
+        const strings = employees.filter(e => e.salary > 50000).map((e) => e.firstName);
+        console.log(strings);
+	});
+	</script>
+</head>
+<body>
+	<h1>Map, Reduce, Filter</h1>
+</body>
+</html>

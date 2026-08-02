@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+//         const favoriteBerry = prompt("Enter your favorite Berry!")
+//         switch(favoriteBerry.toLowerCase()){
+//             case "strawberry":
+//                 message = "strawberries are my fave too!";
+//                 break;
+//             case "blueberry":
+//                 message = "Good Choice, great for antioxidants!";
+//                 break;
+//             case "raspberry":
+//                 message = "Those are yummy!";
+//                 break;
+//             case "blackberry":
+//                 message = "Its so hard to find non-bitter ones, goodluck!";
+//                 break;
+//             default:
+//                 message = "Interesting choice I am exited to try that";
+
+// };
+// alert(message);
+
+
+// const school = prompt("Enter your grade");
+
+// const result = school >= 45 ? "You are passing" : "You need to work harder";
+// alert(result);
+
+// const kitty = {firstName: "kimchi", lastName: "Gonzalez", color: "white", age: "2"};
+// for(let x in kitty){
+//     console.log(kitty[x]);
+// }
+
+const colors = ["aqua", "maroon","teal", "copper", "lilac" ];
+colors.push("navy", "turquoise", "purple", "mauve", "forest green");
+console.log(colors);
+console.log(colors.length);
+
+const fruit = ["tomato", "strawberry", "passionfruit", "mango", "kiwi", "pomegranate"];
+
+const veggies = ["broccoli", "cauliflower", "bell peppers", "lettuce", "carrots", "potatoes"];
+
+fruit.push(...veggies);
+console.log(fruit);
+console.log(fruit.length);
+
+const countries = ["Belize", "Italy", "Greece", "Japan", "Korea", "The United Kingdom", "France"];
+
+console.log(countries.includes("Japan"));
+console.log(countries.includes("Romania"));
+console.log(countries.includes("Korea", 3));
+
+const a1 = ["Arianna", "Angela", "Logan", "Jessie", "Sonja"];
+const a2 = ["Hannah", "Jack", "Katie", "Julie", "Holly"];
+const a3 = ["Stacie", "Leslie", "Dave", "Maria", "Marcy"];
+const coworkers = a1.concat(a2, a3);
+console.log(coworkers);
+
+const elements = ["fire", "water", "earth", "air"];
+console.log(elements.join(' - '));
+
+const onlineGames = ["Genshin Impact", "Valorant", "Stardew Valley", "World or Warcraft", "Fortnite"];
+console.log(onlineGames.pop());
+
+const coworkersAges = [24, 26, 27, 45, 36, 53, 65, 42, 35];
+const searchAge = coworkersAges.find(age => age >= 35);
+console.log(searchAge);
+
+const newColors = ["blue", "green", "yellow", "pink", "orange", "red"];
+console.log(newColors.splice(3));
+
+const bedroom = ["tv", "desk", "computer","bed", "closet", "pillows","blankets", "night stand"];
+const essentials = bedroom.slice(3, 8);
+console.log(essentials); 
+
+const checkAge = coworkersAges.filter(age => age >= 40);
+console.log(checkAge);
+
+const animals = ["dogs", "cats", "horses", "turtles", "snakes", "hamsters"];
+ const animalsList = animals.map(a => "<li>" + a + "<li>");
+ console.log(animalsList);
+
+ const someScores = [45, 85, 62, 93, 78, 56];
+const sum = someScores.reduce((s, ce) => s + ce, 0);
+console.log(sum);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

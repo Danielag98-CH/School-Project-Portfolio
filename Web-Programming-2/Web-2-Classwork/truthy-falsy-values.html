@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Truthy Falsy Values</title>
+	<script type="text/javascript">
+
+		// Truthy and Falsey Values
+		// In JavaScript, and many other languages, some values
+		// will evalulate to TRUE when used in a boolean expression
+		// while other values will evaluate to FALSE
+		// Here's a link that has more info:
+		// https://www.sitepoint.com/javascript-truthy-falsy/
+		
+
+		// TRUTHY OR FALSEY VALUES???
+		const a = 1;
+		const b = "Hello";
+		const c = true;
+		const d = -7;
+		const e = 0; 	// FALSE! because 0 is always false
+		let f; 			// FALSE! the variable has been declared but not initialized
+		const g = "";	// FALSE! empty strings evaluate to false
+
+		if(a){  // you could also do this: if(a == true){
+			console.log("Truthy!");
+		}else{
+			console.log("Falsy!");
+		}
+
+		// You could abbreviate the above if statemt like so (using the conditional/ternery operator):
+		//console.log(a ? "Truthy!" : "Falsy!")
+
+		
+		// FALSY VALUES
+
+		// 0 is condisered to be false
+		if(0 == false){
+			console.log("True - zero is equal to false");
+		}
+		
+
+		// Checking for strict equality
+		// The equality operator == checks to see if two values are the same
+		// but it doesn't check to see if the data types are the same
+		if(7 == "7"){
+			console.log("7 is equal to \"7\"");
+		}
+
+		// The 'strict equality' operator is ===
+		// It will result in true if the value AND the data type of each operand is true
+		if(7 === "7"){
+
+		}else{
+			console.log("7 is not strictly equal to \"7\"")
+		}
+
+		// following up on the example in which we compared 0 to false with 0 == false
+		if(0 === false){
+			
+		}else{
+			console.log("False - zero and false are different data types");
+		}
+
+		// SOME JS DEVELOPERS THINK YOU SHOULD ALWAYS USE ===
+		// AND NEVER USE == SO THAT YOU ARE VERY AWARE OF THE DATA TYPES THAT YOU ARE USING
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

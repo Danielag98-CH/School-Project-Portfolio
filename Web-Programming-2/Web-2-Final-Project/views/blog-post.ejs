@@ -1,0 +1,21 @@
+<%- include('partials/top') %>
+<main>
+  <div class="container container-fluid py-4">
+    <article class="text-primary-emphasis" aria-labelledby="blog-post-title">
+      <h1 id="blog-post-title"><%= title %></h1>
+      <section aria-labelledby="blog-description">
+        <p id="blog-description"><%= description %></p>
+      </section>
+      <section aria-labelledby="blog-author">
+        <p id="blog-author">
+          <strong>Author:</strong> <%= author %> | 
+          <strong>Published:</strong> <%= published %>
+        </p>
+      </section>
+      <section aria-labelledby="blog-content">
+        <div id="blog-content"><%- content %></div>
+      </section>
+    </article>
+  </div>
+</main>
+<%- include('partials/bottom') %>

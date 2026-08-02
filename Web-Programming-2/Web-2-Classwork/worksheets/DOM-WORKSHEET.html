@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DOM Problems</title>
+	<style type="text/css">
+
+		.hidden{
+			visibility: hidden;
+		}
+	
+	</style>
+	<script type="text/javascript">
+	window.addEventListener("load", ()=>{
+
+		console.log("PROBLEM 1");
+		const colors = ["Red", "Green", "Blue"];
+		// Loop through the colors array.
+		// Inside the body of the loop, do the following:
+		// 		1. Create an OPTION element
+		//		2. Use the current element (a string) to set the innerHTML 
+		//		   property of the OPTION element
+		//		3. Append the OPTION element to the SELECT 
+		// 		   element below (in the BODY element)
+		for(let x = 0; x < colors.length; x++){
+			let option = document.createElement("OPTION");
+			option.innerHTML = colors[x];
+			document.body.querySelector("SELECT").appendChild(option);
+		}
+		
+
+
+		console.log("PROBLEM 2");
+		// Get a handle on the H1 element that has an id of 'promo-message'
+		// (the H1 is currently hidden because its class is set to 'hidden' (see the CSS code above))
+		// Then get a handle on the button that says 'Click to get the promo'
+		// Add an event listener to the button (listen for click events)
+		// In the body of the event handler function, write code that toggles 
+		// the 'hidden' class for the H1 
+		// (use the 'classList' property of the H1, which is an object that has a toggle() method)
+		const promo = document.getElementById("promo-message");
+		const btn = document.querySelector('input[name="btnPromo"]');
+		btn.addEventListener("click", function(){
+			promo.classList.toggle("hidden");
+		})
+		
+
+
+		console.log("PROBLEM 3");
+		// Use document.createElement() to create a button
+		// (create an INPUT element and set its TYPE attribute to 'button')
+		// Set the button's VALUE attribute to "Add Person"
+		// Then append the button to the 'people' DIV
+		// (You'll use this button in the next problem)
+		const addBtn1 = document.createElement("input");
+		addBtn1.setAttribute("type", "button");
+		addBtn1.setAttribute("value", "Add Person");
+		
+		const pplDiv = document.querySelector("#people")
+		pplDiv.appendChild(addBtn1);
+				
+
+
+		console.log("PROBLEM 4");
+		// Add a 'click' event handler function to the button you created in the previous step
+		// Inside the body of the function:
+		// 		 1. Get the value property of the text box (the one for First Name)
+		//		 2. If the value is NOT an empty string, then do the following:
+		// 		 	1. Create an LI element and set it's innerHTML property to the value of the textbox
+		//		 	2. Append the LI element to the people-list UL
+		//			3. Set the value of the text box to an empty string
+		addBtn1.addEventListener("click", function(){
+			const addFirstName = document.querySelector('input[name="firstName"]');
+			const firstName = addFirstName.value.trim();
+			if(firstName !== ""){
+				const newPerson = document.createElement("LI");
+				newPerson.innerHTML = firstName;
+
+				const peopleList = document.querySelector("#people-list");
+				peopleList.appendChild(newPerson);
+				addFirstName.value = "";
+			}
+		})
+		
+
+
+		console.log("PROBLEM 5");
+		const fruits = ["Strawberries", "Apples", "Oranges"];
+		// use the map() method on the fruits array and then use the join()
+		// method to create a string that looks like this: 
+		//		<li>Strawberries</li><li>Apples</li><li>Oranges</li>
+		// Then 'get a handle' on the fruit-list UL (in the BODY)
+		// and set its innerHTML property to the string you created
+		const fruitList = fruits.map(f => "<li>" + f + "<li>");
+		console.log(fruitList);
+		// console.log(fruitList.join(" "));
+
+		const listFruits = document.querySelector(".fruit-list");
+		listFruits.innerHTML = fruitList.join(" "); 
+		
+		
+
+
+
+		console.log("PROBLEM 6");
+		// Use JavaScript code to add the following styles to the fruit-list UL 
+		//		background-color: darkgray
+		//      border: 2px solid black
+		//		border-radius: 4px
+		//		color: white
+		//		list-style: none
+		//		padding: 10px
+		const listFruit = document.querySelector(".fruit-list");
+		listFruit.style.cssText = `
+			background-color: darkgray;
+			border: 2px solid black;
+			border-radius: 4px;
+			color: white;
+			list-style: none;
+			padding: 10p;
+		`;
+		
+
+	});
+	</script>
+</head>
+<body>
+	<p>
+		Solve the problems in the SCRIPT element.
+	</p>
+	<h3>Colors</h3>
+	<select name="colors"></select>
+
+	<div id="promo-container">
+		<h3>Promos</h3>
+		<h1 id="promo-message" class="hidden">You get the promo!</h1>
+		<input type="button" name="btnPromo" value="Click to toggle the promo">
+	</div>
+
+	<div id="people">
+		<h3>People</h3>
+		<ul id="people-list">
+			<li>Serena</li>
+			<li>John</li>
+			<li>Roger</li>
+		</ul>
+		<label>First Name: </label>
+		<input type="text" name="firstName">
+	</div>	
+
+	<h3>Fruit List</h3>
+	<ul class="fruit-list"></ul>
+
+</body>
+</html>

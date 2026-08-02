@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Date Object Worksheet</title>
+	<style type="text/css">
+  		div.answer{ background-color: lightgray; margin-bottom: 25px; padding:18px }
+  	</style>
+  	<script type="text/javascript">
+  	window.addEventListener("load", ()=>{
+
+  		
+  		//Problem 1
+  		//Create a date object by calling the Date constructor function, assign the object to a constant named 'today'.
+  		//Invoke the getTime() method of 'today' and log the return value.
+  		//Invoke the toDateString() method of 'today' and log the return value.
+		const today = new Date();
+		console.log(today.getTime());
+		console.log(today.toDateString());
+
+
+  		//Problem 2
+  		// Use the Date() constructor function to create a date object that represents your birthday.
+  		// Pass in parameters to the constructor function to set the date object to your birthday.
+  		// Assign the returned object in a constant called 'myBirthday'
+  		// BE CAREFUL: Month numbers start with 0, not 1
+  		// Then log the date so that it's easy to read your birthday (use the toDateString() method)
+		const myBirthday = new Date(1998, 1, 21);
+		console.log(myBirthday);
+
+
+  		//Problem 3
+  		// Use the Date constructor function without any parameters to create a date object.
+  		// You can store the return object in a constant called 'newYearsEve'.
+  		// Then use various methods of the object to set the date to December 31 of the current year.
+  		// HINT: you will have to use the following methods: setFullYear(), setMonth(), setDate()
+		const newYearsEve = new Date();
+		newYearsEve.setFullYear(2025);
+		newYearsEve.setMonth(11);
+		newYearsEve.setDate(31);
+		console.log(newYearsEve);
+  		
+  		// Problem 4
+  		// Write a function that converts milliseconds to days
+  		// The function should have a parameter that represents a number of millisceconds
+  		// The function should return the equivalent number in days
+		function milliscecondsToDays(milliseconds){
+			const inOneDay = 86400000
+			const days = milliseconds / inOneDay;
+			return days;
+		}
+		const newDay = new Date();
+		console.log(newDay.getTime());
+		console.log(milliscecondsToDays(newDay.getTime()));
+		
+
+  		// Problem 5
+  		// Use the today constant from problem 1 and the newYearsEve constant from problem 3
+  		// to figure out how many days from now until newYearsEve.
+  		// Hint, figure out the difference in milliseconds, and then use the function that you wrote
+  		// for problem 4 to convert the milliseconds to days
+		  let differenceInMs = newYearsEve.getTime() - today.getTime();
+		  console.log(differenceInMs);
+		  console.log(milliscecondsToDays(differenceInMs));
+  		// Bonus Problem
+  		// Use various methods of the Date object to determine the significance of the specialDay variable below
+  		// Then log a message that explains what day it is
+  		var specialDay = new Date(-6106004517529); 
+		console.log(specialDay);
+		console.log(`${specialDay} was the day that the US adopted the Declaration of independence`)
+
+
+
+
+  		// Bonus Problem
+  		// Write a function called getDayOfWeek(). 
+  		// Include a parameter that represents a date object.
+  		// The function should return the day name of the parameter
+  		// (for example: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday)
+  		// When you are done, test the function (pass in today's date), and log the return value
+		function getDayOfWeek(date) {
+			const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+			const dayI = date.getDay();
+  			return daysOfTheWeek[dayI];
+		}
+		const thisDayOfWeek = new Date();
+		console.log(getDayOfWeek(thisDayOfWeek));
+
+
+
+  	});
+  	</script>
+</head>
+<body>
+	<h1>JavaScript Date API Worksheet</h1>
+	<h2>Questions</h2>
+	<p>This <a href="https://www.w3schools.com/jsref/jsref_obj_date.asp" target="_blank">reference</a> may be helpful in understanding how you can work with Date objects.</p>
+	<h4>Question 1</h4>
+	<p class="question">
+	    If you invoke the Date constructor without passing in any parameters, what date will be stored in the object that is returned?
+	</p>
+	<div class="answer">
+	    Replace this text with the solution to the above question/problem.
+	</div>
+
+	<h4>Question 2</h4>
+	<p class="question">
+	    What is an 'epoch'?
+	</p>
+	<div class="answer">
+	    Replace this text with the solution to the above question/problem.
+	</div>
+
+	<h4>Question 3</h4>
+	<p class="question">
+	    What is a 'Unix timestamp' (also known as 'epoch time')?
+	</p>
+	<div class="answer">
+	    Replace this text with the solution to the above question/problem.
+	</div>
+
+	<h4>Question 4</h4>
+	<p class="question">
+	    What is the actual date of the epoch for Unix timestamps?
+	</p>
+	<div class="answer">
+	    Replace this text with the solution to the above question/problem.
+	</div>
+
+	<h4>Question 5</h4>
+	<p class="question">
+	    What does the getTime() method of a date object return (refer to the link that was mentioned above, or find another reference on the Date object in JavaScript)?
+	</p>
+	<div class="answer">
+	    Replace this text with the solution to the above question/problem.
+	</div>
+
+	<h4>Question 6</h4>
+	<p class="question">
+	    If you are working with 2 date objects, how could you use the getTime() method to determine if one date is more recent than the other?
+	</p>
+	<div class="answer">
+	    Replace this text with the solution to the above question/problem.
+	</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!-- <!DOCTYPE html>
+<html>
+ 
+<head>
+    <style>
+        div {
+            background: teal;
+            border: 1px grey;
+            padding: 10px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <h1 style="color:aqua">
+            Research Paper Test
+        </h1>
+        <h2> oncontextmenu Event</h2>
+        <div id="myDIV">
+          <p>Right-click inside this the box</p>
+        </div>
+        <p id="try"></p>
+        <script>
+            document.getElementById("myDIV").oncontextmenu = function (){
+                ocm()
+            };
+        
+            function ocm(){
+                let ocm = document.getElementById("try")
+                ocm.innerHTML = "you right-clicked";
+            }
+        </script>
+</body> -->
+<!-- </html> -->
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <style>
+        div {
+            background: teal;
+            border: 1px grey;
+            padding: 10px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <h1 style="color:rgb(31, 140, 140)">
+            Research Paper Test
+        </h1>
+        <h2> oncontextmenu Event</h2>
+        <div id="myDIV">
+          <p>Right-click inside this the box</p>
+        </div>
+        <p id="try"></p>
+        <script>
+            const myDiv = document.querySelector("#myDIV");
+            const tryP = document.querySelector("#try");
+
+            myDiv.oncontextmenu = (evt) => {
+                evt.preventDefault();
+                ocm();
+            };
+        
+            function ocm(){
+                tryP.innerHTML = "you right-clicked";
+                
+                
+                setTimeout(() => {
+                tryP.innerHTML = "";
+                }, 5000);
+            }
+        </script>
+</body>
+</html>

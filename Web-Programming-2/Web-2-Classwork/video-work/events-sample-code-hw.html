@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Events</title>
+	<script type="text/javascript">
+    window.addEventListener("load", () => {
+        window.addEventListener("click",(evt) => {
+            console.log("TARGET", evt.target);
+            console.log("CURRENT TARGET", evt.currentTarget);
+        })
+        const btn2 = document.querySelector("#btn2");
+        const btn3 = document.querySelector("#btn3");
+
+        btn1.addEventListener("click", () => {
+            console.log("Hi!");
+        })
+
+        const someEventHandler = (evt) => {
+            // console.log(evt.target);
+            if(evt.target.id == "btn2"){
+                console.log("BTN2")
+            }else if(evt.target.id == "btn3"){
+                console.log("BTN3");
+            }
+        }
+
+        btn2.addEventListener("click", someEventHandler);
+        btn3.addEventListener("click", someEventHandler);
+
+        const txtPageX = document.querySelector("#txtPageX");
+        const txtPageY = document.querySelector("#txtPageY");
+        window.addEventListener("mousemove", (evt) => {
+            txtPageX.value = evt.pageX;
+            txtPageY.value = evt.pageY;
+        })
+        const txt1 = document.querySelector("#txt1");
+        // txt1.addEventListener("keypress", (evt) => {
+        //     console.log(evt.key);
+        // })
+
+        const form = document.querySelector("#surveyForm");
+        form.addEventListener("submit", (evt) => {
+            // evt.preventDefault();
+            const txtFirstName = form.querySelector("[name=firstName]");
+            const txtAge = form.querySelector("[name=age]");
+
+            if(txtFirstName.value == ""){
+                alert("Name is required");
+                evt.preventDefault();
+            }
+
+            if(txtAge.value == ""){
+                alert("Age is required");
+                evt.preventDefault();
+            }else if(!(txtAge.value > 0)){
+                alert("Age must be a number greater than 0");
+                evt.preventDefault();
+            }
+        })
+
+        const sel = document.querySelector("[name=color]");
+        sel.addEventListener("change", (evt) => {
+            console.log(sel.value);
+            console.log(evt.target.value);
+        })
+
+        const chk = document.querySelector("[name=agree]");
+        chk.addEventListener("change", (evt) => {
+            console.log(evt.target.checked);
+        })
+
+        txt1.addEventListener("input", (evt) => {
+            console.log(evt.target.value);
+        })
+
+    })
+
+	// Wait until the page loads to execute your JavaScript code
+
+	</script>
+</head>
+<body>
+	<h1>Events</h1>
+	<h1>JavaScript Event Object Sample Code</h1>
+	<h2>Click Events</h2>
+	<input type="button" id="btn1" value="Button 1">
+	<br><br>
+
+	<input type="button" id="btn2" value="Button 2">
+	<input type="button" id="btn3" value="Button 3">
+	<br><br>
+
+	<h2>Mouse Move Events</h2>
+	<p>You can 'listen' for when the mouse moves within the window, or within a certain element.</p>
+	Mouse Position X:<input type="text" size="3" id="txtPageX" />
+	<br/>
+	Mouse Position Y:<input type="text" size="3" id="txtPageY" />
+	<br><br>
+
+	<h2>Keyboard Events</h2>
+	<label>Enter some text:</label>
+	<input type="text" id="txt1">
+	<br><br>
+
+	<h2>Form Events</h2>
+	<form id="surveyForm" method="POST" action="https://webcoder.club/form-handler/">
+		<label>Enter your first name:</label>
+		<br>
+		<input type="text" name="firstName" />
+		<br>
+		<label>Enter your age:</label>
+		<br>
+		<input type="text" name="age" />
+		<br>
+		<label></label>
+		<input type="submit" value="submit" />
+	</form>
+	<br><br>
+
+	<h2>Change Events</h2>
+	Select a color:
+	<br>
+	<select name="color">
+	    <option value="">Choose One...</option>
+	    <option value="red">RED</option>
+	    <option value="blue">BLUE</option>
+	    <option value="green">GREEN</option>
+	</select>
+	<br><br>
+	<label>
+		<input type="checkbox" name="agree">
+		Agree to our terms
+	</label>
+</body>
+</html>

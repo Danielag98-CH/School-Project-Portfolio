@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Data Binding Sales to a Table</title>
+	<script type="text/javascript">
+	window.addEventListener("load", () => {
+
+		const salesData = [
+			{id: 101, customer:"Charlie Anderson", product: "Bike", price: 10.00, date: "02-21-2022"},
+			{id: 117, customer:"Charlie Anderson", product: "Radio", price: 17.00 , date: "02-22-2022"},
+			{id: 121, customer:"Charlie Anderson", product: "TV", price: 20.00 , date: "02-23-2022"},
+			{id: 130, customer:"Charlie Anderson", product: "Book", price: 10.00 , date: "02-23-2022"},
+			{id: 104, customer:"Betty Jones", product: "Bike", price: 10.00 , date: "02-21-2022"},
+			{id: 105, customer:"Betty Jones", product: "Shoes", price: 25.00, date: "02-21-2022"}, 
+			{id: 112, customer:"Betty Jones", product: "TV", price: 30.00 , date: "02-23-2022"},
+			{id: 107, customer:"Bob Smith", product: "Radio", price: 42.00, date: "02-21-2022"}, 
+			{id: 123, customer:"Bob Smith", product: "Bike", price: 10.00 , date: "02-21-2022"},
+			{id: 153, customer:"Bob Smith", product: "Monitor", price: 16.00 , date: "02-23-2022"},
+			{id: 157, customer:"Bob Smith", product: "Keyboard", price: 18.00, date: "02-23-2022"},
+			{id: 157, customer:"Mark Johnson", product: "Microwave", price: 11.00, date: "02-22-2022"} 
+		];
+
+		const createSalesTable = (sales) => {
+			const table = document.createElement("table");
+			table.setAttribute("border", 1);
+			
+			sales.forEach(s => {
+				const tr = document.createElement("tr");
+				const tdName = document.createElement("td");
+				tdName.innerHTML = s.customer;
+				// tr.append(tdName);
+
+				const tdProduct = document.createElement("td");
+				tdProduct.innerHTML = s.product;
+				tr.append(tdName, tdProduct);
+				
+				table.append(tr);
+				
+			});
+			return table;
+		}
+
+		const table1 = createSalesTable(salesData);
+		//console.log(table1.constructor.name, table1); // Note the return type
+		document.querySelector("#table1-container").append(table1);
+
+
+		const createSalesTableV2 = (sales) => {
+			let html = `<table border="1">`;
+			sales.forEach(s => {
+				html += `<tr>
+					<td>${s.customer}</td>
+					<td>${s.product}</td>
+					</tr>`;
+			})
+			html += `</table>`;
+			return html;
+		}
+
+		const table2 = createSalesTableV2(salesData);
+		// console.log(table2.constructor.name, table2); // note that the return type is a string
+		document.querySelector("#table2-container").innerHTML += table2;
+
+
+		// TODO: Filter the sales data and create a table from it
+		
+
+
+
+	})
+	</script>
+</head>
+<body>
+	<div id="table1-container">
+		<h2>Table 1 (using document.createElement())</h2>
+	</div>
+	<div id="table2-container">
+		<h2>Table 2 (using string concatentation and innerHTML)</h2>
+	</div>
+</body>
+</html>

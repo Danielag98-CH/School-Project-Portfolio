@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The DOM API</title>
+<style type="text/css">
+
+	.special{
+		color: orange;
+	}
+
+	.promo{
+		text-decoration: underline;
+	}
+
+	.warning{
+		color:  red;
+	}
+</style>
+<script type="text/javascript">
+window.addEventListener("load", ()=>{
+
+	/*
+	window
+		location
+		href
+		localStorage
+		document (The DOM and it's API)
+			getElementById()
+			querySelector()
+			querySelectorAll()
+			createElement()
+
+			element/object - Every element that you 'get a handle on' will have the following methods and properties
+				appendChild() (or append)
+				addEventListener()
+				getAttribute()
+				setAttribute()
+				closest()
+				classList()
+				innerHTML
+				style
+				value
+
+			The DOM is full of different types of objects....
+	*/
+
+	///////////////////////////////////////////////////////
+	// The Window Object
+	///////////////////////////////////////////////////////
+
+	// The window object is created by the browser, and it represents the
+	// browser window
+	// It is a very complex object!
+	console.dir(window);
+
+	// within the window, there is a document object
+	// that represents the document (web page) that is loaded in the browser window
+	console.dir(window.document); // NOTE THAT THE dir() method displays the document as an object instead of a string of HTML
+
+	// The location property of the window object
+	// contains information about where the document came from
+	console.log(window.location);
+
+	// To redirect to a new page, change the href property of the location object:
+	//location.href = "http://www.google.com";
+
+	// When working with objects that are inside the window object,
+	// you can omit the window.
+	console.log(location); // same as window.location
+	console.log(document); // same as window.document
+
+	// We'll be focusing on the document object (aka The DOM)
+
+	///////////////////////////////////////////////////////
+	// The Document Object and all the HTML Element Objects
+	// within it make up the DOM
+	// Let's explore the DOM API (the properties and methods
+	// we can use when working with the DOM)
+	///////////////////////////////////////////////////////
+
+	// getElementById() - get's a handle on an HTML element object by it's ID attribute
+    let h1 = document.getElementById("main-header");
+    console.log(h1);
+    console.dir(h1);
+
+	// querySelector() - get's a handle on an HTML element that matches the selector param
+    let h2 = document.querySelector("#sub-header");
+    console.log(h2);
+
+    let list = document.querySelector("ul.fruits"); /* or (".fruits") if you dont need to be more specific */
+    console.log(list);
+
+	// querySelectorAll() - gets ALL elements that match the selector param
+
+    let fruitListItems = document.querySelectorAll("ul.fruits li");
+    console.log(fruitListItems);
+
+    fruitListItems.forEach(ce => console.log(ce));
+
+	// Creating and Appending Elements to the DOM
+	// createElement()
+    let li = document.createElement("li");
+    li.innerHTML = "<b>strawberries</b>";
+    console.log(li);
+
+	// appendChild() OR append()
+    list.append(li);
+
+	// addEventListener()
+
+
+	//getAttribute() setAtribtute()
+    // console.log(h2.getAttribute("id"));
+    console.log(list.getAttribute("class"));
+    h2.setAttribute("class", "warning");
+
+	// some attributes are treated as properties (such as the 'id' attribute)
+	// but some aren't (such as the 'class' atribute) so you have to use get/setAttribute())
+
+
+	//closest() - finds the closest ancestor that matches the tag name passed in
+    console.log(li.closest("ul")); /* Can use a CSS selector as a parameter in the Closest(), like ".fruits" for example */
+    
+	//PROPERTIES of HTML Element Objects (nodes)
+
+	//innerHTML
+    // ^is a string
+
+	//value - for form elements (textboxes, buttons, checkboxes, etc)
+
+
+	// Let's create and configure a button
+    const btn = document.createElement("input");
+    btn.setAttribute("type", "button");
+    btn.setAttribute("value", "Click Me");
+    document.body.append(btn);
+    btn.addEventListener("click", () => {alert("Hello!");})
+
+	//style - the style property of an element is a an object with many properties
+	//(use kabob-case in CSS, but camelCase in JS)
+    btn.style.backgroundColor = "blue";
+    btn.style.color = "white";
+
+
+	//classList (this property is an object that is like an array, and it has some useful methods)
+    console.log(h1.classList);
+    if(h1.classList.contains("promo")){
+        console.log("It's a promo!");
+    }
+
+    h1.classList.add("FOO");
+    h1.classList.remove("promo");
+    h1.classList.toggle("promo");
+
+
+
+	/////////////////////////////////////////////////////
+	// A Preview of things we'll be doing with the DOM
+	/////////////////////////////////////////////////////
+
+	// Data-binding to the DOM (we'll explore this more later)
+
+
+	// The localStorage object allows you to save data between browsing sessions
+
+
+	// Now look at the localStorage in the developer tools (in the Applications tab)
+	// Note that this data will only be available for the file:// protocol
+	// which when you load a page from the file system (rather than from a web server)
+	// Note that localStorage is a keystore
+
+
+});
+</script>
+</head>
+<body>
+
+	<h1 id="main-header" class="special promo">The DOM API</h1>
+	<h2 id="sub-header">This is an h2 element</h2>
+	<ul class="fruits">
+		<li>Apples</li>
+		<li>Bananas</li>
+		<li>Oranges</li>
+	</ul>
+	<div class="warning">This is a warning</div>
+	<div class="warning">This is another warning</div>
+	<div id="pets-container">
+		<h3>Pets</h3>
+	</div>
+	<form>
+		<label>Name</label>
+		<input type="text" id="txtName" value="Bob">
+		<label>Age</label>
+		<select id="selAge"></select>
+	</form>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Component Based Design with Classes</title>
+        <script type="text/javascript">
+
+        class LabelCheckBox{
+
+            // PRIVATE INSTANCE VARIABLES
+            #el; 		// the element that will contain this component (the 'container element')
+            #label;		// the label element that is used in this component
+            #checkBox;	// the checkbox that is used in this component
+            #labelText	// the data that will be bound to the label element
+            #chkValue	// the value that will be bound to the checkbox
+            #div;		// the label and checkbox will be put inside this div
+
+            // The constructor is used to set up the instance variables
+            // (the dependencies should be passed into the constructor, this is 'dependency injection')
+            constructor(el, labelText, chkValue){
+                this.#el = el;
+                this.#labelText = labelText;
+                this.#chkValue = chkValue;
+                this.#label = document.createElement("label");
+                this.#checkBox = document.createElement("input");
+                this.#checkBox.setAttribute("type", "checkbox");
+                this.#div = document.createElement("div");
+
+                this.render();
+            }
+
+            // The render method displays the UI,
+            // and binds the data
+            render(){
+
+                this.#div.append(
+                    this.#checkBox,
+                    this.#label
+                )
+
+                this.#el.append(this.#div);
+
+                // bind the data
+                this.#label.append(this.#labelText);
+                this.#checkBox.value = this.#chkValue;
+            }
+        }
+
+
+        window.addEventListener("load", () => {
+
+            // TRY OUT THE COMPONENT
+            const testContainer = document.getElementById("test-container");
+            // The component depends on three things:
+            // 1. A container to know where to attach itself on the page
+            // 2. The text (data) to display in the label
+            // 3. The value (data) to bind to the checkbox
+            // We will 'inject' these dependencies into the component:
+            const lblChk1 = new LabelCheckBox(testContainer, "Check if you like veggies", "yes");
+
+            // the components should be able to notify the system when needed:
+            testContainer.addEventListener("change", evt => {
+                console.log(evt.target.value, evt.target.checked);
+            })
+
+
+            // REUSE THE COMPONENT
+            // The problem is to figure out which veggies a user likes.
+            const veggieContainer = document.getElementById("veggie-container");
+
+            const veggies = [
+                {id:1, name:"Brocoli", liked:null},
+                {id:2, name:"Carrots", liked:null},
+                {id:3, name:"Peas", liked:null}
+            ];
+
+            // Instantiate the component for each object in the veggies array
+            veggies.forEach( vObj => new LabelCheckBox(veggieContainer, vObj.name, vObj.id));
+
+
+            veggieContainer.addEventListener("change", evt => {
+
+                const veggieId = evt.target.value;
+                const vegObj = veggies.find(v => v.id == veggieId);
+                // bind the data based on the state of the checkbox
+                vegObj.liked = evt.target.checked;
+
+                if(vegObj.liked){
+                    alert("Glad you like " + vegObj.name);
+                }else{
+                    alert("Sorry you don't like " + vegObj.name);
+                }
+
+                console.log("Here is the current state of your veggie data:", veggies);
+            })
+
+        });
+
+        </script>
+    </head>
+    <body>
+        <div id="test-container"></div>
+        <br><br>
+        <h3>Which veggies do you like?</h3>
+        <div id="veggie-container"></div>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Array Problems - Part 2</title>
+	<script type="text/javascript">
+
+	// use the following array to solve the problems below
+	const people = [
+		{id:1, firstName:"Bob", lastName:"Smith", age: 17, vaccinated: false, email:"bob@bob.com"},
+		{id:2, firstName:"Tua", lastName:"Lor", age: 16, vaccinated: true, email:"tua@tua.com"},
+		{id:3, firstName:"Stan", lastName:"Jones", age: 24, vaccinated: true, email:"stan@stan.com"},
+		{id:4, firstName:"Jen", lastName:"Parker", age: 33, vaccinated: false, email:"jen@jen.com"},
+		{id:5, firstName:"Pedro", lastName:"Moreno", age: 27, vaccinated: false, email:"pedro@bob.com"},
+		{id:6, firstName:"Fritz", lastName:"Wilhelm", age: 23, vaccinated: true, email:"fritz@fritz.com"},
+		{id:7, firstName:"Nadia", lastName:"Bakhar", age: 26, vaccinated: true, email:"nadia@nadia.com"}
+	];
+		
+
+	console.log("Problem 1") 
+	// Use the map() method to create an array of strings
+	// each string should include the first and last name of each
+	// element in the array
+	// Log the value that is returned by the map() method
+	const newList = people.map(p => p.firstName + " " + p.lastName);
+	console.log(newList);
+
+
+
+	console.log("Problem 2") 
+	// Use the map() method to create an array of email addresses (strings)
+	// from the people array
+	// Log the value that is returned by the map() method
+	const peoplesEmail = people.map(p => p.email);
+	console.log(peoplesEmail);
+
+	
+
+
+	console.log("Problem 3")
+	// Use the filter() method to create an array
+	// of all that people objects who are older than 20
+	// Log the value that is returned by the filter() method
+	const peoplesAges = people.filter(p => p.age > 20);
+	console.log(peoplesAges);
+
+	
+
+
+	console.log("Problem 4")
+	// Use the filter() method to create an array
+	// of all that people objects who have been vaccinated
+	// Log the value that is returned by the filter() method
+	const shots = people.filter(p => p.vaccinated = true);
+	console.log(shots);
+
+
+	console.log("Problem 5")
+	// Use the filter() method to create an array
+	// of all that people objects who are younger than 25 AND have been vaccinated
+	// Log the value that is returned by the filter() method
+	const agesAndShots = people.filter(p => p.age > 25 && p.vaccinated == true);
+	console.log(agesAndShots);
+
+	
+
+	console.log("Problem 6")
+	// THIS ONE IS TRICKY BECAUSE THE reduce() METHOD IS TRICKY!!!
+	// Use the reduce() method to calculate the sum of ages
+	// of all the elements in the people array
+	// Log the value that is returned by the reduce() method
+	const sumOfAges = people.reduce((sum, person) => sum + person.age, 0);
+	console.log(sumOfAges);
+
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

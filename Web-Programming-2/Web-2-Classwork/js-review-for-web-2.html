@@ -1,0 +1,166 @@
+
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>Review Problems for Intermediate Web Programming</title>
+
+  <script>
+  window.addEventListener("load", function(){
+
+    /*
+    PROBLEM 1
+    Write a function named calculateTip that has two parameters.
+    The first parameter should be named billAmount (it should represent the amount of a dinner bill).
+    The second parameter should be named tipPercent (it should represent a percent for a tip).
+    The function should return the tip amount based on the parameters.
+    Make sure to try out the function by invoking it and then console logging the return value.
+    */
+
+
+    // PROBLEM 2
+    var testScores = [78, 85, 93, 98]
+    /*
+    Use a loop to figure out the average of all the scores in the testScores array
+    */
+
+
+    /*
+    PROBLEM 3
+    Declare a variable named myTextFile and initialize it to an object that has the following
+    properties (keys) and values (note that the object represents a file on your computer):
+
+    PROPERTY (KEY)    VALUE
+    --------------------------------
+    name              hello-world.txt
+    location          C:\desktop
+    extension         txt
+    size              1000
+    */
+
+
+
+    /* 
+    PROBLEM 4
+    Create an array of objects. 
+    Each object (element) in the array represents a file on your computer.
+    Use the following chart to set the property values for each element:
+
+    name            location         extension      size
+    --------------------------------------------------------------
+    MyResume.docx   C:\documents     docx           2501
+    FamilyPic.jpg   C:\desktop       jpg            43000
+    DogPic.jpg      C:\documents     jpg            10002
+    MyReport.docx   C:\documents     docx           50004
+    */
+
+
+
+    /*
+    PROBLEM 5 (use the array that you created in the previous problem)
+    Write code that figures out how many .docx files have a file size larger than 10000.
+    To do this, loop through the array of 'file' objects
+    */
+
+
+    
+    //PROBLEM 6
+
+    /*
+    NOTE: I completed step 1 for you (below)
+      But please make sure you understand the code before moving on to step 2
+    Step 1 - Get a handle each of the following elements on the page
+      - The textbox with the id of 'txtAmount'
+      - The SELECT element with the id of 'selTipPercent'
+      - The button with the id of 'btnCalculateTip'
+      - The DIV element with the id of 'dvResult'
+    You should conosle.log each of the variables to make sure you don't have any bugs.
+    (If any of the log messages say 'null', then you have a bug)
+    */
+    const txtAmount = document.getElementById("txtAmount");
+    const selTipPercent = document.getElementById("selTipPercent");
+    const btnCalculateTip = document.getElementById("btnCalculateTip");
+    const dvResult = document.getElementById("dvResult");
+    console.log(txtAmount, selTipPercent, btnCalculateTip, dvResult);
+
+
+    // Step 2 - Add an event handler function for when btnCalculateTip is clicked
+
+
+    /*
+    Step 3 - In the body of of the event handler function, do the following
+       - Get the value entered into txtAmount
+       - Get the value of the SELECT element (selTipPercent)
+    You should console log the values so that you know you are getting them properly
+    */
+
+
+    /*
+    Step 4 - Inside the body of the event handler, add code that does the following:
+      Use the calculateTip function that you wrote earlier to figure out the tip amount
+      based on the values you extracted from txtAmount and selTipPercent
+      Then display the return value in dvResult 
+    */
+
+
+    /*
+    SIDE NOTE - I used 'Hungarian notation' for the variable names that I used in step 1
+    Here's more info on that:
+      https://www.codeconquest.com/blog/hungarian-notation-in-programming/
+
+    Other ways of naming variables that you'll see in programming are:
+      camelCase
+      kabob-case
+      snake_case
+    As a programmer, you should be aware of these naming conventions
+    */
+
+  });
+
+  </script>
+</head> 
+<body>
+    <main>
+      <h2>Things you learned about JavaScript in Web Programming</h2>
+      <ol>
+        <li>Variables</li>
+        <li>Data Types</li>
+        <li>IF Statements</li>
+        <li>Functions
+          <ol>
+            <li>Parameters</li>
+            <li>Return Values (and their data types)</li>
+          </ol>
+        </li>
+        <li>Objects
+          <ol>
+            <li>Properties</li>
+            <li>Methods</li>
+          </ol>
+        </li>
+        <li>Arrays</li>
+        <li>Loops</li>
+        <li>The DOM</li>
+        <li>Event Handling</li>
+      </ol>
+      <h2>Complete The Coding Problems in the SCRIPT Element of this Page</h2>
+      <h2>Tip Calculator</h2>
+      
+        <label>Bill Amount</label>
+        <input type="text" id="txtAmount">
+        <br>
+        <label>Tip Percent</label> 
+        <select id="selTipPercent">
+          <option>10</option>
+          <option>15</option>
+          <option>20</option>
+          <option>25</option>
+        </select>
+        <br>
+        <input type="button" id="btnCalculateTip" value="Calculate Tip">
+        <div id="dvResult"></div>
+
+    </main>
+</body> 
+</html>

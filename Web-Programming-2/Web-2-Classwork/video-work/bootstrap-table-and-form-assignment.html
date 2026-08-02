@@ -1,0 +1,173 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Assignment</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <style>
+    section{
+      padding: 60px 0;
+      min-height: 600px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- navbar -->
+  <div class="container-fluid bg-dark" id="top">
+    <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark text-light">
+      <div class="container-lg">
+        <!-- navbar brand / title -->
+        <span class="fw-bold">
+          <a href="#top" class="text-light text-decoration-none">
+            <i class="bi bi-bootstrap" style="font-size: 1.4rem;"></i>
+            INT WEB DEV - Bootstrap Assignment
+          </a>
+        </span>
+
+        <!-- toggle button for mobile nav -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- navbar links -->
+        <div class="collapse navbar-collapse justify-content-start align-center bg-dark text-light" id="main-nav" >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+               <a class="nav-link" href="#instructions">
+                <span data-bs-toggle="collapse" data-bs-target="#main-nav">
+                  Instructions
+                </span>
+               </a>
+              </span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#table">
+                <span data-bs-toggle="collapse" data-bs-target="#main-nav">User Table</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#form">
+                <span data-bs-toggle="collapse" data-bs-target="#main-nav">User Form</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <section id="instructions">
+    <div class="container-lg pt-3">
+      <h2>Instructions</h2>
+      <p>
+        Do some research on the <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank">Bootstrap website</a>. You may find these two pages to be particularly useful:
+      </p>
+      <ul>
+        <li><a href="https://getbootstrap.com/docs/5.1/content/tables/" target="_blank">Tables</a></li>
+        <li><a href="https://getbootstrap.com/docs/5.1/forms/overview/" target="_blank">Forms</a></li>
+      </ul>
+      <p>
+        After doing some research, apply Bootstrap classes to the table and form elements below.
+        Feel free to re-arrange the HTML that I've used to set up the table and form.
+        You may add additional HTML elements to the table and form as you see fit. 
+      </p>
+      <p>
+        Make sure to include a few icons in both the table and the form.
+      </p>
+      <p>
+        The table and form should be 'responsive', so make sure to test the page at various screen sizes.
+      </p>
+    </div>
+  </section>
+
+  <section id="table">
+    <div class="container-lg">
+      <h2>User Table</h2>
+      
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Active</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>Bob</td>
+          <td>Smith</td>
+          <td>bob@smith.com</td>
+          <td>Admin</td>
+          <td>Yes</td>
+          <td>
+            <button type="button">Edit</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Betty</td>
+          <td>Smith</td>
+          <td>betty@smith.com</td>
+          <td>Standard User</td>
+          <td>Yes</td>
+          <td>
+            <button type="button">Edit</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Barney</td>
+          <td>Smith</td>
+          <td>barney@smith.com</td>
+          <td>Standard User</td>
+          <td>No</td>
+          <td>
+            <button type="button">Edit</button>
+          </td>
+        </tr>                  
+      </table>
+    
+    </div>
+  </section>
+
+  <section id="form">
+    <div class="container-lg">
+      <h2>User Form</h2>
+
+      <form class="user-form" action="http:www.wtc-web.com/form-handler.php" method="POST">
+        <input type="hidden" name="user_id">
+        <label>First Name:</label>
+        <input type="text" name="first_name">
+        <label>Last Name:</label>
+        <input type="text" name="last_name">
+        <label>Email:</label>
+        <input type="email" name="email">
+        <label>Password:</label>
+        <input type="password" name="password">
+        <label>User Role:</label>
+        <select name="role">
+          <option value="1">Standard User</option>
+          <option value="2">Admin</option>
+        </select>
+        <label>
+          Active:
+          <input type="checkbox" name="active">
+        </label>
+        <input type="submit" value="SAVE">
+        <input type="button" class="btnCancel" value="CANCEL">
+      </form>
+
+    </div>
+  </section>
+
+  <div class="container-fluid bg-dark fixed-bottom text-white">
+    <div class="container-lg">
+      <footer class="fs-6 py-2">&copy; 2024 ??????</footer>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  
+</body>
+</html>

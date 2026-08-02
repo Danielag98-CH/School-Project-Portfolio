@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            //abbreviating arrow functions
+            const someArray = ["Bob", "Sally", "Betty"];
+            someArray.forEach((ce) => {console.log(ce)})
+            someArray.forEach(ce => {console.log(ce)}) // if there is one and only one parm you can omit the ()
+            someArray.forEach(ce => console.log(ce)) // if there is only one statement in the body you can omit the {}
+            //if the body of the arrow function is a single statement that returns a value
+            //then you can omit the 'return' and remove the {} - THIS IS KNOWN AS AN IMPLICIT RETURN 
+
+            // const someElement = someArray.find((ce) => {return "Sally" === ce}) 
+            // //a callback function returns a boolean expression 'true' or 'false'
+            const someElement = someArray.find(ce => "Sally" === ce); 
+
+            // const isEven = (number) => {return number % 2 === 0};
+            const isEven = number => number % 2 === 0;
+            console.log(isEven(2));
+            console.log(isEven(3));
+            //Template Syntax
+            const firstName = "Bob";
+            const lastName = "Smith";
+            let fullName = `First Name: ${firstName} Last Name: ${lastName}`
+
+            let score = 9;
+            let msg = `Your score is ${score > 5 ? "GOOD": "BAD"}`;
+            console.log(msg);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

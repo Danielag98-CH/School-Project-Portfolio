@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Event Sequencing</title>
+	<script type="text/javascript">
+
+		// Example 1
+		// Which console log will we see first, and why?
+		window.addEventListener("load", () =>  console.log("WINDOW LOADED"));
+		document.addEventListener("DOMContentLoaded", () => console.log("DOCUMENT CONTENT LOADED"));
+		
+
+
+		// Example 2
+		document.addEventListener("DOMContentLoaded", () => {
+
+			const txt = document.querySelector("[name=firstName");
+			txt.addEventListener("focus", () => console.log("FOCUS"));
+			txt.addEventListener("blur", () => console.log("BLUR"));
+			txt.addEventListener("keyup", () => console.log("KEY UP"));
+			txt.addEventListener("keydown", () => console.log("KEY DOWN"));
+			txt.addEventListener("keypress", () => console.log("KEY DOWN"));
+			txt.addEventListener("change", () => console.log("CHANGE"));
+			txt.addEventListener("input", () => console.log("INPUT"));
+			txt.addEventListener("copy", () => console.log("COPY"));
+			txt.addEventListener("select", () => console.log("SELECT"));
+			txt.addEventListener("paste", () => console.log("PASTE"));
+		
+		});
+
+	</script>
+</head>
+<body>
+	<label>Enter your name:</label>
+	<input type="text" name="firstName">
+</body>
+</html>

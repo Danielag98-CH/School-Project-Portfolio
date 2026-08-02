@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Utility vs Component Based CSS</title>
+	<style type="text/css">
+	
+	/*component based CSS - WE'LL WRITE THIS CSS TOGETHER*/
+	#some-form{
+		background-color: lightgrey;
+		margin: 10px;
+		padding: 20px;
+	}
+
+	#some-form label{
+		display: inline-block;
+		width: 150px;
+		text-align: right;
+		color: midnightblue;
+	}
+
+	#some-form input[type=submit]{
+		color: white;
+		background-color: #333;
+		border: 1px solid white;
+		padding: 10px;
+	}
+
+	/*Utility based CSS - WE'LL APPLY THESE 'UTILITY' RULESETS TO THE SECOND FORM ON THE PAGE */
+	*{ border:none; }
+
+	.ib{ display: inline-block; }
+
+	.al{ text-align: left }
+	.ac{ text-align: center }
+	.ar{ text-align: right }
+
+	.w1{ width: 100px; }
+	.w2{ width:150px; }
+
+	.p1{ padding:10px }
+	.p2{ padding:20px }
+
+	.m1{ margin:10px; }
+	.m2{ margin:20px; }
+
+	.bg-dark{ background-color: #333; }
+	.bg-light{ background-color: lightgray; }
+
+	.txt-dark{ color: midnightblue; }
+	.txt-light{ color:white; }
+
+	.b-dark{ border-color: midnightblue; }
+	.b-light{ border-color: lightgray; }
+
+	.border{ border-width: 1px; border-style: solid;}
+	.border-light{ border-color: white; }
+	.border-dark{ border-color: midnightblue; }
+
+	</style>
+</head>
+<body>
+
+	<h2>Component Based CSS</h2>
+	<form id="some-form">
+		<label>First Name:</label>
+		<input type="text">
+		<br>
+		<label>Last Name:</label>
+		<input type="text">
+		<br>
+		<label></label>
+		<input type="submit" value="SAVE">
+	</form>
+
+	<h2>Utility Based CSS</h2>
+	<form class="p2 m1 bg-light">
+		<label class="txt-dark ib w2 ar">First Name:</label>
+		<input type="text">
+		<br>
+		<label class="txt-dark ib w2 ar">Last Name:</label>
+		<input type="text">
+		<br>
+		<label class="ib w2"></label>
+		<input class="bg-dark txt-light p1 border border-light" type="submit" value="SAVE">
+	</form>
+
+</body>
+</html>

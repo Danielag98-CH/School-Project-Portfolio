@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modal Window</title>
+        <script>
+            window.addEventListener("load", () => {
+
+                document.getElementById("btn").addEventListener("click", () => {
+                    showModal("Hello World", "This is the content!");
+                })
+
+                function showModal(title, content){
+                    const modal = document.createElement("div");
+                    modal.classList.add("overlay");
+
+                    modal.innerHTML = `<div class="modalWindow">
+                                            <div class="titleBar">
+                                                <h2 class="title">${title}</h2>
+                                                <span class="closeButton">X</span>
+                                            </div>
+                                            <div class="modalContent">
+                                            ${content}
+                                            </div>
+                                        </div>`;
+
+
+                    document.body.append(modal);
+
+                    function hideModal(){
+                        document.body.removeChild(modal);
+                        closeButton.removeEventListener("click", hideModal);
+                    }
+
+                    const closeButton = modal.querySelector(".closeButton");
+                    closeButton.addEventListener("click", hideModal);
+                }
+
+            })
+
+
+        </script>
+        <style>
+            .overlay{
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(127, 127, 127, 0.8);
+                z-index: 200;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .modalWindow{
+                width: 400px;
+                background-color: white;
+                padding: 5px;
+                border: 3px solid black;
+                z-index: 201;
+            }
+
+            .titleBar{
+                display: flex;
+                align-items: center;
+            }
+
+            .closeButton{
+                height: 44px;
+                width: 44px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            .title{
+                flex: 1;
+            }
+            
+            .modalContent{
+                padding: 10px;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita facilis eos voluptate velit illum sint ab sed. Recusandae rem est facilis quasi nam provident numquam quo, repellat alias voluptates reprehenderit?
+        </p>
+        <button id="btn">Click Me!</button>
+
+
+        <!-- <div class="overlay">
+            <div class="modalWindow">
+                <div class="titleBar">
+                    <h2 class="title">Title Goes Here</h2>
+                    <span class="closeButton">X</span>
+                </div>
+                <div class="modalContent">
+                    Content Goes Here.
+                </div>
+            </div>
+        </div> -->
+    </body>
+
+</html>

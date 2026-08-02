@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Confetti</title>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+        <script>
+            window.addEventListener("load", () => {
+                const scalar = 3;
+                const boba = confetti.shapeFromText({text: '🧋', scalar})
+                confetti({
+                    particleCount: 500, 
+                    spread: 300,
+                    shapes: [boba],
+                    scalar});
+                const btn = document.querySelector("[type=button]")
+                btn.addEventListener("click", (evt) => {
+                    const scalar = 4;
+                    const strawberry = confetti.shapeFromText({ text: '🍓', scalar});
+                    confetti({
+                        particleCount: 500, 
+                        spread: 200,
+                        shapes: [strawberry],
+                        scalar,
+                        // origin: {
+                        //     x: evt.pageX/window.innerWidth,
+                        //     y: evt.pageY/window.innerHeight
+                        // }
+                        
+                    // const scalar = 4;
+                    // const rainConfetti = confetti.shapeFromText({text: '💦', scalar});
+                    // confetti({
+                    //     particleCount: 500,
+                    //     spread: 200,
+                    //     shapes: [rainConfetti],
+                    //     scalar
+                    });
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Click Me">
+    </body>
+</html>

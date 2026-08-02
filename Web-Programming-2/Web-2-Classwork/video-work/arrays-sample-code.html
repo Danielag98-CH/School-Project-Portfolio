@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Arrays</title>
+	<script type="text/javascript">
+
+	window.addEventListener("load", () => {
+
+		// Here's a reference on array methods in JavaScript:
+		// https://www.w3schools.com/js/js_array_methods.asp
+
+		// This one is more complete and up-to-date, but maybe more difficult to understand:
+		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+		// There are many others, you should find one you like!
+
+
+		// Now let's explore some of the many array methods in JavaScript
+
+		// But first, remember that when using a method you should understand 3 things:
+		// 1. What does it do? (But you don't need to understand how it does it)
+		// 2. What parameters can you pass in (including the data types of parameters)
+		// 3. What does it return (including the data type)
+
+		// We'll use the following arrays during this activity:
+
+		// an array of numbers
+		const scores = [75,85,95,85];
+
+		// an array of strings
+		const pets = ["Buster", "Bruno", "Felix"];
+
+		// an array of objects (extremely useful because this is how you get data from a database)
+		const employees = [
+			{"id": 1, "firstName": "Bob", "lastName": "Smith", email: "bob@acme.com", "salary": 45000, "hireDate":"3/12/2009", password: "xxx"},
+			{"id": 2, "firstName": "Betty", "lastName": "Jones", email: "betty@acme.com", "salary": 55000, "hireDate":"5/11/2017", password: "xxx"},
+			{"id": 3, "firstName": "Sally", "lastName": "Johsnson", email: "sally@acme.com", "salary": 65000, "hireDate":"5/21/2016", password: "xxx"},
+			{"id": 4, "firstName": "Ted", "lastName": "Thomas", email: "ted@acme.com", "salary": 45000, "hireDate":"9/14/2019", password: "xxx"},
+			{"id": 5, "firstName": "Jean", "lastName": "Parker", email: "jean@acme.com", "salary": 55000, "hireDate":"1/17/2017", password: "xxx"},
+			{"id": 6, "firstName": "Larry", "lastName": "Corker", email: "larry@acme.com", "salary": 65000, "hireDate":"8/19/2012", password: "xxx"},
+			{"id": 7, "firstName": "Morris", "lastName": "Smith", email: "morris@acme.com", "salary": 45000, "hireDate":"5/16/2002", password: "xxx"},
+			{"id": 8, "firstName": "Buster", "lastName": "Jenkins", email: "buster@acme.com", "salary": 55000, "hireDate":"2/23/2019", password: "xxx"},
+			{"id": 9, "firstName": "Grace", "lastName": "Anderson", email: "grace@acme.com", "salary": 85000, "hireDate":"05/03/2017", password: "xxx"}
+		];
+
+
+		// Review
+		// Items in an array are called elements
+		// Each element in an array has an index number (starting at 0)
+		// Use bracket notation to access an element by it's index number
+        console.log(scores[0]);
+
+
+		// Arrays are objects that have a length property
+        console.log(scores.length);
+
+
+		// The length of an array is one higher than the highest index number
+        console.log("Last employee", employees[employees.length-1])
+
+
+		// PART 1
+
+		/////////////////
+		// forEach()
+		// The parameter that you pass into forEach() is a function
+		// JavaScript will loop through the array and call this function
+		// for each element in the array, AND it will pass in the current element
+		/////////////////
+        scores.forEach((ce) => {
+            console.log(ce);
+        })
+
+		// If you need the index as well as the current element, then add a 2nd param
+        scores.forEach((ce, i) => {
+            console.log(ce,i);
+        })
+
+
+		///////////////////////////////////////
+		// push() - adds an element to an array
+		// (and returns the new length of the array)
+		///////////////////////////////////////
+        pets.push("Lassie");
+        console.log(pets);
+        console.log(pets.push("Snoopy"));
+
+		////////////////////////////////////////////////////
+		// includes() - tells you if a value is in an array
+		// (returns true or false)
+		////////////////////////////////////////////////////
+        console.log(scores.includes(99));
+        console.log(pets.includes("Lassie"));
+
+
+
+		/////////////////
+		// concat() - merges one (or more) arrays into one
+		/////////////////
+        const newArray = scores.concat(pets, employees);
+        console.log(newArray);
+
+
+		//////////////////
+		// join()
+		//////////////////
+        console.log(scores.join(""));
+		console.log(pets.join(":"));
+
+
+		/////////////////////////////////////
+		// indexOf() - returns the index of the element in
+		// the array that matches the parameter (if more than one)
+		////////////////////////////////////
+        console.log(pets.indexOf("foo"));
+
+
+
+
+
+		/////////////////////////////////////
+		//slice() - extracts a slice from an array
+		// params are the start and end position
+		// *note that the end position is not included
+		//////////////////////////////////////
+		const names = ["Bob", "Sally", "Betty", "Paul", "Jenny"];
+		const numbers = [7,5,6,1,5];
+
+        const namesSlice = names.slice(1,3);
+        console.log(namesSlice);
+        console.log(names);
+
+
+		// splice()
+		// params are the start position and how many to remove
+		// *note that the splice method removes the spliced elements from the array!
+        const namesSplice = names.splice(1,3);
+        console.log(namesSplice);
+        console.log(names);
+
+
+
+		////////////////////
+		// find() - returns the first element in the array that matches a condition
+		// Note - the function that you pass into find() must return true or false
+		// If it returns true for an element, then find() will return that element
+		////////////////////
+        const empId = prompt("Enter an employee Id");
+        // const matchingEmployee = employees.find((ce) => {
+        //     if(empId == ce.id){
+        //         return true;
+        //     }
+        //         return false;
+        // });
+        const matchingEmployee = employees.find(ce => ce.id == empId)
+
+        console.log(matchingEmployee);
+
+
+
+		///////////////////////
+		// findIndex() - same as find() except that it returns the index
+		// of the first element that matches a condition
+		///////////////////////
+
+		// find the index of the employee with the email of sally@acme.com
+        // const i = employees.findIndex((ce) => {
+        // if(ce.email == "sally@anme.com"){
+        //     return true;
+        // }
+        //     return false;
+        // });
+        const i = employees.findIndex(ce => ce.email == "sally@acme.com")
+        console.log(i);
+
+        
+
+		// OPTIONAL methods to explore
+
+
+		///////////////////////////////////
+		//shift() - returns the first element and removes it from the array
+		///////////////////////////////////
+
+
+
+		///////////////////////////////////
+		// pop() - returns the last element AND removes it from the array
+		//////////////////////////////////
+
+	});
+
+	</script>
+</head>
+<body>
+	<h1>JavaScript Arrays</h1>
+	<p>How do you 'interface' with an array in JavaScript?</p>
+	<p>Well, you need to know how they work, which includes knowing:</p>
+	<ol>
+		<li>They are objects (that have properties and methods, just like objects in any language)</li>
+		<li>You work with them by using their properties and methods</li>
+	</ol>
+	<p>
+		<b>
+			You interface with an array (or any object) by using it's properties and methods.
+			Properties and methods are the tools you use to solve problems.
+		</b>
+	</p>
+
+
+	<p>
+		The <b>API</b> (application programming interface) of an object is
+		it's collection of properties and methods that you can use.
+	</p>
+	<p>
+		Here are some references on array methods in JavaScript:
+	</p>
+	<ol>
+		<li><a href="https://www.w3schools.com/js/js_array_methods.asp" target="_blank">This one is fairly easy to understand</a></li>
+		<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">This one is more complete but more difficult to understand</a></li>
+	</ol>
+	<p>There are many others, you should find one you like!</p>
+	<p>In this activity we'll explore the Array API in JavaScript.</p>
+	<p>But first, remember that when using a method you should understand 3 things:</p>
+	<ol>
+		<li>What does it do? (But you don't need to understand how it does it)</li>
+		<li>What parameters can you pass in (including the data types of parameters)</li>
+		<li>What does it return (including the data type)</li>
+	</ol>
+</body>
+</html>

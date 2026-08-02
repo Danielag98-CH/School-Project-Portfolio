@@ -1,0 +1,37 @@
+<%- include('partials/top') %>
+<script src="/js/contact-validation.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<main>
+  <h1>Contact Me</h1>
+  <div>
+    <form novalidate id="contact-form" method="POST" action="/contact/submit">
+      <div>
+        <label>First Name:</label>
+        <br>
+        <input type="text" name="firstName">
+        <div id="aFirstName"></div>
+      </div>
+      <div>
+        <label>Last Name:</label>
+        <br>
+        <input type="text" name="lastName">
+        <div id="aLastName"></div>
+      </div>
+      <div>
+        <label>Email:</label>
+        <br>
+        <input type="text" name="email">
+        <div id="anEmail"></div>
+      </div>
+      <div>
+        <label>Comments:</label>
+        <br>
+        <textarea name="comments"></textarea>
+        <div id="aComments"></div>
+        <br>
+        <input type="submit" value="SUBMIT">
+      </div>
+    </form>
+  </div>
+</main>
+<%- include('partials/bottom') %>

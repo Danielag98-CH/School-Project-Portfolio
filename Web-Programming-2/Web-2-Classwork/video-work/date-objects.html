@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<script type="text/javascript">
+	var startTime = new Date();
+</script>
+<html>
+<head>
+	<title>JavaScript Date Objects</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="An overview of what JavaScript can do for your web pages">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/prism.min.js" integrity="sha512-pSVqGtpGygQlhN8ZTHXx1kqkjQr30eM+S6OoSzhHGTjh6DKdfy7WZlo1DNO9bhtM0Imf6xNLznZ7iVC2YUMwJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  	<style type="text/css">
+  		body{
+  			margin: 0;
+  			padding: 40px;
+  			font-family: Verdana;
+  		}
+  		p{
+  			font-size:16px;
+  			line-height: 25px;
+  		}
+  	</style>
+	<script>
+
+    	// In order to solve problems in programming you need to be familiar witht the APIs of various objects.
+    	// This sample code deals with Date objects.
+    	// Keep in mind that when using methods of an API, you should understand:
+    	// 1. What the method does (but not how it does it)
+    	// 2. What params does the method take (and the data types of each param)
+    	// 3. Wht the method returns (including it's data type)
+    	
+    	// Here's a good reference on the Date API:
+    	// https://www.w3schools.com/jsref/jsref_obj_date.asp
+
+		// Example 1
+    	// Create a Date object calling the Date constructor function
+    	// If you don't pass in any parameters/arguments it defaults to the current date and time
+		const today = new Date();
+		console.log(today);
+
+    	// Example 2
+    	// You can pass in parameters for year, month, day, hours, minutes, seconds, milliseconds
+    	const july1 = new Date(2025, 6, 1);
+		console.log(july1);
+
+    	// Example 3
+    	// You can pass a timestamp into the constructor
+		const dDay = new Date(-806958000000);
+		console.log(dDay);
+    	
+    	// Example 4
+    	// You can also use 'get' methods to extract parts of a date:
+		console.log(today.getDate());
+		console.log(today.getMonth());
+		console.log(today.getFullYear());
+
+    	// Example 5
+    	// You can alter dates with various set methods:
+		const someDate = new Date();
+		someDate.setFullYear(2000);
+		someDate.setMonth(0);
+		someDate.setDate(1);
+		console.log(someDate);
+
+    	// Example 6
+    	// Becareful of the difference between getDay() and getDate()
+    	console.log(today.getDate());
+		console.log(today.getDay());
+
+    	// Example 7
+    	// The getTime() method returns the number of milliseconds that have elapsed since the epoch.
+		console.log(today.getTime());
+
+    	// Example 8
+    	// To figure out the difference between to dates, you can subtract the milliseconds
+		let differenceInMs = july1.getTime() - today.getTime();
+		console.log(differenceInMs);
+    	// Example 9
+    	// as a short cut, you can just subtract one date from another like this:
+		differenceInMs = july1 - today;
+		console.log(`Only ${differenceInMs} milliseconds until July 1`);
+
+    	// Example 10
+    	// toDateString() is another useful method to display dates in a format that humans easily recognize
+		console.log(today.toDateString());
+
+    	//Note that I added code at the top and bottom of this page to figure out how long it takes to load 
+
+
+    </script>
+</head>
+<body>
+	<h2>Introduction</h2>
+	<p>
+		Before digging into Date objects, I just want to remind you that there
+		are many different types of objects in JavaScript.
+		Here are some that we've seen so far in this class:
+	</p>
+	<ul>
+		<li>Arrays</li>
+		<li>Strings</li>
+		<li>The console object</li>
+		<li>The window object</li>
+		<li>The document object</li>
+		<li>HTMLElement objects</li>
+		<li>NodeList (querySelectorAll() returns NodeLists, which are a type of array)</li>
+		<li>DOMTokenList (this is the 'classList' property of an HTMLElement object)</li>
+		<li>CSSStyleDeclaration (this is the 'style' property of an HTMLElement object)</li>
+	</ul>
+	<p>
+		There are many,many more types of objects in JavaScript. 
+		And we can't cover all of them in this course, but you'll come across more and more
+		of them as you continue your journey into web development.
+	</p>
+	<p>
+		Understanding a particular type of object means knowing about it's properties and methods.
+		Ironically, Date objects don't have any properties, so we'll be dealing strictly with
+		methods in this activity.
+	</p>
+	<h2>JavaScript Date Objects</h2>
+	<p>
+	    In the Web Programming class we discussed how object-oriented programming is used to simulate real world objects in our programs.
+	    A date, such as '2/22/2024', is not a real object that we can touch, but everyone
+	    is familiar with the concept of a date.
+	</p>
+	<p>    
+	    I like to refer to dates as 'virtual' objects, because although they are not
+	    real physical things, we can still use objects to simulate them.
+	    Some properties of a date object might be 'month', 'day', and 'year'.
+	</p>
+	<p>
+		Working with dates and times is so common in programming that many languages have some sort of built-in object (or class) for doing so.
+	    In JavaScript you can create a date object by invoking the Date() constructor function, which is built into the language (we'll try it out in a minute).
+	    You will soon see that date objects in JavaScript have lots of methods that you can use to help you solve problems that involve dates and times.
+		Dates are extremely important for building business applications because so many businesses need to 
+		keep track of dates. So, it's extremely important for programmers to be proficient at working with dates.
+	</p>
+	<h2 id="how-computers-keep-time">How Computers Keep Track of Dates and Times</h2>
+	<p>
+		Before we dig into the specifics of the Date object in JavaScript, we need to spend a moment understanding how computers keep track of dates and times.
+		Computers keep track of time by counting the number of milliseconds that have elapsed since a given moment in time.
+		Humans keep track of years by counting the number of years that have passed since 0 B.C..
+		This date, 0 B.C. is known as an <b>epoch</b> because it marks the occurence of an event.
+		In computers, the epoch is January 1, 1970 (at midnight, to be exact), and computers recognize this time as 0.
+		This is known as the <b>Unix Epoch</b> (Unix is one of the first operating systems, and it was invented in 1969).
+		Humans read dates as the number of years, months, and days that have elapsed since 0 B.C., while computers refer to dates and times as the number of milliseconds that have elapsed since the Unix Epoch.
+	</p>
+	<p>
+		The number in milliseconds that have elapsed since the Unix epoch, is often called <b>Unix time</b>, or a <b>Unix timestamp</b>.
+		I just now checked my computer for it's Unix timestamp and it gave me this: 1594675436565.
+		This was the number of milliseconds that had elapsed since the Unix Epoch when I did my check.
+		If I were to check it again a moment later, it would be a bigger number because more milliseconds would have elapsed.
+	</p>
+	<p>
+		You might be wondering how the computer stores dates before the Unix Epoch.
+		Well, those are simply negative numbers, starting at zero and counting backwards in milliseconds.
+	</p>
+	<p>
+		Below is a fun little diagram to help with visualizing Unix Time. It starts on Jan 1, 1970, which is 0 milliseconds (the Unix epoch).
+		I have placed another marker roughly where the turn of the century occured. 
+		I really don't know how to say that number, so I'll just say that about 9 bazillion milliseconds elapsed between the Unix epoch and the turn of the century.
+		The arrow at the end represents (roughly) the time when I wrote this article, which was something like 15 bazillion milliseconds after the Unix epoch. 
+	</p>
+	<img src="https://www.remwebdevelopment.com/uploadedFiles/timeline-90-lg.png" alt="timeline" />
+	<p>
+		If you wanted to calculate how much time elapsed between the turn of the century and the time when I wrote this article you can visualize the problem like this:
+	</p>
+	<img src="https://www.remwebdevelopment.com/uploadedFiles/timeline-difference-91-lg.png" alt="timeline" />
+	<p>
+		To solve the problem you could just subtract the 9 bazillion from the 15 bazillion.
+		The result would be number of milliseconds that elapsed between the turn of the century and
+		the time that I wrote this article.
+		Humans have a hard time comprehending milliseconds, so we could convert the result into days or years
+	</p>
+
+
+
+	<p>
+		If you watched the video that accompanies this lesson, you saw a neat little trick for figuring out how long it takes for the browser to load a web page.
+		You can check the current time at the very top of the page,
+		and then check it again at the bottom of the page.
+		The difference between these two times is the number of milliseconds that it took for
+		the browser to fully load the page.
+	</p>
+	
+
+	<h2 id="the-date-constructor-function">The Date Constructor Function</h2>
+	<p>To capture the current time when your program is running, you can invoke the Date constructor function without passing in any parameters, like so:</p>
+	<pre class="language-js"><code>var currentTime = new Date();
+console.log(currentTime);</code></pre>
+	<p>
+		The Date constructor returns a Date object, which in this case is stored in the currentTime variable.
+		Note that currentTime will store the time when this line of code is executed in the browser.
+		If you re-run this code by repeatedly pressing the F5 key to refresh the page, you'll see the the number of seconds will grow.
+		You'll also notice that logging the variable that stores a date object will produce a string that represents the date in human readable form rather than in milliseconds.
+		If you want to see the currentTime represented in milliseconds (the Unix timestamp) you could
+		call the getTime() method, like so (we'll talk about methods of Date objects in a moment):
+	</p>
+		<pre class="language-js"><code>console.log(currentTime.getTime());</code></pre>
+	<p>
+		You can pass in parameters when you invoke the Date constructor to create a date object that represents any date/time you like.
+		The first parameter indicates the year, the second indicates the month, and the third represents the day of the month.
+		In this example, the date object created by calling the constructor stores Jan 1, 2000:
+	</p>
+	<pre class="language-js"><code>var y2k = new Date(2000, 0, 1);</code></pre>
+	<p>
+		You may have noticed something funny about the second parameter, which is 0.
+		In most programming languages, month numbers start at 0 rather than 1.
+		This may trip you up when you first start working with date objects, but you'll get used to it with some practice.
+	</p>
+	<p>
+		You could pass even more parameters if you wanted to set the date object to a specific time.
+		A fourth parameter would represent the hour, a fifth would represent the minute, and so on.
+	</p>
+	<h2 id="date-methods">Methods of a Date Object</h2>
+	<p>
+		Now that you know the very basics of creating Date objects, we'll turn our attention to the many various methods that you can invoke.
+		It's extremely important for programmers to understand the methods of an object.
+		Methods are the tools you use to solve problems, and you must understand the tools in order to solve problems.
+		I won't cover all the methods that are bundled into a date object, but you can check out this reference for a complete listing:
+		<br><a target="_blank" href="https://www.tutorialspoint.com/javascript/javascript_date_object.htm">JavaScript Date Object Reference</a>
+		<br>
+		There are many other references on the internet as well.
+	</p>
+	<p>If you want to store the Unix timestamp of a date object in a variable, you can invoke the <b>getTime()</b> method like this (note that I'm using the y2k variable that was initialized above:</p>
+	<pre class="language-js"><code>var timestamp = y2k.getTime();</code></pre>
+	<p>I used this method in the video to calculate the time it took for the page to load.</p>
+	<p>
+		You can pull parts of a date out of a date object by invoking various methods whose names start with 'get':
+	</p>
+	<pre class="language-js"><code>var currentMonth = currentTime.getMonth();
+var currentDayOfMonth = currentTime.getDate();
+var currentYear = currentTime.getFullYear();
+
+console.log(currentMonth, currentDayOfMonth, currentYear);</code></pre>
+	<p>Be careful with the <b>getMonth()</b> method and remember that a computer counts months starting from 0.</p>
+	<p>You can alter the timestamp stored within a date object by invoking various methods whose names begin with 'set':</p>
+	<pre class="language-js"><code>var myDate = new Date();
+myDate.setMonth(0);
+myDate.setDate(31);
+myDate.setFullYear(1999);</code></pre>
+	<p>Again, be careful when using setMonth and remember that the month numbers start a 0 rather than 1.</p>
+	<p>
+		Another handy method is <b>getDay()</b> (not to be confused with the <b>getDate()</b> method that was mentioned earlier). 
+		The getDay() method returns a number that represents the day of the week for a date.
+		A 0 represents a Sunday, a 1 represents Monday, and so on (notice that the computer starts counting from 0 here again).
+		This code sample reveals that y2k occured on a Saturday:
+	</p>
+	<pre class="language-js"><code>console.log(y2k.getDay());</code></pre>
+	<p>
+		Yet another handy method of a date object is <b>toDateString</b>, which returns a string that represents a date in human readable form:
+	</p>
+	<pre class="language-js"><code>console.log(y2k.toDateString());</code></pre>
+	<p>
+		Date objects in JavaScript have many more methods than the ones we tried out today.
+		So you may want to explore a little more on your own.
+		Knowing how to work with date objects, and other types of objects in JavaScript 
+		is an important skill for web developers. 
+	</p>
+</body>
+</html>
+<script type="text/javascript">
+
+	console.log("\n\n\n\n\n\n");
+
+	var endTime = new Date();
+	console.log("Start: " + startTime.getTime());
+	console.log("End: " + endTime.getTime());
+	var loadTime = endTime.getTime() - startTime.getTime();
+	console.log("Load Time: " + loadTime);
+</script>

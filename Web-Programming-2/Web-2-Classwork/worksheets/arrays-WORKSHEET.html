@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Array Problems - Part 1</title>
+	<script type="text/javascript">
+	window.addEventListener("load", ()=>{
+		
+		// You'll use the following 4 arrays to solve the problems below:
+
+		// this array stores how many hours of sleep I got last week:
+		const hoursOfSleep = [8,8,6,6,5,11,9];
+
+		// an array of strings:
+		const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		
+		// another array of strings
+		const flavors = ["Chocolate", "Vanilla", "Strawberry"];
+	
+		// an array of objects
+		const basketballPlayers = [
+			{name: "Michael Jordan", team: "Chicago", number: 23, totalPoints: 32292, hallOfFamer:true, birthday:"1963-02-17"}, 
+			{name: "Magic Johnson", team: "Los Angeles", number: 32, totalPoints:21408, hallOfFamer:true, birthday:"1959-08-14"}, 
+			{name: "Larry Bird", team: "Boston", number: 33, totalPoints: 21791, hallOfFamer:true, birthday:"1956-12-07"}, 
+			{name: "Niall Kader", team: "La Crosse", number: 2, totalPoints: 0, hallOfFamer:false, birthday:"1998-01-01"} 
+		]
+
+		
+
+		console.log("PROBLEM 1");
+		// Console log the last element in the flavors array
+		console.log(flavors[flavors.length -1]);
+
+		console.log("PROBLEM 2");
+		// Console log the second element in the basketballPlayers array
+		console.log(basketballPlayers[1]);
+
+		console.log("PROBLEM 3");
+		// Console log the name property of the second element in the basketballPlayers array
+		console.log(basketballPlayers[1].name);
+
+		console.log("PROBLEM 4");
+		// Console log the index (position) of "Saturday" in the weekDays array
+		console.log(weekDays.indexOf("Saturday"));
+        
+		console.log("PROBLEM 5");
+		// Write code that figures out the average hours of sleep I got last week
+		// Then console log the result
+		let sum = 0;
+		for (let i = 0; i < hoursOfSleep.length; i++){
+			sum += hoursOfSleep[i];
+		};
+		const average = sum / hoursOfSleep.length; 
+		console.log(average); 
+
+
+		console.log("PROBLEM 6");
+		// Write code that figures out the most sleep I got for one night last week
+		const longestSleep = Math.max(...hoursOfSleep);
+		console.log(longestSleep);
+
+		console.log("PROBLEM 7");
+		// Console log the index of the highest value in the the hoursOfSleep array
+		console.log(hoursOfSleep.indexOf(longestSleep));
+		
+		console.log("PROBLEM 8");
+		// Write code that determines if "Vanilla" is in the flavors array
+		// If it is in the array console log "Vanilla is in the array!"
+		// If it is NOT in the array console log "Vanilla is NOT in the array!"
+		const searchFlav = flavors.find(flavors => flavors === "Vanilla" );
+			if(searchFlav){
+				console.log("Vanilla is in the array!");
+			}else{
+				console.log("Vanilla is NOT in the array");
+			}
+		
+		
+		console.log("PROBLEM 9");
+		// Use the push() method to add "Chocolate Chip" to the array of flavors
+		// Then console log the return value
+			flavors.push("Chocolate Chip");
+			console.log(flavors);
+		
+		console.log("PROBLEM 10");
+		// Use the pop() method to remove "Chocolate Chip" from the flavors array
+		// Then console log the return value
+		flavors.pop("Chocolate Chip");
+		console.log(flavors);
+
+
+		console.log("PROBLEM 11");
+		// Use the join() method to join the elements in the flavors array into
+		// a single string. The string should include a comma in between each flavor
+		// Then console log the string		
+		// SIDE NOTE: A string like this is knows as a CSV string, which stands 
+		// for 'comma separated values'. We may be working with CSV files some day
+		console.log(flavors.join(" , "));
+
+		console.log("PROBLEM 12");
+		// Use the find() method to find the basketball player object with the name of Larry Bird
+		// console log the return value
+		const matchingObject = basketballPlayers.find(player => player.name === "Larry Bird");
+		console.log(matchingObject);
+		
+		console.log("PROBLEM 13");
+		// Use the find() method to find the (first and only) basketball player object who is NOT in the hall of fame
+		// console log the return value
+			const notInHallOfFame = basketballPlayers.find(player => !player.hallOfFamer);
+			console.log(notInHallOfFame);
+
+		console.log("PROBLEM 14");
+		// Use the findIndex() method to find the index of the (first and only) basketball player who is NOT in the hall of fame
+		// console log the return value
+		const i = basketballPlayers.findIndex(player => !player.hallOfFamer);
+		console.log(i);
+
+		console.log("PROBLEM 15");
+		// Use the slice() array to get the first two elements in the weekDays array
+		// console log the return value
+		// AND console log the weekDays array
+		const weekSlice = weekDays.slice(0,2);
+		console.log(weekSlice);
+		console.log(weekDays);
+
+		console.log("PROBLEM 16");
+		// Use the splice() array to remove the first two elements in the flavors array
+		// console log the return value
+		// AND console log the flavors array
+		const flavorSplice = flavors.splice(0,2);
+		console.log(flavorSplice);
+		console.log(flavors);
+
+		console.log("PROBLEM 17");
+		// Write code that figures out which basketball player scored the most total points
+		// Then console log the name of the player
+		const topScorer = basketballPlayers.reduce((maxPlayer, player) => {
+			return player.totalPoints > maxPlayer.totalPoints ? player : maxPlayer;
+		});
+		console.log(topScorer);
+
+		console.log("PROBLEM 18");
+		// Write code that figures out how many basketball players are in the hall of fame
+		// then console log the result
+		const hallOfFamerTotal = basketballPlayers.filter(player => player.hallOfFamer).length;
+		console.log(hallOfFamerTotal);
+
+	})// end of window load handler		
+	</script>
+</head>
+<body>
+	<h1>Array Problems (Part 1)</h1>
+	<p>
+		Solve the problems in the SCRIPT element.
+	</p>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Assignment</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <style>
+    section{
+      padding: 60px 0;
+      min-height: 600px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- navbar -->
+  <div class="container-fluid bg-dark" id="top">
+    <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark text-light">
+      <div class="container-lg">
+        <!-- navbar brand / title -->
+        <span class="fw-bold">
+          <a href="#top" class="text-light text-decoration-none">
+            <i class="bi bi-bootstrap" style="font-size: 1.4rem;"></i>
+            INT WEB DEV - Bootstrap Assignment
+          </a>
+        </span>
+
+        <!-- toggle button for mobile nav -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- navbar links -->
+        <div class="collapse navbar-collapse justify-content-start align-center bg-dark text-light" id="main-nav" >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+               <a class="nav-link" href="#instructions">
+                <span data-bs-toggle="collapse" data-bs-target="#main-nav">
+                  Instructions
+                </span>
+               </a>
+              </span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#table">
+                <span data-bs-toggle="collapse" data-bs-target="#main-nav">User Table</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#form">
+                <span data-bs-toggle="collapse" data-bs-target="#main-nav">User Form</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <section id="instructions">
+    <div class="container-lg pt-3">
+      <h2>Instructions</h2>
+      <p>
+        Do some research on the <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank">Bootstrap website</a>. You may find these two pages to be particularly useful:
+      </p>
+      <ul>
+        <li><a href="https://getbootstrap.com/docs/5.1/content/tables/" target="_blank">Tables</a></li>
+        <li><a href="https://getbootstrap.com/docs/5.1/forms/overview/" target="_blank">Forms</a></li>
+      </ul>
+      <p>
+        After doing some research, apply Bootstrap classes to the table and form elements below.
+        Feel free to re-arrange the HTML that I've used to set up the table and form.
+        You may add additional HTML elements to the table and form as you see fit. 
+      </p>
+      <p>
+        Make sure to include a few icons in both the table and the form.
+      </p>
+      <p>
+        The table and form should be 'responsive', so make sure to test the page at various screen sizes.
+      </p>
+      <p>
+        NOTE: You do not have to make any of the buttons do anything. You just have to apply Bootstrap classes to them.
+      </p>
+    </div>
+  </section>
+
+  <section id="table">
+    <div class="container-lg">
+      <h2>User Table
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
+          <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"/>
+        </svg>
+      </h2>
+      
+      <table class="table table-striped table-success table-hover table-bordered responsive">
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Role</th>
+          <th scope="col">Active</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>Bob</td>
+          <td>Smith</td>
+          <td>bob@smith.com</td>
+          <td>Admin</td>
+          <td>Yes</td>
+          <td>
+            <button type="button">Edit
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+              </svg>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Betty</td>
+          <td>Smith</td>
+          <td>betty@smith.com</td>
+          <td>Standard User</td>
+          <td>Yes</td>
+          <td>
+            <button type="button">Edit
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+              </svg>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Barney</td>
+          <td>Smith</td>
+          <td>barney@smith.com</td>
+          <td>Standard User</td>
+          <td>No</td>
+          <td>
+            <button type="button">Edit
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+              </svg>
+            </button>
+          </td>
+        </tr>                  
+      </table>
+    
+    </div>
+  </section>
+
+  <section id="form">
+    <div class="container-lg">
+      <h2>User Form
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-ui-checks" viewBox="0 0 16 16">
+          <path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zM2 1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm0 8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm.854-3.646a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647 1.646-1.647a.5.5 0 1 1 .708.708zm0 8a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708.708zM7 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+        </svg>
+      </h2>
+
+      <form class="user-form align-items-left" action="https://webcoder.club/form-handler" method="POST">
+        <input type="hidden" name="user_id">
+        
+        <label for="autoSizingInput" class="form-label col-auto">First Name:</label>
+        <input type="text" class="form-control" name="first_name">
+        
+        <label class="form-label">Last Name:</label>
+        <input type="text" class="form-control" name="last_name">
+        
+        <label class="form-label">Email:</label>
+        <input type="email" class="form-control" name="email">
+        
+        <label class="form-label">Password:</label>
+        <input type="password" class="form-control form-text" name="password">
+        
+        <label>User Role:</label>
+        <select class="form-select-sm" name="role">
+          <option value="1">Standard User</option>
+          <option value="2">Admin</option>
+        </select>
+        <label class="form-check">
+          Active:
+          <input class="form-check-input" type="checkbox" value="" name="active">
+        </label>
+        <input type="submit" value="SAVE">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-floppy" viewBox="0 0 16 16">
+            <path d="M11 2H9v3h2z"/>
+            <path d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z"/>
+          </svg>
+        <input type="button" class="btnCancel" value="CANCEL">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-octagon" viewBox="0 0 16 16">
+            <path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z"/>
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+          </svg>
+      </form>
+
+    </div>
+  </section>
+
+  <div class="container-fluid bg-dark fixed-bottom text-white">
+    <div class="container-lg">
+      <footer class="fs-6 py-2">&copy; 2025 ??????</footer>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  
+</body>
+</html>
