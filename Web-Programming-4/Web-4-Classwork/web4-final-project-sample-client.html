@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Web 4 Final Sample Client</title>
+    <script>
+    window.addEventListener("load", () => {
+
+        const baseURL = "http://localhost:8888/";
+
+        const form = document.querySelector("#loginForm");
+        const txtEmail = form.querySelector("[name=email]");
+        const txtPassword = form.querySelector("[name=password]");
+
+        form.addEventListener("submit", async evt => {
+            evt.preventDefault();
+
+            const email = txtEmail.value;
+            const password = txtPassword.value;
+
+           const resp = await axios.post(baseURL + "auth/login", {email, password})
+        })
+
+    });
+    </script>
+</head>
+<body>
+    <form id="loginForm" method="POST" action="http://localhost:8888/auth/login">
+        <input type="text" name="email" placeholder="email">
+        <br>
+        <input type="password" name="password" placeholder="password">
+        <br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
