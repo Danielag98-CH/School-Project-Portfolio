@@ -1,0 +1,31 @@
+.mobileView {
+  margin: 1rem auto;
+  display: block;
+  text-align: center !important;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  overflow-x: auto
+}
+.gradientTable {
+  background: linear-gradient( #f48a59 15%, #020237 75%) !important;
+  color: rgb(220, 218, 218) !important;
+  margin: 2rem auto 2rem 2rem; 
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 35rem !important; 
+}
+.gradientTable th,
+.gradientTable td {
+  background-color: transparent !important;
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  padding: 0.75rem 1.25rem;
+}
+@media (max-width: 576px) {
+  .gradientTable {
+    overflow-x: auto;
+    max-width: 100% !important;
+    margin: 1rem auto;
+  }
+}

@@ -1,0 +1,80 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(127,127,127, 0.8);
+  z-index: 200;
+}
+
+.modalWindow {
+  text-align: center;
+  background-color: white;
+  width: 400px;
+  padding: 5px;
+  border:3px solid black;
+  border-radius: 10px;
+  z-index:201;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.titleBar{
+  display: flex;
+  align-items: center;
+  opacity: 1;
+}
+
+.title{
+  flex:1;
+  opacity: 1;
+}
+
+.modalContent{
+  padding:10px;
+  height: 100%;
+  opacity: 1;
+}
+
+.closeButton{
+  height: 44px;
+  width:44px;
+  font-weight: bold;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: red;
+  opacity: 1;
+}
+
+div.close{
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius:  8px;
+  border: 3px solid black;
+  opacity: 1;
+}
+
+div.close:hover{
+  background-color: tomato;
+  opacity: 1;
+}
+
+img.closeButtonX{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  cursor: pointer;
+  opacity: 1;
+}

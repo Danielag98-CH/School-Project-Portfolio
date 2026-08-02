@@ -1,0 +1,21 @@
+@media (max-width: 765px) {
+  .homepageCard {
+    max-width: 18rem !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body, html {
+    padding-bottom: 70px !important; 
+    margin-bottom: 70px !important; 
+  }
+
+  .main-content {
+    padding-bottom: 80px; 
+  }
+
+  .chart-container {
+    width: 290px !important;
+    height: 290px !important;
+  }
+}

@@ -1,0 +1,22 @@
+ body, html{
+  height: 100%;
+  background-image: url("./assets/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; 
+ }
+
+ @media (max-width: 600px) {
+  .body, html {
+    padding-bottom: 3rem; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+  }
+
+  .test{
+    padding-bottom: 60px;
+  }
+}
