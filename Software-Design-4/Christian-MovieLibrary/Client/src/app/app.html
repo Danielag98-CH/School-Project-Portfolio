@@ -1,0 +1,19 @@
+<!-- <app-nav></app-nav>
+<nav>
+  <a routerLink="/">Home</a> |
+  <a routerLink="/movies">Movies</a> |
+  <a routerLink="/movies/search">Search</a>
+</nav>
+<router-outlet /> -->
+
+<header class="topbar">
+  <nav class="nav">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/movies" routerLinkActive="active">Movies</a>
+    <a routerLink="/movies/search" routerLinkActive="active">Search</a>
+  </nav>
+</header>
+
+<main class="page-shell">
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,102 @@
+<div class="min-h-screen bg-gray-100 py-10">
+  <div class="mx-auto mb-6 flex max-w-3xl items-start justify-between px-6">
+    <div>
+      <h1 class="text-3xl font-bold text-gray-800">Create Course</h1>
+      <p class="text-sm text-gray-500">Add a new course to CourseTrack.</p>
+    </div>
+
+    <button
+      type="button"
+      (click)="cancel()"
+      class="rounded bg-gray-600 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700"
+    >
+      Cancel
+    </button>
+  </div>
+
+  <div class="mx-auto max-w-3xl rounded-xl bg-white p-6 shadow">
+    <div class="mb-5">
+      <label class="mb-1 block text-sm font-medium text-gray-700" for="title">
+        Course Title
+      </label>
+      <input
+        id="title"
+        type="text"
+        [(ngModel)]="title"
+        class="w-full rounded border border-gray-300 px-3 py-2"
+      >
+    </div>
+
+    <div class="mb-5 grid grid-cols-2 gap-4">
+      <div>
+        <label class="mb-1 block text-sm font-medium text-gray-700" for="instructor">
+          Instructor
+        </label>
+        <input
+          id="instructor"
+          type="text"
+          [(ngModel)]="instructor"
+          class="w-full rounded border border-gray-300 px-3 py-2"
+        >
+      </div>
+
+      <div>
+        <label class="mb-1 block text-sm font-medium text-gray-700" for="credits">
+          Credits
+        </label>
+        <input
+          id="credits"
+          type="number"
+          [(ngModel)]="credits"
+          class="w-full rounded border border-gray-300 px-3 py-2"
+        >
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="mb-2 block text-sm font-medium text-gray-700">
+        Course Status
+      </label>
+
+      <div class="flex items-center gap-2">
+        <input
+          id="isCompleted"
+          type="checkbox"
+          [(ngModel)]="isCompleted"
+          class="h-4 w-4"
+        >
+        <label for="isCompleted" class="text-gray-700">Completed</label>
+      </div>
+    </div>
+
+    <div class="mb-8">
+      @if (isCompleted) {
+        <span class="inline-block rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800">
+          ✔ This course will be created as completed.
+        </span>
+      } @else {
+        <span class="inline-block rounded-full bg-yellow-100 px-3 py-1 text-sm font-medium text-yellow-800">
+          This course will be created as in progress.
+        </span>
+      }
+    </div>
+
+    <div class="flex justify-end gap-3">
+      <button
+        type="button"
+        (click)="cancel()"
+        class="rounded bg-gray-600 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700"
+      >
+        Cancel
+      </button>
+
+      <button
+        type="button"
+        (click)="createCourse()"
+        class="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+      >
+        Create Course
+      </button>
+    </div>
+  </div>
+</div>

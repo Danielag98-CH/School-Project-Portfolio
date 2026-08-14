@@ -1,0 +1,47 @@
+<section class="search-page">
+  <div class="search-container">
+    <header class="search-header">
+      <h1>Search Movies</h1>
+      <p>Find a movie by title.</p>
+    </header>
+
+    <div class="search-bar">
+      <input
+        type="text"
+        [(ngModel)]="title"
+        placeholder="Search title"
+        (keyup.enter)="search()"
+      />
+      <button (click)="search()">Search</button>
+    </div>
+
+    <div class="results-list" *ngIf="results$ | async as movies">
+      <p class="no-results" *ngIf="movies.length === 0">
+        No movies found.
+      </p>
+
+      <a
+        class="result-card"
+        *ngFor="let movie of movies"
+        [routerLink]="['/movies', movie.id]"
+      >
+        <img
+          class="result-poster"
+          [src]="movie.posterPath"
+          [alt]="movie.title + ' poster'"
+        />
+
+        <div class="result-content">
+          <h2>{{ movie.title }}</h2>
+          <p>Directed by {{ movie.director }}</p>
+
+          <div class="result-meta">
+            <span>{{ movie.genre }}</span>
+            <span>{{ movie.releaseYear }}</span>
+            <span>⭐ {{ movie.rating }}</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

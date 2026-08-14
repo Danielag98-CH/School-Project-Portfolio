@@ -1,0 +1,48 @@
+<section class="movies-page">
+  <div class="movies-container">
+    <header class="movies-header">
+      <h1>Movie Library</h1>
+      <p>Browse the collection and select a movie to view more details.</p>
+    </header>
+
+    <div class="movie-grid" *ngIf="movies$ | async as movies">
+      <a
+        class="movie-card"
+        *ngFor="let movie of movies"
+        [routerLink]="['/movies', movie.id]"
+      >
+        <img
+          class="movie-poster"
+          [src]="movie.posterPath"
+          [alt]="movie.title + ' poster'"
+        />
+
+        <div class="movie-card-body">
+          <h2>{{ movie.title }}</h2>
+
+          <p class="director">
+            Directed by {{ movie.director }}
+          </p>
+
+          <div class="meta-row">
+            <span class="pill genre">{{ movie.genre }}</span>
+            <span class="pill year">{{ movie.releaseYear }}</span>
+            <span class="pill rating">⭐ {{ movie.rating }}</span>
+          </div>
+
+          <p
+            class="streaming"
+            [class.available]="movie.isAvailableToStream"
+            [class.unavailable]="!movie.isAvailableToStream"
+          >
+            {{ movie.isAvailableToStream ? 'Available to Stream' : 'Not Available to Stream' }}
+          </p>
+
+          <p class="description">
+            {{ movie.description }}
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

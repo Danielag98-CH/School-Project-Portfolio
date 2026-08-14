@@ -1,0 +1,56 @@
+<div class="mx-auto max-w-3xl p-6">
+  <div class="mb-6 flex items-center justify-between">
+    <h1 class="text-3xl font-bold">Courses</h1>
+    <a
+      routerLink="/courses/create"
+      class="inline-flex items-center gap-2 rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+    >
+        <span class="text-lg leading-none">+</span>
+         Create Course
+    </a>
+  </div>
+
+  @if (courses.length === 0) {
+    <p class="text-gray-600">No courses available.</p>
+  } @else {
+    <div class="space-y-4">
+      @for (course of courses; track course.id) {
+        <div class="relative rounded border border-gray-300 p-4">
+            <button
+                type="button"
+                (click)="deleteCourse(course.id)"
+                class="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-white text-sm font-bold hover:bg-red-600"
+                >
+                 ×
+            </button>
+
+          <h2 class="mb-2 text-xl font-semibold">{{ course.title }}</h2>
+          <p><span class="font-medium">Instructor:</span> {{ course.instructor }}</p>
+          <p><span class="font-medium">Credits:</span> {{ course.credits }}</p>
+          <p>
+            <span class="font-medium">Status:</span>
+
+                @if (course.isCompleted) {
+                    <span class="ml-2 inline-flex items-center rounded bg-green-100 px-2 py-1 text-sm font-medium text-green-800">
+                    ✔ Completed
+                    </span>
+                } @else {
+                    <span class="ml-2 inline-flex items-center rounded bg-yellow-100 px-2 py-1 text-sm font-medium text-yellow-800">
+                    In Progress
+                    </span>
+                }
+        </p>
+
+          <div class="mt-4 flex justify-end">
+            <a
+              [routerLink]="['/courses', course.id]"
+              class="rounded bg-purple-600 px-3 py-2 text-sm text-white hover:bg-purple-700"
+            >
+              View Details
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

@@ -1,0 +1,63 @@
+<section class="movie-details-page">
+  <div class="details-shell">
+    <a class="back-button" routerLink="/movies">← Back</a>
+
+    <div class="details-card" *ngIf="movie$ | async as movie">
+      <div class="poster-panel">
+        <img
+          class="movie-poster"
+          [src]="movie.posterPath"
+          [alt]="movie.title + ' poster'"
+        />
+      </div>
+
+      <div class="details-content">
+        <h1>{{ movie.title }}</h1>
+        <p class="director-line">Directed by {{ movie.director }}</p>
+
+        <div class="meta-row">
+          <span class="pill genre">{{ movie.genre }}</span>
+          <span class="pill year">{{ movie.releaseYear }}</span>
+          <span class="pill rating">⭐ {{ movie.rating }}</span>
+        </div>
+
+        <p
+          class="streaming"
+          [class.available]="movie.isAvailableToStream"
+          [class.unavailable]="!movie.isAvailableToStream"
+        >
+          {{ movie.isAvailableToStream ? 'Available to Stream' : 'Not Available to Stream' }}
+        </p>
+
+        <hr />
+
+        <section class="description-section">
+          <h2>Description</h2>
+          <p>{{ movie.description }}</p>
+        </section>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <span class="label">Director</span>
+            <span class="value">{{ movie.director }}</span>
+          </div>
+
+          <div class="info-box">
+            <span class="label">Release Year</span>
+            <span class="value">{{ movie.releaseYear }}</span>
+          </div>
+
+          <div class="info-box">
+            <span class="label">Genre</span>
+            <span class="value">{{ movie.genre }}</span>
+          </div>
+
+          <div class="info-box">
+            <span class="label">Rating</span>
+            <span class="value">{{ movie.rating }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
