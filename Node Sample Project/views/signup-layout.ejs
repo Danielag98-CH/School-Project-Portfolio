@@ -1,0 +1,20 @@
+<%- include('partials/top') %>
+<form method="POST" action="/signup-confirmation">
+  <label>First Name:</label>
+  <input type="text" name="firstName">
+  <br>
+  <label>Last Name:</label>
+  <input type="text" name="lastName">
+  <br>
+  <label>Email:</label>
+  <input type="email" name="email">
+  <br>
+  <label>Password:</label>
+  <input type="password" name="password">
+  <br>
+  <label>Confirm Password:</label>
+  <input type="password" name="confirmPassword">
+  <br>
+  <input type="submit" value="Sign Up">
+</form>
+<%- include('partials/bottom') %>

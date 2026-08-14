@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sample Form</title>
+        <style>
+            label{
+                display:block;
+                font-weight: bold;
+            }
+
+            input[type=checkbox] + label, input[type=radio] + label{
+                display: inline;
+                font-weight: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Basic Form Handling</h3>
+            <form method="POST" action="/request-handler">
+                <input type="hidden" name="hiddenInput" value="some hidden value">
+                <label>First name</label>
+                <input type="text" name="firstName">
+                <br>
+                <label>Favorite color</label>
+                <select name="colors">
+                    <option>Choose a color...</option>
+                    <option value="red">RED</option>
+                    <option value="blue">BLUE</option>
+                    <option value="green">GREEN</option>
+                </select>
+                <br>
+                <label>Status</label>
+                <input type="radio" value="single" name="marital-status"><label>Single</label>
+                <input type="radio" value="married" name="marital-status"><label>Married</label>
+                <br>
+                <label>Places you've been to:</label>
+                <input type="checkbox" name="places" value="canada"><label>Canada</label>
+                <input type="checkbox" name="places" value="us"><label>United States</label>
+                <input type="checkbox" name="places" value="mexico"><label>Mexico</label>
+                <br>
+                <label>Terms of service</label>
+                <input type="checkbox" name="agreed" value="yes"><label>Check to agree to our terms of service</label>
+                <br>
+                <input type="submit">
+            </form>
+</html>

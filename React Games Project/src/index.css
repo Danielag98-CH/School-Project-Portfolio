@@ -1,0 +1,14 @@
+#root{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+button {
+  background-color: green;
+  color: white;
+  border-radius: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

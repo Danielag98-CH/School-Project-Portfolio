@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>File Upload Example</title>
+        <style>
+            label{
+                display:block;
+                font-weight: bold;
+            }
+
+            input[type=checkbox] + label, input[type=radio] + label{
+                display: inline;
+                font-weight: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>File Upload</h3>
+            <form method="POST" action="/upload" enctype="multipart/form-data">
+                <label>Upload a file</label>
+                <input type="file" name="someFile">
+                <br>
+                <input type="submit">
+            </form>
+    </body>
+</html>
