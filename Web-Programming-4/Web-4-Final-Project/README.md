@@ -1,4 +1,4 @@
-# Project X
+# Apothecary Project
 
 # STEP 1 - Starter Files
 Log into your MySQL server and run the script in the **database.sql** file (which is
